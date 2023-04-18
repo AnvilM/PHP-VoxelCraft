@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" class="dark antialiased [--scrollbar-size:theme(width.4)] motion-safe:scroll-smooth">
-
-<head>
-    
-</head>
-
 <body class="bg-tavern-black min-w-[447px]">
     <?require 'src\views\Partials\header.php';?>
         <main>

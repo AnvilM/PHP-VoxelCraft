@@ -4,6 +4,11 @@ return [
     'all' => [
         '',
         'Towns'
+        'Bank'
+        'Profile'
+        'Statistic'
+        'Zalupatown'
+        'Zalupatownedit'
         
     ],
     'noLogined' => [

@@ -1,11 +1,4 @@
 <<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en" id="element" class="dark antialiased [--scrollbar-size:theme(width.4)] motion-safe:scroll-smooth">
-
-<head>
-
-</head>
-
 <body class="bg-tavern-black overflow-x-hidden min-w-[647px]">
     <?require 'src\views\Partials\header.php';?>
     <main class="pt-20 font-sans">

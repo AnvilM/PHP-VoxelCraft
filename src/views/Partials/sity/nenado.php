@@ -23,11 +23,11 @@
         </svg>
         Люди не требуются
     </div>
-    <img class="float-right w-[100px] top-[70px] absolute right-[12px]" src="./images/banner.png">
+    <img class="float-right w-[100px] top-[70px] absolute right-[12px]" src="public\images\banner.png">
     <div class="py-4 px-6">
         <p class="text-white">Залупавиль</p>
         <div class="flex items-center">
-            <img class="h-[18px]" src="./images/ava.png">
+            <img class="h-[18px]" src="public\images\ava.png">
             <p class="text-white ml-3">New_Jeb</p>
         </div>
     </div>
