@@ -13,5 +13,10 @@ Class HomeController extends Controller{
         $this->User->add_tag('w');
         $this->View->render();
     }   
+    public function TownsAction(){
+        
+        $this->User->add_tag('w');
+        $this->View->render();
+    } 
 
 } 

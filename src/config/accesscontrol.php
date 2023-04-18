@@ -2,7 +2,8 @@
 
 return [
     'all' => [
-        ''
+        '',
+        'Towns'
         
     ],
     'noLogined' => [
