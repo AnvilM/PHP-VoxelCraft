@@ -9,7 +9,6 @@ abstract class Controller{
     public $view;
     public $model;
     public $params;
-    public $access;
 
     function __construct($params){
         
@@ -52,25 +51,20 @@ abstract class Controller{
     }
 
     public function accessCheck(){
-        $this->access = require $_SERVER['DOCUMENT_ROOT'].'/src/config/accesscontrol.php';
-        if($this->accessMatch('all')){
+        $access = require $_SERVER['DOCUMENT_ROOT'].'/src/config/accesscontrol.php';
+        if(in_array($this->params['Route'], $access['all'])){
             return true;
         }
-        else if($this->accessMatch('noLogined') &&  !isset($_SESSION['Login'])){
+        else if(in_array($this->params['Route'], $access['noLogined']) &&  !in_array('Logined', $_SESSION['User']['Tags'])){
             return true;
         }
-        else if($this->accessMatch('isLogined') && isset($_SESSION['Login'])){
-            return true;
-        }
-        else if ($this->accessMatch('admin') && isset($_SESSION['admin'])){
+        else if(in_array($this->params['Route'], $access['isLogined']) && in_array('Logined', $_SESSION['User']['Tags'])){
             return true;
         }
         return false;
     }
 
-    public function accessMatch($key){
-        return in_array($this->params['Route'], $this->access[$key]);
-    }
+    
    
 
 }
