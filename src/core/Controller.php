@@ -3,13 +3,14 @@
 namespace src\core;
 
 use src\core\View;
+use src\lib\User;
 
 abstract class Controller{
 
     public $View;
     public $Model;
     public $params;
-
+    public $User;
     function __construct($params){
         
         $this->params = $params;
@@ -17,7 +18,7 @@ abstract class Controller{
         if(!$this->accessCheck()){
             View::error(404);
         }
-
+        $this->User = new User();
         $this->View = new View($params);
         
         $this->Model = $this->loadModel($params['Controller']);
@@ -39,7 +40,7 @@ abstract class Controller{
         if(in_array($this->params['Route'], $access['all'])){
             return true;
         }
-        else if(in_array($this->params['Route'], $access['noLogined']) &&  !in_array('Logined', $_SESSION['User']['Tags'])){
+        else if(in_array($this->params['Route'], $access['noLogined']) &&  !isset($_SESSION['User'])){
             return true;
         }
         else if(in_array($this->params['Route'], $access['isLogined']) && in_array('Logined', $_SESSION['User']['Tags'])){

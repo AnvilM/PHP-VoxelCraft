@@ -10,7 +10,7 @@ Class HomeController extends Controller{
 
     public function IndexAction(){
         
-
+        $this->User->add_tag('w');
         $this->View->render();
     }   
 
