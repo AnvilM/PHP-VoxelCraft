@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" id="element" class="dark antialiased [--scrollbar-size:theme(width.4)] motion-safe:scroll-smooth">
 
@@ -128,3 +129,8 @@
 
 
 </html>
+=======
+<?php
+
+print_r($_SESSION['User']);
+>>>>>>> 163ba4b5b8963ee70d285a26ca12bc3ef4c22f3e
