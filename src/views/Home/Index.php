@@ -129,8 +129,3 @@
 
 
 </html>
-=======
-<?php
-
-print_r($_SESSION['User']);
->>>>>>> 163ba4b5b8963ee70d285a26ca12bc3ef4c22f3e
