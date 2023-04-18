@@ -13,7 +13,7 @@ abstract class Controller{
     function __construct($params){
         
         $this->params = $params;
-
+        
         if(!$this->accessCheck()){
             View::error(404);
         }
@@ -21,25 +21,9 @@ abstract class Controller{
         $this->view = new View($params);
         
         $this->model = $this->loadModel($params['Controller']);
-
-        
-        if(isset($_SESSION['Login'])){
-            $this->model->updateSession(time(), $_SESSION['Login'], session_id());
-        }
-        if(isset($_SESSION['Login'])){
-            if(mysqli_num_rows($this->model->checkSession($_SESSION['Login'], session_id())) < 1){
-                $this->model->delSession($_SESSION['Login'], session_id());
-                unset($_SESSION['Login']);
-                header('Location: /');
-                exit();
-            }
-        }
         
     }
 
-    public function SetMessage($message){
-        $_SESSION['Message'] = $message;
-    }
 
     
 

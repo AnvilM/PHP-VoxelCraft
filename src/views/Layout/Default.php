@@ -23,13 +23,11 @@
     </head>
     <body>
 
-            <div class="root">
-                <?= $view ?>
-            </div>
+        <div class="root">
+            <?= $view ?>
+        </div>
 
             
-    
-        <script src="/public/js/script.js"></script>
         <?=$js?>
     </body>
     
