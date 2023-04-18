@@ -6,8 +6,8 @@ use src\core\View;
 
 abstract class Controller{
 
-    public $view;
-    public $model;
+    public $View;
+    public $Model;
     public $params;
 
     function __construct($params){
@@ -18,9 +18,9 @@ abstract class Controller{
             View::error(404);
         }
 
-        $this->view = new View($params);
+        $this->View = new View($params);
         
-        $this->model = $this->loadModel($params['Controller']);
+        $this->Model = $this->loadModel($params['Controller']);
         
     }
 
