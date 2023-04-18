@@ -1,35 +1,92 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
+<html lang="en" id="element" class="dark antialiased [--scrollbar-size:theme(width.4)] motion-safe:scroll-smooth">
 
-        <!-- FAVICON -->
-        <link rel="icon" type="image/x-icon" href="/public/icons/logo.svg">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://VoxelCraft.ru/" rel="canonical">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="VoxelCraft">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="Приватный Minecraft сервер — VoxelCraft title1">
+    <meta
+        content="Это приватный сервер созданный для динамичной и cплoчённой игры людей. На нашем сервере отсутствуют лишние плагины вроде /sethome или /tpa. meta1"
+        name="description">
+    <meta
+        content="Это приватный сервер созданный для динамичной и cплoчённой игры людей. На нашем сервере отсутствуют лишние плагины вроде /sethome или /tpa. meta2"
+        name="og:description">
+    <meta itemprop="description"
+        content="Это приватный сервер созданный для динамичной и cплoчённой игры людей. На нашем сервере отсутствуют лишние плагины вроде /sethome или /tpa. meta3">
+    <meta property="og:image" content="https://VoxelCraft.ru/og-image.jpg">
+    <meta content="911" property="og:image:width">
+    <meta content="364" property="og:image:height">
+    <meta name="twitter:image" content="https://VoxelCraft.ru/og-image.jpg">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
+    <meta http-equiv="Expires" content="Tue, 01 Jan 1995 12:12:12 GMT">
+    <meta http-equiv="Pragma" content="no-cache">
 
-        <!-- FONTS -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="public\images\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="public\images\favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <!-- CSS --> 
-        <?=$css?>
-        
-        <title><?= $title ?></title>
-    </head>
-    <body>
+    <script>
+        tailwind.config = {
+            content: [
+                './views/*.ejs',
+                './views/partials/*.ejs',
+                './views/adminpanel/*.ejs',
+                './views/partials/dropdowns/*.ejs',
+                './views/partials/modals/*.ejs',
+                './views/partials/bank/*.ejs',
+                './views/partials/sity/*.ejs',
+                './node_modules/flowbite/**/*.js'
+            ],
+            theme: {
+                extend: {
+                    backgroundImage: {
+                        'slider': "url('/src/img/Group91.svg')",
+                    },
+                    colors: {
+                        'tavern-black': '#111414',
+                        'tavern-link': '#1d72f2',
+                        'tavern-grid': '#1C1C1C',
+                        'tavern-grid-br': '#3F3F3F',
+                        'tavern-input-br': '#1d72f2',
+                        'tavern-bank': '#CDDFFF',
+                        'tavern-bg-bank': '#1E70FF',
+                        'white/15': 'hsla(0,0%,100%,.15);',
+                    },
+                    height: {
+                        '18': '4.66rem',
+                    },
+                    spacing: {
+                        '1000': '50rem',
+                        '18': '4.5rem',
+                    },
+                },
+            }
+        }
+    </script>
 
-        <div class="root">
-            <?= $view ?>
-        </div>
+    <!-- CSS -->
+    <?=$css?>
 
-            
-        <?=$js?>
-    </body>
-    
-    
+    <title><?= $title ?></title>
+</head>
+
+<body>
+
+    <div class="root">
+        <?= $view ?>
+    </div>
+
+
+    <?=$js?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+</body>
+
+
 </html>

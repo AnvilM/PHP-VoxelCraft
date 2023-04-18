@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "benzin";
+    src: url("../fonts/benzin-bold.ttf") format("truetype");
+}
+
+*::-webkit-scrollbar {
+    height: 1rem;
+    width: 1rem;
+    background-color: #111414;
+    border-radius: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    border: 5px solid transparent;
+    background-color: #0089ff;
+    background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: rgba(var(--color-gray-800), var(--tw-bg-opacity));
+    padding: .25rem;
+}
+
+.buy::before {
+    content: attr(data-title);
+    color: #fff;
+    top: -12px;
+    right: 191px;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    background: #111414;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.buy2::before {
+    content: attr(data-title);
+    color: #fff;
+    top: -12px;
+    right: 181px;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    background: #111414;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.buy3::before {
+    content: attr(data-title);
+    color: #fff;
+    top: -12px;
+    left: 26px;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    background: #111414;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.zalupa {
+    width: 345.71px;
+    height: 345.71px;
+    position: absolute;
+    translate: -174px;
+    top: 66px;
+    left: 0;
+    border-radius: 50%;
+    background: rgba(0, 215, 172, .718);
+    filter: blur(50px);
+}
+
+.zalupa2 {
+    width: 345.71px;
+    height: 345.71px;
+    position: absolute;
+    translate: -1674px;
+    top: 66px;
+    left: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 226.25px 18.1px #00D7AC;
+    background: rgba(0, 215, 172, 0.718);
+    filter: blur(50px);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+li::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+    padding-left: 14px;
+}
+
+li.px-5 {
+    list-style: none;
+}
+
+.huy li.px-5::before {
+    content: "•";
+    font-size: 28px;
+    position: absolute;
+    padding-top: 5px;
+    left: 16px;
+    color: #1d72f2;
+}
+
+.pizda {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background: #007eff;
+    border-radius: 0 0 .75rem .75rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.negri {
+    background-image: url(https://media.discordapp.net/attachments/1086216483010527272/1090950615770878023/image.png?width=1440&height=505);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
