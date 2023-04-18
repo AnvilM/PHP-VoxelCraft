@@ -35,7 +35,7 @@ $routes = [
         'Title' => 'Профиль'
     ],
     [
-        'Route' => 'Statistic',
+        'Route' => 'Stats',
         'Controller' => 'Home',
         'Action' => 'Statistic',
         'Layout' => 'Default',
@@ -52,6 +52,22 @@ $routes = [
     ],
     [
         'Route' => 'Zalupatownedit',
+        'Controller' => 'Home',
+        'Action' => 'Zalupatownedit',
+        'Layout' => 'Default',
+        'View' => 'Zalupatownedit',
+        'Title' => 'Да'
+    ],
+    [
+        'Route' => 'admin/index',
+        'Controller' => 'Home',
+        'Action' => 'Zalupatownedit',
+        'Layout' => 'Default',
+        'View' => 'Zalupatownedit',
+        'Title' => 'Да'
+    ],
+    [
+        'Route' => 'admin/bank',
         'Controller' => 'Home',
         'Action' => 'Zalupatownedit',
         'Layout' => 'Default',

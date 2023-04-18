@@ -3,12 +3,14 @@
 return [
     'all' => [
         '',
-        'Towns'
-        'Bank'
-        'Profile'
-        'Statistic'
-        'Zalupatown'
-        'Zalupatownedit'
+        'Towns',
+        'Bank',
+        'Profile',
+        'Stats',
+        'Zalupatown',
+        'Zalupatownedit',
+        'admin/bank',
+        'admin/index'
         
     ],
     'noLogined' => [
