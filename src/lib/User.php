@@ -12,5 +12,11 @@ class User{
         }
         return false;
     }
+
+    public function get_login(){
+        if(isset($_SESSION['User'])){
+            return $_SESSION['User']['Login'];
+        }
+    }
     
 }
