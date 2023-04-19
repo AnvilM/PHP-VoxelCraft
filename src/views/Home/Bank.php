@@ -9,7 +9,8 @@
                                 class="h-52 text-[#343737] select-none hover:text-tavern-bg-bank hover:border-tavern-bg-bank transition-all text-2xl font-medium mb-4  flex flex-col items-center justify-center border-dashed border-2 border-[#343737] rounded-lg">
                                 Нет карточек
                             </div>
-                            <a href="#"
+                            <!-- <?require 'src\views\Partials\cardstyles\whiteredan.php';?> -->
+                            <a href="#" data-modal-target="editcard" data-modal-toggle="editcard"
                                 class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-4 flex items-center font-medium text-xl">
                                 <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -19,9 +20,8 @@
                                 </svg>
                                 Редактировать дизайн
                             </a>
-                            <a href="#"
+                            <a href="#" data-modal-target="createcard" data-modal-toggle="createcard"
                                 class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-14 flex items-center font-medium text-xl">
-
                                 <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -504,6 +504,8 @@
         </main>
         <?require 'src\views\Partials\modals\link.php';?>
         <?require 'src\views\Partials\modals\transfermoney.php';?>
+        <?require 'src\views\Partials\modals\createcard.php';?>
+        <?require 'src\views\Partials\modals\editcard.php';?>
 </body>
 
 </html>
