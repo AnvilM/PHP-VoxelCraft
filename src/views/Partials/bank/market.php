@@ -1,7 +1,7 @@
 <div class="hover:bg-tavern-grid flex items-center justify-between px-6 py-3">
     <div class="flex items-center">
         <img class="h-[45px]"
-            src="https://media.discordapp.net/attachments/891260764134993960/1090702590645379072/image.png">
+            src="https://media.discordapp.net/attachments/1097539754234499132/1098195067174400000/image.png">
         <div class="ml-3 flex flex-col">
             <p class="text-white">Маркет</p>
             <p class="flex text-[#00D6AC] whitespace-nowrap items-center">Покупка товара «Дилдо»</p>

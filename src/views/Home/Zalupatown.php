@@ -73,7 +73,7 @@
                                             <div
                                                 class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
                                                 <img class="object-fill rounded-xl"
-                                                    src="https://media.discordapp.net/attachments/891261530857963532/1089892085420793886/Its_No_Use_Hes_in_A_Deep_Coma_26032023225225.jpg?width=437&height=671">
+                                                    src="https://media.discordapp.net/attachments/1097539754234499132/1097836471127392376/image.png?width=1233&height=671">
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                             <div class="flex">
                                 <div class="flex items-center">
 
-                                    <img class="h-[288px] mr-6" src="http://localhost:3000/images/banner.png">
+                                    <img class="h-[288px] mr-6" src="public\images\banner.png">
                                     <div class="flex flex-col">
                                         <div
                                             class="bg-tavern-bg-bank select-none mb-10 text-tavern-black max-w-fit rounded-full px-7 py-2.5 text-base font-semibold flex items-center">
@@ -200,7 +200,7 @@
                                         </button>
                                     </form>
                                     <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2" src="http://localhost:3000/images/ava.png">
+                                        <img class="h-11 mr-2" src="public\images\ava.png">
                                         <svg class="mr-2" width="24" height="22" viewBox="0 0 24 22" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_0_1317)">
@@ -220,7 +220,7 @@
                                         <p class="text-white text-base font-medium">New_Jeb</p>
                                     </div>
                                     <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2" src="http://localhost:3000/images/ava.png">
+                                        <img class="h-11 mr-2" src="public\images\ava.png">
                                         <svg class="mr-2" width="26" height="24" viewBox="0 0 26 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -233,7 +233,7 @@
                                         <p class="text-white text-base font-medium">New_Jeb</p>
                                     </div>
                                     <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2" src="http://localhost:3000/images/ava.png">
+                                        <img class="h-11 mr-2" src="public\images\ava.png">
                                         <p class="text-white text-base font-medium">New_Jeb</p>
                                     </div>
                                     <a href="#"

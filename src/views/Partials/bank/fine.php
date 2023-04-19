@@ -1,7 +1,7 @@
 <div class="hover:bg-tavern-grid flex items-center justify-between px-6 py-3">
     <div class="flex items-center">
         <img class="h-[45px]"
-            src="https://media.discordapp.net/attachments/891260764134993960/1090702516016124004/image.png">
+            src="https://media.discordapp.net/attachments/1097539754234499132/1098194981048561695/image.png">
         <div class="ml-3 flex flex-col">
             <p class="text-white">Штраф</p>
             <p class="flex text-[#FF5949] whitespace-nowrap items-center">Обосрался на площади</p>

@@ -121,28 +121,28 @@
                 </div>
                 <div class="container mx-auto gap-x-16 gap-y-8 px-10 sm:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-3">
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center">
-                        <img class="h-[80px]" src="./images/ava.png">
+                        <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
                             <p class="font-medium text-lg leading-7">New_Jeb</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center">
-                        <img class="h-[80px]" src="./images/ava.png">
+                        <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
                             <p class="font-medium text-lg leading-7">New_Jeb</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center">
-                        <img class="h-[80px]" src="./images/ava.png">
+                        <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
                             <p class="font-medium text-lg leading-7">New_Jeb</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center">
-                        <img class="h-[80px]" src="./images/ava.png">
+                        <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
                             <p class="font-medium text-lg leading-7">New_Jeb</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
