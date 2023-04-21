@@ -64,28 +64,28 @@
                         <nav class="ml-0 md:ml-8">
                             <ul class="flex justify-center md:justify-start p-4 flex-row lg:space-x-6 mt-0 font-medium">
                                 <li>
-                                    <a href="#"
-                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4"
+                                    <a
+                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4 cursor-pointer online-now-button"
                                         aria-current="page">Онлайн</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4"
+                                    <a 
+                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4 cursor-pointer online-month-button"
                                         aria-current="page">Месяц</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4"
+                                    <a 
+                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4 cursor-pointer online-week-button"
                                         aria-current="page">Неделя</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4"
+                                    <a 
+                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4 cursor-pointer online-yesterday-button"
                                         aria-current="page">Вчера</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4"
+                                    <a 
+                                        class="text-white hover:border-b border-[#1d72f2] transition-all mx-3 px-1 py-4 cursor-pointer online-today-button" 
                                         aria-current="page">Сегодня</a>
                                 </li>
                             </ul>
@@ -120,31 +120,38 @@
                     </form>
                 </div>
                 <div class="container mx-auto gap-x-16 gap-y-8 px-10 sm:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-3">
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center">
+                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-now">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb</p>
+                            <p class="font-medium text-lg leading-7">New_Jeb-now</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center">
+                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-today">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb</p>
+                            <p class="font-medium text-lg leading-7">New_Jeb-today</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center">
+                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-yesterday">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb</p>
+                            <p class="font-medium text-lg leading-7">New_Jeb-yesterday</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center">
+                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-week">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb</p>
+                            <p class="font-medium text-lg leading-7">New_Jeb-week</p>
+                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
+                        </div>
+                    </a>
+                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
+                        <img class="h-[80px]" src="public\images\ava.png">
+                        <div class="text-white ml-8 flex flex-col">
+                            <p class="font-medium text-lg leading-7">New_Jeb-month</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>

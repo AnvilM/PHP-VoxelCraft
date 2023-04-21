@@ -18,7 +18,7 @@ Class HomeController extends Controller{
      
         $this->View->render();
     } 
-    public function StatisticAction(){
+    public function StatsAction(){
         
       
         $this->View->render();
