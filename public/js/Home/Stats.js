@@ -1,5 +1,5 @@
 var users = document.querySelectorAll('.user')
-
+document.querySelector('.online-all-button').addEventListener('click', showAll)
 document.querySelector('.online-now-button').addEventListener('click', online)
 document.querySelector('.online-today-button').addEventListener('click', today)
 document.querySelector('.online-yesterday-button').addEventListener('click', yesterday)

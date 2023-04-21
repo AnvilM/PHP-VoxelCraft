@@ -56,7 +56,7 @@
             <div class="py-10  font-sans">
                 <div class="container mx-auto flex items-center flex-col md:grid md:grid-cols-none md:grid-rows-1">
                     <div class="md:my-auto mb-5">
-                        <button class="bg-tavern-link hover:bg-blue-500 py-[16px] px-[42px] rounded-md text-white font-medium">Все игроки</button>
+                        <button class="bg-tavern-link hover:bg-blue-500 py-[16px] px-[42px] rounded-md text-white font-medium online-all-button">Все игроки</button>
                     </div>
 
                     <div class="bg-tavern-grid h-[54px]  rounded-md col-start-3 col-span-10 w-full">
