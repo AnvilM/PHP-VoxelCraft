@@ -2,6 +2,7 @@
 <html lang="en" id="element" class="dark antialiased [--scrollbar-size:theme(width.4)] motion-safe:scroll-smooth">
 
 <head>
+    <!-- META -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" />
@@ -27,49 +28,16 @@
     <meta http-equiv="Expires" content="Tue, 01 Jan 1995 12:12:12 GMT">
     <meta http-equiv="Pragma" content="no-cache">
 
+    <!-- FAVICON -->
     <link rel="icon" href="public\images\favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="public\images\favicon.ico" type="image/x-icon">
+
+    <!-- TAILWIND -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/public/js/Tailwind.js"></script>
+    <link rel="stylesheet" href="/public/css/Index.css">
 
-    <script>
-        tailwind.config = {
-            content: [
-                './views/*.ejs',
-                './views/partials/*.ejs',
-                './views/adminpanel/*.ejs',
-                './views/partials/dropdowns/*.ejs',
-                './views/partials/modals/*.ejs',
-                './views/partials/bank/*.ejs',
-                './views/partials/sity/*.ejs',
-                './node_modules/flowbite/**/*.js'
-            ],
-            theme: {
-                extend: {
-                    backgroundImage: {
-                        'slider': "url('/src/img/Group91.svg')",
-                    },
-                    colors: {
-                        'tavern-black': '#111414',
-                        'tavern-link': '#1d72f2',
-                        'tavern-grid': '#1C1C1C',
-                        'tavern-grid-br': '#3F3F3F',
-                        'tavern-input-br': '#1d72f2',
-                        'tavern-bank': '#CDDFFF',
-                        'tavern-bg-bank': '#1E70FF',
-                        'white/15': 'hsla(0,0%,100%,.15);',
-                    },
-                    height: {
-                        '18': '4.66rem',
-                    },
-                    spacing: {
-                        '1000': '50rem',
-                        '18': '4.5rem',
-                    },
-                },
-            }
-        }
-    </script>
 
     <!-- CSS -->
     <?=$css?>

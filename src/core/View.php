@@ -16,13 +16,13 @@ class View{
 
             $title = $this->params['Title'];
 
-            $css = $_SERVER['DOCUMENT_ROOT'].'/public/css/Index.css';
+            $css = $_SERVER['DOCUMENT_ROOT'].'/public/css/'.$this->params['Controller'].'/'.$this->params['View'].'.css';
             $js = $_SERVER['DOCUMENT_ROOT'].'/public/js/'.$this->params['Controller'].'/'.$this->params['View'].'.js';
 
             if(!file_exists($css)){
                 $css = '';
             } else{
-                $css = '<link rel="stylesheet" href="/public/css/Index.css">';
+                $css = $_SERVER['DOCUMENT_ROOT'].'/public/css/'.$this->params['Controller'].'/'.$this->params['View'].'.css';
             }   
             if(!file_exists($js)){
                 $js = '';
