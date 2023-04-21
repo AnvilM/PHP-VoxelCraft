@@ -19,20 +19,28 @@ $routes = [
         'Title' => 'Города'
     ],
     [
-        'Route' => 'Bank',
-        'Controller' => 'Home',
-        'Action' => 'Bank',
-        'Layout' => 'Default',
-        'View' => 'Bank',
-        'Title' => 'Банк'
-    ],
-    [
         'Route' => 'Stats',
         'Controller' => 'Home',
         'Action' => 'Stats',
         'Layout' => 'Default',
         'View' => 'Stats',
         'Title' => 'Статистика'
+    ],
+    [
+        'Route' => 'Map',
+        'Controller' => 'Home',
+        'Action' => 'Map',
+        'Layout' => 'Default',
+        'View' => 'Map',
+        'Title' => 'Да'
+    ],
+    [
+        'Route' => 'Bank',
+        'Controller' => 'Home',
+        'Action' => 'Bank',
+        'Layout' => 'Default',
+        'View' => 'Bank',
+        'Title' => 'Банк'
     ],
     [
         'Route' => 'Profile',
@@ -84,6 +92,8 @@ $routes = [
         'View' => '',
         'Title' => 'Да'
     ],
+
+    
 ];
 
 return $routes;

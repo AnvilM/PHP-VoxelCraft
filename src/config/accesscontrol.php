@@ -13,7 +13,8 @@ return [
         'Zalupatown',
         'Zalupatownedit',
         'admin/bank',
-        'Admin'
+        'Admin',
+        'Map'
         
     ],
     'noLogined' => [
