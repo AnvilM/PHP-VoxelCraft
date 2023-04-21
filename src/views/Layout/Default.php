@@ -27,6 +27,9 @@
     <meta content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
     <meta http-equiv="Expires" content="Tue, 01 Jan 1995 12:12:12 GMT">
     <meta http-equiv="Pragma" content="no-cache">
+    
+    <!-- CSS -->
+    <?=$css?>
 
     <!-- FAVICON -->
     <link rel="icon" href="public\images\favicon.ico" type="image/x-icon">
@@ -39,8 +42,8 @@
     <link rel="stylesheet" href="/public/css/Index.css">
 
 
-    <!-- CSS -->
-    <?=$css?>
+
+    
 
     <title><?= $title ?></title>
 </head>

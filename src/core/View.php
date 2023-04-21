@@ -22,7 +22,7 @@ class View{
             if(!file_exists($css)){
                 $css = '';
             } else{
-                $css = $_SERVER['DOCUMENT_ROOT'].'/public/css/'.$this->params['Controller'].'/'.$this->params['View'].'.css';
+                $css = '<link rel="stylesheet" href="/public/css/'.$this->params['Controller'].'/'.$this->params['View'].'.css'.'">';
             }   
             if(!file_exists($js)){
                 $js = '';
