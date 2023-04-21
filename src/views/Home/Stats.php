@@ -122,35 +122,35 @@
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-now">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb-now</p>
+                            <p class="user-name font-medium text-lg leading-7">New_Jeb-now</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-today">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb-today</p>
+                            <p class="user-name font-medium text-lg leading-7">New_Jeb-today</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-yesterday">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb-yesterday</p>
+                            <p class="user-name font-medium text-lg leading-7">New_Jeb-yesterday</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-week">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb-week</p>
+                            <p class="user-name font-medium text-lg leading-7">New_Jeb-week</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
                     <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
-                            <p class="font-medium text-lg leading-7">New_Jeb-month</p>
+                            <p class="user-name font-medium text-lg leading-7">New_Jeb-month</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
