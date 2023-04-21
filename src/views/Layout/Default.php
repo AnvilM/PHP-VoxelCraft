@@ -41,7 +41,8 @@
     <script src="/public/js/Tailwind.js"></script>
     <link rel="stylesheet" href="/public/css/Index.css">
 
-
+    <!-- CHART -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
     
 

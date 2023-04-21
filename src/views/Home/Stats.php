@@ -51,8 +51,7 @@
                         ip-server.ru
                     </p>
                 </div>
-                <div class="border border-tavern-link container mx-auto rounded-b-lg p-2 h-72 w-full flex flex-col">
-                </div>
+                <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col"></canvas>
             </div>
             <div class="py-10  font-sans">
                 <div class="container mx-auto flex items-center flex-col md:grid md:grid-cols-none md:grid-rows-1">
