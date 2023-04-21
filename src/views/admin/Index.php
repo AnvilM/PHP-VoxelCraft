@@ -35,7 +35,7 @@
                 </p> -->
                 <div class="flex items-center justify-center font-Manrope mt-6 ">
                     <!-- type="submit" -->
-                    <button onclick="location.href='/adminpanel/bank'" type="button"
+                    <button onclick="location.href='/admin/bank'" type="button"
                         class="bg-admin-black-btn w-full rounded-md border py-2 shadow-xl hover:bg-admin-black hover:text-schalker-purple transition duration-150">Войти</button>
                 </div>
             </div>

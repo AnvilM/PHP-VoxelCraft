@@ -27,51 +27,52 @@ $routes = [
         'Title' => 'Банк'
     ],
     [
-        'Route' => 'Profile',
-        'Controller' => 'Home',
-        'Action' => 'Profile',
-        'Layout' => 'Default',
-        'View' => 'Profile',
-        'Title' => 'Профиль'
-    ],
-    [
         'Route' => 'Stats',
         'Controller' => 'Home',
-        'Action' => 'Statistic',
+        'Action' => 'Stats',
         'Layout' => 'Default',
-        'View' => 'Statistic',
+        'View' => 'Stats',
         'Title' => 'Статистика'
     ],
     [
-        'Route' => 'Zalupatown',
-        'Controller' => 'Home',
-        'Action' => 'Zalupatown',
+        'Route' => 'Profile',
+        'Controller' => 'Profile',
+        'Action' => 'Index',
         'Layout' => 'Default',
-        'View' => 'Zalupatown',
+        'View' => 'Index',
+        'Title' => 'Профиль'
+    ],
+    
+    [
+        'Route' => 'Town',
+        'Controller' => 'Town',
+        'Action' => 'Index',
+        'Layout' => 'Default',
+        'View' => 'Index',
         'Title' => 'Да'
     ],
     [
-        'Route' => 'Zalupatownedit',
-        'Controller' => 'Home',
-        'Action' => 'Zalupatownedit',
+        'Route' => 'Town/Edit',
+        'Controller' => 'Town',
+        'Action' => 'Edit',
         'Layout' => 'Default',
-        'View' => 'Zalupatownedit',
+        'View' => 'Edit',
         'Title' => 'Да'
     ],
     [
-        'Route' => 'admin/index',
-        'Controller' => 'Home',
-        'Action' => 'Zalupatownedit',
+        'Route' => 'Admin',
+        'Controller' => 'Admin',
+        'Action' => 'Index',
         'Layout' => 'Default',
-        'View' => 'Zalupatownedit',
+        'View' => 'Index',
         'Title' => 'Да'
     ],
     [
-        'Route' => 'admin/bank',
-        'Controller' => 'Home',
-        'Action' => 'Zalupatownedit',
+        'Route' => 'Admin/Bank',
+        'Controller' => 'Admin',
+        'Action' => 'Bank',
         'Layout' => 'Default',
-        'View' => 'Zalupatownedit',
+        'View' => 'Bank',
         'Title' => 'Да'
     ]
 ];
