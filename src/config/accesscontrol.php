@@ -8,6 +8,7 @@ return [
         'Town/Edit',
         'Bank',
         'Profile',
+        'Profile/Signin',
         'Stats',
         'Zalupatown',
         'Zalupatownedit',

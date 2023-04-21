@@ -18,7 +18,7 @@
         <?require 'src\views\Partials\dropdowns\checks.php';?>
 
         <!-- КНОПКА АВТОРИЗОВАТЬСЯ -->
-        <a href='https://discord.com/api/oauth2/authorize?client_id=1090234343286386759&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=identify%20guilds'
+        <a href='https://discord.com/oauth2/authorize?client_id=1006565061214621808&redirect_uri=http://localhost/Profile/Signin&response_type=code&scope=identify%20guilds'
           class='flex items-center text-white text-center bg-[#1d72f2] hover:bg-blue-500 px-3 py-2 font-semibold rounded-lg mr-3 lg:mr-0 transition-all'>
           Авторизоваться
         </a>

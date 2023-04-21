@@ -11,6 +11,7 @@ abstract class Controller{
     public $Model;
     public $params;
     public $User;
+
     function __construct($params){
         
         $this->params = $params;

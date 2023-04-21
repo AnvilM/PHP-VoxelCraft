@@ -74,7 +74,16 @@ $routes = [
         'Layout' => 'Default',
         'View' => 'Bank',
         'Title' => 'Да'
-    ]
+    ],
+
+    [
+        'Route' => 'Profile/Signin',
+        'Controller' => 'Profile',
+        'Action' => 'Signin',
+        'Layout' => 'Default',
+        'View' => '',
+        'Title' => 'Да'
+    ],
 ];
 
 return $routes;
