@@ -12,15 +12,39 @@ Class ProfileController extends Controller{
    public $Discord;
 
    public function IndexAction(){
-      $this->View->render();
+      if(!isset($_SESSION['User'])){
+         header('Location: /');
+         exit();
+      }
+      $this->View->render(['Login' => $_SESSION['User']['Login'], 'Discr' => $_SESSION['User']['discriminator']]);
    }
    public function BankAction(){
+      if(!isset($_SESSION['User'])){
+         header('Location: /');
+         exit();
+      }
       $this->View->render();
    }
    public function SigninAction(){
       $this->Discord = new Discord();
-      $_SESSION['User']['Login'] = $this->Discord->Auth();
+      $response = $this->Discord->Auth();
+      
+      if(mysqli_num_rows($this->Model->getUser($response['username'], $response['discriminator'])) >= 1){
+         $_SESSION['User']['Login'] = $response['username'];
+         $_SESSION['User']['discriminator'] = $response['discriminator'];
+      }
+      else{
+         $this->Model->addUser($response['username'], $response['discriminator']);
+         $_SESSION['User']['Login'] = $response['username'];
+         $_SESSION['User']['discriminator'] = $response['discriminator'];
+      }
+
       header('Location: /Profile');
       exit();
+   }
+
+   public function LogoutAction(){
+      unset($_SESSION['User']);
+      header('Location: /');
    }
 } 

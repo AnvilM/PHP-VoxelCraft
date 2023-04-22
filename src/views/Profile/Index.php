@@ -14,7 +14,7 @@
                                 <img class="h-[300px]"
                                     src="https://media.discordapp.net/attachments/943509410561544213/1089950183573434388/image.png" />
                                 <img class="w-14 h-14 p-3 z-10 bg-tavern-grid rounded-full mb-4 overflow-visible ring-2 ring-tavern-link"
-                                    src="./images/ava.png" alt="Bordered avatar">
+                                    src="public/images/ava.png" alt="Bordered avatar">
                                 <div class="pizda"></div>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                                         <img class="h-7 "
                                             src="https://media.discordapp.net/attachments/943509410561544213/1089956906153545798/image.png" />
                                     </div>
-                                    <div class="text-white font-semibold pl-4">NewJeb#2777</div>
+                                    <div class="text-white font-semibold pl-4"><?=$Login.'#'.$Discr?></div>
                                 </a>
                             </div>
                             <div class="mt-6 flex flex-col">

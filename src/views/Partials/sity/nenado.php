@@ -1,4 +1,4 @@
-<a href="#" class="hover:bg-tavern-grid select-none border relative border-tavern-grid-br rounded-md flex flex-col">
+<a href="Town?id=<?=$Towns[$i][0]?>" class="hover:bg-tavern-grid select-none border relative border-tavern-grid-br rounded-md flex flex-col">
     <div class="bg-tavern-grid-br w-full text-white font-semibold py-4 px-6 flex items-center rounded-t-md">
         <svg class="mr-2" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_0_967)">
@@ -23,19 +23,18 @@
         </svg>
         Люди не требуются
     </div>
-    <img class="float-right w-[100px] top-[70px] absolute right-[12px]" src="public\images\banner.png">
+    <img class="float-right w-[100px] top-[70px] absolute right-[12px]" src="/public/resources/Towns/<?=$Towns[$i][0]?>/banner.png">
     <div class="py-4 px-6">
-        <p class="city-name text-white">Городок</p>
+        <p class="city-name text-white"><?=$Towns[$i][1]?></p>
         <div class="flex items-center">
             <img class="h-[18px]" src="public\images\ava.png">
-            <p class="text-white ml-3">New_Jeb</p>
+            <p class="text-white ml-3"><?=$Towns[$i][5]?></p>
         </div>
     </div>
     <hr class="border-tavern-grid-br max-w-[307px] sm:max-w-[506px] md:max-w-[222px] lg:max-w-[165px] xl:max-w-[247px] 2xl:max-w-[338px]">
     <div class="py-4 px-6 max-w-[331px] sm:max-w-[357px] md:max-w-[238px] lg:max-w-[165px] xl:max-w-[269px] 2xl:max-w-[338px]">
         <p class="text-white">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus culpa aut perferendis eius? Nobis
-            deserunt voluptatem atque, maxime distinctio possimus 123123
+        <?=$Towns[$i][2]?>
         </p>
     </div>
     <hr class="border-tavern-grid-br">
@@ -44,7 +43,7 @@
             <svg class="mr-2" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 5L0.5 9.33013L0.5 0.669872L8 5Z" fill="#3F3F3F" />
             </svg>
-            <span class="font-medium mr-1">20</span>участников
+            <span class="font-medium mr-1"><?=$Towns[$i][4]?></span>участников
         </p>
         <p class="text-white flex items-center text-base">
             <svg class="mr-2" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +67,14 @@
             <svg class="mr-2" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 5L0.5 9.33013L0.5 0.669872L8 5Z" fill="#3F3F3F" />
             </svg>
-            Есть<span class="font-medium mx-1">Discord</span>сервер
+            <?php
+                if($Towns[$i][8] != ''){
+                    echo 'Есть<span class="font-medium mx-1">Discord</span>сервер';
+                }
+                else{
+                    echo 'Нет<span class="font-medium mx-1">Discord</span>сервера';
+                }
+            ?>
         </p>
     </div>
 </a>

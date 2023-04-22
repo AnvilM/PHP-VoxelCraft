@@ -6,7 +6,7 @@ return [
         'Towns',
         'Town',
         'Town/Edit',
-        'Bank',
+        'Profile/Bank',
         'Profile',
         'Profile/Signin',
         'Stats',
@@ -14,7 +14,9 @@ return [
         'Zalupatownedit',
         'admin/bank',
         'Admin',
-        'Map'
+        'Map',
+        'Profile/Logout',
+        'Town/Create'
         
     ],
     'noLogined' => [

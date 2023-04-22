@@ -55,7 +55,7 @@ class Discord{
     
         
     
-        return $response['username'];
+        return $response;
         
     }
     

@@ -35,8 +35,8 @@ $routes = [
         'Title' => 'Да'
     ],
     [
-        'Route' => 'Bank',
-        'Controller' => 'Home',
+        'Route' => 'Profile/Bank',
+        'Controller' => 'Profile',
         'Action' => 'Bank',
         'Layout' => 'Default',
         'View' => 'Bank',
@@ -88,6 +88,22 @@ $routes = [
         'Route' => 'Profile/Signin',
         'Controller' => 'Profile',
         'Action' => 'Signin',
+        'Layout' => 'Default',
+        'View' => '',
+        'Title' => 'Да'
+    ],
+    [
+        'Route' => 'Profile/Logout',
+        'Controller' => 'Profile',
+        'Action' => 'logout',
+        'Layout' => 'Default',
+        'View' => '',
+        'Title' => 'Да'
+    ],
+    [
+        'Route' => 'Town/Create',
+        'Controller' => 'Town',
+        'Action' => 'Create',
         'Layout' => 'Default',
         'View' => '',
         'Title' => 'Да'
