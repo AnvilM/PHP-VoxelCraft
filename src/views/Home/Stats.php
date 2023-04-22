@@ -51,7 +51,16 @@
                         ip-server.ru
                     </p>
                 </div>
-                <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col"></canvas>
+                <script>
+                    const dataToday = [28, 38, 20, 20, 39, 18, 40, 15, 26, 36, 24, 36, 15, 38, 16, 40, 26, 23, 21, 21, 19, 25, 15, 27, 33, 22, 19, 35, 17, 27, 34]
+                    const dataYesterday = [34, 31, 28, 17, 27, 20, 35, 23, 30, 22, 23, 18, 15, 40, 24, 39, 15, 35, 25, 28, 29, 36, 27, 25, 25, 15, 17, 29, 36, 32, 33]
+                    const dataWeek = [35, 39, 31, 22, 24, 36, 33, 33, 38, 22, 28, 35, 17, 38, 28, 23, 34, 17, 21, 15, 33, 16, 36, 18, 17, 30, 37, 33, 31, 31, 32]
+                    const dataMonth = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60]
+                </script>
+                <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col chart-today" style="display: none;"></canvas>
+                <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col chart-yesterday" style="display: none;"></canvas>
+                <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col chart-week" style="display: none;"></canvas>
+                <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col chart-month"></canvas>
             </div>
             <div class="py-10  font-sans">
                 <div class="container mx-auto flex items-center flex-col md:grid md:grid-cols-none md:grid-rows-1">
@@ -151,6 +160,20 @@
                         <img class="h-[80px]" src="public\images\ava.png">
                         <div class="text-white ml-8 flex flex-col">
                             <p class="user-name font-medium text-lg leading-7">New_Jeb-month</p>
+                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
+                        </div>
+                    </a>
+                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
+                        <img class="h-[80px]" src="public\images\ava.png">
+                        <div class="text-white ml-8 flex flex-col">
+                            <p class="user-name font-medium text-lg leading-7">Aboba_Jeb-month</p>
+                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
+                        </div>
+                    </a>
+                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
+                        <img class="h-[80px]" src="public\images\ava.png">
+                        <div class="text-white ml-8 flex flex-col">
+                            <p class="user-name font-medium text-lg leading-7">Biba_Jeb-month</p>
                             <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                         </div>
                     </a>
