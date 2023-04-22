@@ -14,6 +14,7 @@ function all(){
 users.forEach(function(elem){
     elem.style.display = 'flex'
 })
+type = ''
 }
 
 function online(){
@@ -103,29 +104,35 @@ function month(){
 
 //поиск
 
-button.addEventListener('click', (e)=>{
-    e.preventDefault()
+input.oninput = function(){
     var input_val = input.value.trim()
-        let items = document.querySelectorAll('.user-name')
-        if(input_val != ''){
-            items.forEach(function(elem){
-                if(elem.innerHTML.toLowerCase().search(input_val.toLowerCase()) == -1 || !elem.parentElement.parentElement.classList.contains(type)){
-                    elem.parentElement.parentElement.style.display = 'none'
-                }
-                else{
-                    elem.parentElement.parentElement.style.display = 'flex'
-                }
-            })
-        }
-        else{
-            items.forEach(function(elem){
+    let items = document.querySelectorAll('.user-name')
+    if(input_val != ''){
+        items.forEach(function(elem){
+            if(elem.innerHTML.toLowerCase().search(input_val.toLowerCase()) == -1 || !elem.parentElement.parentElement.classList.contains(type)){
+                elem.parentElement.parentElement.style.display = 'none'
+            }
+            else{
+                elem.parentElement.parentElement.style.display = 'flex'
+            }
+        })
+    }
+    else{
+        items.forEach(function(elem){
+            if(type != ''){
                 if(elem.parentElement.parentElement.classList.contains(type)){
                     elem.parentElement.parentElement.style.display = 'flex'
                 }
-                
-            })
-        }
-})
+            }
+            else{
+                elem.parentElement.parentElement.style.display = 'flex'
+
+            }
+            
+            
+        })
+    }
+}
 
 
 
