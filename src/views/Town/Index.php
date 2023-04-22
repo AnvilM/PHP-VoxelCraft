@@ -137,20 +137,25 @@
                             </div>
                             <hr class="border-tavern-grid-br my-5">
                             <h1 class="text-white text-2xl font-bold mb-5">Подробное описание:</h1>
-                            <p class="text-white"><?=$Town[0][2]?>
+                            <p class="text-white"><?=$Town[0][9]?>
                             </p>
                         </div>
                         <div class="lg:w-[300px] mb-3">
                             <div class="flex lg:flex-col mt-5 lg:mt-0">
                                 <div class="mr-12 lg:mr-0 flex flex-col">
                                     <h2 class="text-white  mb-3 text-2xl font-bold">Ссылки</h2>
-                                    <a href="#" class="text-white underline hover:no-underline mb-10 flex items-center">
+                                    <?php
+                                        if($Town[0][8] != ''){
+                                            echo '
+                                            <a href="'.$Town[0][8].'" class="text-white underline hover:no-underline mb-10 flex items-center">
                                         <svg class="mr-2" width="5" height="5" viewBox="0 0 5 5" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="2.5" cy="2.5" r="2.5" fill="#1D72F2" />
                                         </svg>
                                         Дискорд
-                                    </a>
+                                    </a>';
+                                        }
+                                    ?>
                                 </div>
 
                                 <div class="ml-12 lg:ml-0 flex flex-col">
@@ -217,7 +222,7 @@
                                    ?>
                                     <?php
                                         for($i=0;$i<count($Players); $i++){
-                                            if($Players[$i][1] != $Town[0][5]){
+                                            if($Players[$i][1] != $Town[0][5] && $Players[$i][1] != $Town[0][6]){
                                                 echo '
                                                 <div class="flex mb-3 items-center">
                                                     <img class="h-11 mr-2" src="public\images\ava.png">

@@ -131,7 +131,7 @@
                             <div class="flex">
                                 <div class="flex items-center">
 
-                                    <img class="h-[288px] mr-6" src="public\images\banner.png">
+                                    <img class="h-[288px] mr-6" src="<?=$Town[0][3]?>" style="image-rendering: pixelated;">
                                     <div class="flex flex-col">
                                         <div
                                             class="bg-tavern-bg-bank select-none mb-10 text-tavern-black max-w-fit rounded-full px-6 py-2.5 text-base font-semibold flex items-center">
@@ -170,7 +170,7 @@
                                                 </div>
                                             </label>
                                         </div>
-                                        <h1 class="text-white text-3xl mb-3 font-bold">ZalupaTown</h1>
+                                        <h1 class="text-white text-3xl mb-3 font-bold"><?=$Town[0][1]?></h1>
                                         <p class="text-white mb-9 flex">
                                             <a href="#" class="mr-2 mt-1">
                                                 <svg class="w-5" width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -192,13 +192,7 @@
                                                     </defs>
                                                 </svg>
                                             </a>
-
-                                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                                            elit. Magnam,
-                                            fugiat. Commodi,
-                                            aliquid suscipit qui hic minus reiciendis! Repudiandae, ut quasi molestias
-                                            sequi
-                                            praesentium debitis facere odio maiores? Sapiente, enim maiores.
+                                            <?=$Town[0][2]?>
                                         </p>
                                         <p class="text-white flex items-center font-medium">
                                             <svg class="mr-2 mt-[1px]" width="20" height="20" viewBox="0 0 20 20"
@@ -227,7 +221,7 @@
                                                     </clipPath>
                                                 </defs>
                                             </svg>
-                                            15 участников
+                                            <?=$Town[0][4]?> участников
                                         </p>
                                     </div>
                                 </div>
@@ -264,13 +258,7 @@
                             <div class="flex lg:flex-col mt-5 lg:mt-0">
                                 <div class="mr-12 lg:mr-0 flex flex-col">
                                     <h2 class="text-white  mb-3 text-2xl font-bold">Ссылки</h2>
-                                    <a href="#" class="text-white underline hover:no-underline mb-2 flex items-center">
-                                        <svg class="mr-2" width="5" height="5" viewBox="0 0 5 5" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.5" cy="2.5" r="2.5" fill="#1D72F2" />
-                                        </svg>
-                                        Баннер
-                                    </a>
+                                    
                                     <div class="mb-10">
                                         <label for="first_name"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Изменить
@@ -285,7 +273,7 @@
                                     <h2 class="text-white mb-3 text-2xl flex items-center font-bold">Участники
                                         <div
                                             class="rounded-full text-white select-none text-sm mt-1 font-medium bg-tavern-grid-br ml-3 py-1 px-2">
-                                            15</div>
+                                            <?=$Town[0][4]?></div>
                                     </h2>
                                     <form class="flex mb-5 items-center">
                                         <label for="simple-search" class="sr-only">Поиск</label>
@@ -332,23 +320,37 @@
                                                 </clipPath>
                                             </defs>
                                         </svg>
-                                        <p class="text-white text-base font-medium">New_Jeb</p>
+                                        <p class="user-name text-white text-base font-medium"><?=$Town[0][5]?></p>
                                     </div>
-                                    <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2" src="public\images\ava.png">
-                                        <p class="text-white mr-2 text-base font-medium">New_Jeb</p>
-                                        <label class="relative inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" value="" class="sr-only peer">
-                                            <div
-                                                class="w-7 h-4 rounded-full peer dark:bg-tavern-grid-br peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-tavern-black after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-[#ffd500] peer-checked:bg-[#FFD600]">
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2" src="public\images\ava.png">
-                                        <p class="text-white text-base font-medium">New_Jeb</p>
-                                    </div>
-                                    <a href="#"
+                                    <?php
+                                   if($Town[0][6] != ''){
+                                    echo ' <div class="flex mb-3 items-center">
+                                    <img class="h-11 mr-2" src="public\images\ava.png">
+                                        <svg class="mr-2" width="26" height="24" viewBox="0 0 26 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M21 19.0001H5C4.46957 19.0001 3.96086 19.2108 3.58579 19.5859C3.21071 19.961 3 20.4697 3 21.0001C3 21.5306 3.21071 22.0393 3.58579 22.4143C3.96086 22.7894 4.46957 23.0001 5 23.0001H21C21.5304 23.0001 22.0391 22.7894 22.4142 22.4143C22.7893 22.0393 23 21.5306 23 21.0001C23 20.4697 22.7893 19.961 22.4142 19.5859C22.0391 19.2108 21.5304 19.0001 21 19.0001Z"
+                                                stroke="#FFD600" />
+                                            <path
+                                                d="M23 6.00007C22.4696 6.00007 21.9609 6.21078 21.5858 6.58585C21.2107 6.96093 21 7.46963 21 8.00007C21.0002 8.13747 21.0143 8.2745 21.042 8.40907L17.41 10.5901L14.349 4.46807C14.6464 4.19595 14.8547 3.8403 14.9465 3.44775C15.0383 3.0552 15.0093 2.64408 14.8633 2.2683C14.7173 1.89252 14.4612 1.56962 14.1285 1.34194C13.7959 1.11426 13.4021 0.992432 12.999 0.992432C12.5959 0.992432 12.2021 1.11426 11.8695 1.34194C11.5368 1.56962 11.2807 1.89252 11.1347 2.2683C10.9887 2.64408 10.9597 3.0552 11.0515 3.44775C11.1433 3.8403 11.3516 4.19595 11.649 4.46807L8.59 10.5901L4.958 8.40907C4.98573 8.2745 4.9998 8.13747 5 8.00007C5 7.6045 4.8827 7.21783 4.66294 6.88893C4.44318 6.56003 4.13082 6.30368 3.76537 6.15231C3.39992 6.00093 2.99778 5.96133 2.60982 6.0385C2.22186 6.11567 1.86549 6.30615 1.58579 6.58585C1.30608 6.86556 1.1156 7.22192 1.03843 7.60989C0.96126 7.99785 1.00087 8.39998 1.15224 8.76543C1.30362 9.13089 1.55996 9.44324 1.88886 9.66301C2.21776 9.88277 2.60444 10.0001 3 10.0001C3.037 10.0001 3.071 9.99107 3.107 9.98907L3.88 17.0001H22.12L22.893 9.98907C22.929 9.98907 22.963 10.0001 23 10.0001C23.5304 10.0001 24.0391 9.78935 24.4142 9.41428C24.7893 9.03921 25 8.5305 25 8.00007C25 7.46963 24.7893 6.96093 24.4142 6.58585C24.0391 6.21078 23.5304 6.00007 23 6.00007V6.00007Z"
+                                                stroke="#FFD600" />
+                                        </svg>
+                                        <p class="user-name text-white text-base font-medium">'.$Town[0][6].'</p>
+                                    </div>';
+                                   }
+                                   ?>
+                                    <?php
+                                        for($i=0;$i<count($Players); $i++){
+                                            if($Players[$i][1] != $Town[0][5] && $Players[$i][1] != $Town[0][6]){
+                                                echo '
+                                                <div class="flex mb-3 items-center">
+                                                    <img class="h-11 mr-2" src="public\images\ava.png">
+                                                    <p class="user-name text-white text-base font-medium">'.$Players[$i][1].'</p>
+                                                </div>';
+                                            }
+                                        }
+                                    ?>
+                                    <a
                                         class="text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold">Показать
                                         больше...</a>
                                 </div>
