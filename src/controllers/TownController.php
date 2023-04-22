@@ -25,7 +25,7 @@ Class TownController extends Controller{
 
    public function CreateAction(){
       if(isset($_SESSION['User'])){
-         $this->Model->Create($_POST['name'], $_POST['desc'], 'public/resources/Towns/'.(count(scandir('public/resources/Towns'))-1).'/banner.png', $_SESSION['User']['Login']);
+         $this->Model->Create($_POST['name'], $_POST['desc'], '/public/resources/Towns/'.(count(scandir('public/resources/Towns'))-1).'/banner.png', $_SESSION['User']['Login']);
          mkdir('public/resources/Towns/'.count(scandir('public/resources/Towns'))-1);
          copy($_FILES['banner']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.(count(scandir('public/resources/Towns'))-2).'/banner.png');
       }
