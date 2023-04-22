@@ -97,7 +97,7 @@
                             <div class="flex">
                                 <div class="flex items-center">
 
-                                    <img class="h-[288px] mr-6" src="public\images\banner.png">
+                                    <img class="h-[288px] mr-6" src="<?=$Town[0][3]?>" style="image-rendering: pixelated;">
                                     <div class="flex flex-col">
                                         <div
                                             class="bg-tavern-bg-bank select-none mb-10 text-tavern-black max-w-fit rounded-full px-7 py-2.5 text-base font-semibold flex items-center">
@@ -107,15 +107,10 @@
                                                     d="M0 6.5C0 2.91015 2.91015 0 6.5 0C10.0899 0 13 2.91015 13 6.5C13 10.0899 10.0899 13 6.5 13C2.91015 13 0 10.0899 0 6.5ZM4.8372 5.32408C4.8372 4.43065 5.83292 3.89776 6.5763 4.39334L8.34003 5.56916C9.00419 6.01193 9.00418 6.98787 8.34003 7.43063L6.5763 8.60646C5.83292 9.10204 4.8372 8.56915 4.8372 7.67572V5.32408Z"
                                                     fill="#111414" />
                                             </svg>
-                                            Нужны новые люди!
+                                            <?=$Town[0][7] == 1 ? "Нужны новые люди!" : "Новые люди не неужны!";?>
                                         </div>
-                                        <h1 class="text-white text-3xl mb-3 font-bold">ZalupaTown</h1>
-                                        <p class="text-white mb-9">Lorem ipsum dolor sit, amet consectetur adipisicing
-                                            elit. Magnam,
-                                            fugiat. Commodi,
-                                            aliquid suscipit qui hic minus reiciendis! Repudiandae, ut quasi molestias
-                                            sequi
-                                            praesentium debitis facere odio maiores? Sapiente, enim maiores.
+                                        <h1 class="text-white text-3xl mb-3 font-bold"><?=$Town[0][1]?></h1>
+                                        <p class="text-white mb-9"><?=$Town[0][2]?>
                                         </p>
                                         <p class="text-white flex items-center font-medium">
                                             <svg class="mr-2 mt-[1px]" width="22" height="17" viewBox="0 0 22 17"
@@ -133,30 +128,20 @@
                                                     d="M6.55694 10.3113C9.55629 9.24006 12.834 9.24006 15.8333 10.3113C16.739 10.6347 17.3436 11.4926 17.3436 12.4544V13.4807C17.3436 14.8254 16.1526 15.8584 14.8214 15.6682L14.5156 15.6245C12.3131 15.3099 10.0771 15.3099 7.87465 15.6245L7.5689 15.6682C6.23766 15.8584 5.04663 14.8254 5.04663 13.4807V12.4544C5.04663 11.4926 5.65122 10.6347 6.55694 10.3113Z"
                                                     fill="white" />
                                             </svg>
-                                            15 участников
+                                            <?=$Town[0][4]?> участников
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <hr class="border-tavern-grid-br my-5">
                             <h1 class="text-white text-2xl font-bold mb-5">Подробное описание:</h1>
-                            <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam,
-                                fugiat. Commodi,
-                                aliquid suscipit qui hic minus reiciendis! Repudiandae, ut quasi molestias sequi
-                                praesentium debitis facere odio maiores? Sapiente, enim maiores.
+                            <p class="text-white"><?=$Town[0][2]?>
                             </p>
                         </div>
                         <div class="lg:w-[300px] mb-3">
                             <div class="flex lg:flex-col mt-5 lg:mt-0">
                                 <div class="mr-12 lg:mr-0 flex flex-col">
                                     <h2 class="text-white  mb-3 text-2xl font-bold">Ссылки</h2>
-                                    <a href="#" class="text-white underline hover:no-underline mb-2 flex items-center">
-                                        <svg class="mr-2" width="5" height="5" viewBox="0 0 5 5" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="2.5" cy="2.5" r="2.5" fill="#1D72F2" />
-                                        </svg>
-                                        Баннер
-                                    </a>
                                     <a href="#" class="text-white underline hover:no-underline mb-10 flex items-center">
                                         <svg class="mr-2" width="5" height="5" viewBox="0 0 5 5" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
