@@ -22,7 +22,7 @@
         </svg>
         Нужны новые люди!
     </div>
-    <img class="float-right w-[100px] top-[70px] absolute right-[12px]" src="/public/resources/Towns/<?=$Towns[$i][0]?>/banner.png">
+    <img class="float-right w-[100px] top-[70px] absolute right-[12px]" src="<?=$Towns[$i][3]?>">
     <div class="py-4 px-6">
         <p class="city-name text-white"><?=$Towns[$i][1]?></p>
         <div class="flex items-center">
