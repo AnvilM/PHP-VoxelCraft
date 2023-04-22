@@ -9,9 +9,9 @@ use src\core\Controller;
 Class TownController extends Controller{
 
    public function IndexAction(){
-      $town = $this->Model->getTown($_GET['id']);
-      $town = mysqli_fetch_all($town);
-      $this->View->render(['Town' => $town]);
+      $town = mysqli_fetch_all($this->Model->getTown($_GET['id']));
+      $players = mysqli_fetch_all($this->Model->getPlayers($_GET['id']));
+      $this->View->render(['Town' => $town, 'Players' => $players]);
    }
 
    public function EditAction(){

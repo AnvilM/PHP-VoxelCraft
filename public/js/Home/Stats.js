@@ -1,5 +1,5 @@
 var users = document.querySelectorAll('.user')
-var type = []
+var type = ''
 const input = document.querySelector('input')
 const button = document.querySelector('button[type = submit]')
 document.querySelector('.online-all-button').addEventListener('click', all)
@@ -105,15 +105,27 @@ function month(){
 //поиск
 
 input.oninput = function(){
+    
     var input_val = input.value.trim()
     let items = document.querySelectorAll('.user-name')
+    
     if(input_val != ''){
         items.forEach(function(elem){
-            if(elem.innerHTML.toLowerCase().search(input_val.toLowerCase()) == -1 || !elem.parentElement.parentElement.classList.contains(type)){
-                elem.parentElement.parentElement.style.display = 'none'
+            if(type == ''){
+                if(elem.innerHTML.toLowerCase().search(input_val.toLowerCase()) == -1){
+                    elem.parentElement.parentElement.style.display = 'none'
+                }
+                else{
+                    elem.parentElement.parentElement.style.display = 'flex'
+                }
             }
             else{
-                elem.parentElement.parentElement.style.display = 'flex'
+                if(elem.innerHTML.toLowerCase().search(input_val.toLowerCase()) == -1 || !elem.parentElement.parentElement.classList.contains(type)){
+                    elem.parentElement.parentElement.style.display = 'none'
+                }
+                else{
+                    elem.parentElement.parentElement.style.display = 'flex'
+                }
             }
         })
     }
