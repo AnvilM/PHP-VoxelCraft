@@ -31,17 +31,25 @@
                         <textarea id="description" rows="4" name="desc"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-tavern-grid-br dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                     </div>
-                    <div>
+                    <!-- <div>
                         <label for="banner"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Баннер</label>
                         <input type="file" name="banner" id="banner"
                             placeholder="https://www.planetminecraft.com/banner/?b=g"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-tavern-grid-br dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            accept=".png"
-                            required>
+                            accept=".png" required>
                         <p class="text-white mt-2 text-sm">Размер баннера 20x40 пикселей</p>
-                        <p class="text-white text-sm">Вы можете создать и скачать баннер на <a href="https://www.planetminecraft.com/banner/" class="text-tavern-link underline hover:no-underline">Planet Minecraft</a></p>
-                    </div>
+                        <p class="text-white text-sm">Вы можете создать и скачать баннер на <a
+                                href="https://www.planetminecraft.com/banner/"
+                                class="text-tavern-link underline hover:no-underline">Planet Minecraft</a></p>
+                    </div> -->
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Загрузить баннер</label>
+                    <input
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-tavern-grid-br dark:border-gray-600 dark:placeholder-gray-400"
+                        aria-describedby="file_input_help" id="file_input" type="file">
+                    <p class="text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG (MAX. 20x40px).</p>
+
                     <div>
                         <label for="discord"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Дискорд сервер (не
@@ -50,7 +58,7 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-tavern-grid-br dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                     </div>
                     <div>
-                        
+
 
                     </div>
                     <button type="submit"

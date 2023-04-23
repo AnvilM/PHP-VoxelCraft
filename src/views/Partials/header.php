@@ -56,7 +56,7 @@
           class="flex flex-col p-4 mt-4 border rounded-lg lg:flex-row lg:space-x-6 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 bg-tavern-black lg:bg-tavern-black border-gray-700">
           <li>
             <a href="/" class="text-white
-                border-b border-[#1d72f2] transition-all px-1 py-6" aria-current="page">Главная</a>
+            hover:border-b border-[#1d72f2] transition-all px-1 py-6" aria-current="page">Главная</a>
           </li>
           <li class="hidden lg:block">
             <a class="text-white select-none" aria-current="page">•</a>

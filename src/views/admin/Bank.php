@@ -3,7 +3,7 @@
         <aside class="w-64" aria-label="Sidebar">
             <div class="px-3 py-4 overflow-y-auto rounded bg-tavern-black">
                 <a href="#" class="flex items-start mb-5">
-                    <img class="h-8 sm:h-10 mr-5" src="http://localhost:3000/images/logo.png">
+                    <img class="h-8 sm:h-10 mr-5" src="public\images\logo.png">
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Voxel ID</span>
                 </a>
                 <ul class="space-y-2">

@@ -3,7 +3,7 @@
         <form
             class="rounded-md border-solid absolute flex bg-admin-black flex-col items-stretch justify-center text-white p-10">
             <h2 class="text-white font-semibold text-2xl mb-6 text-center">Voxel ID</h2>
-            <img class="w-36 h-36 mx-auto" src="http://localhost:3000/images/logo.png">
+            <img class="w-36 h-36 mx-auto" src="public\images\logo.png">
             <div class="pt-6 font-Manrope">
                 <div class="form-login">
                     <input maxlength="24" placeholder="Никнейм*" type="text" name="name"
