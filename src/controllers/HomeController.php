@@ -25,8 +25,8 @@ Class HomeController extends Controller{
     } 
     public function StatsAction(){
         
-      
-        $this->View->render();
+        $Users = mysqli_fetch_all($this->Model->getUsers());
+        $this->View->render(['Users' => $Users]);
     } 
 
     public function MapAction(){
