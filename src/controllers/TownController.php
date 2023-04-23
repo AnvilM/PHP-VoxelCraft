@@ -15,12 +15,48 @@ Class TownController extends Controller{
    }
 
    public function EditAction(){
-      $town = mysqli_fetch_all($this->Model->getTown($_GET['id']));
-      $players = mysqli_fetch_all($this->Model->getPlayers($_GET['id']));
-      if($town[0][5] != $_SESSION['User']['Login']){
-         header('Location: /Town?id='.$town[0][0]);
+      if(isset($_GET['id'])){
+         $town = mysqli_fetch_all($this->Model->getTown($_GET['id']));
+         if($town[0][5] == $_SESSION['User']['Login']){
+
+            $players = mysqli_fetch_all($this->Model->getPlayers($town[0][0]));
+            if($town[0][5] != $_SESSION['User']['Login']){
+               header('Location: /Town?id='.$town[0][0]);
+            }
+      
+            if(isset($_GET['SwitchPlayers_need'])){
+               
+               if($town[0][7] == 0){
+                  $this->Model->Players_need($town[0][0]);
+               }
+               else{
+                  $this->Model->No_Players_need($town[0][0]);
+               }
+               header('Location: /Town/Edit?id='.$town[0][0]);
+
+               
+            }
+            else if(isset($_GET['changeDiscrodLink'])){
+               
+               $this->Model->ChangeDiscrodLink($town[0][0], $_GET['changeDiscrodLink']);
+               header('Location: /Town/Edit?id='.$town[0][0]);
+               
+            }
+
+            
+            $this->View->render(['Town' => $town, 'Players' => $players]);
+
+
+         }
+         else{
+            header('Location: /Town?id='.$town[0][0]);
+         }
       }
-      $this->View->render(['Town' => $town, 'Players' => $players]);
+      else{
+         header('Location: /Towns');
+      }
+      
+     
    }
 
    public function CreateAction(){

@@ -164,7 +164,7 @@
                                             Нужны новые люди!
                                             <label
                                                 class="relative ml-2 mt-[1px] inline-flex items-center cursor-pointer">
-                                                <input type="checkbox" value="" class="sr-only peer">
+                                                <input type="checkbox" value="" class="sr-only peer" <?=$Town[0][7] != 0 ? "checked" : ""?> onclick="openLink()">
                                                 <div
                                                     class="w-7 h-4 rounded-full peer dark:bg-tavern-black peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-tavern-bg-bank after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-tavern-bg-bank peer-checked:bg-tavern-black">
                                                 </div>
@@ -263,9 +263,11 @@
                                         <label for="first_name"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Изменить
                                             ссылку на дискорд</label>
+                                            
                                         <input type="text" id="first_name"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-tavern-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            placeholder="https://discord.com/invite/Dh5YDDT" required>
+                                            class="discord bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-tavern-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="<?=$Town[0][8]=='' ? "Ссылка на дискорд не установленна" : $Town[0][8]?>" required>
+                                            <button class="mt-4 w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="changeDiscrodLink()">Изменить</button>
                                     </div>
                                 </div>
 

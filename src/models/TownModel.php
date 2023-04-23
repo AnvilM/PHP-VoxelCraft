@@ -22,6 +22,17 @@ class TownModel extends Model{
     public function getPlayers($id){
         return $this->db->query("SELECT * FROM `towns_users` WHERE `Town_id` = $id");
     }
+
+    public function Players_need($id){
+        return $this->db->query("UPDATE `towns` SET `Need_Players` = 1 WHERE `id` = $id");
+    }
+    public function No_Players_need($id){
+        return $this->db->query("UPDATE `towns` SET `Need_Players` = 0 WHERE `id` = $id");
+    }
+
+    public function ChangeDiscrodLink($id, $discord){
+        return $this->db->query("UPDATE `towns` SET `Discord` = '$discord' WHERE `id` = $id");
+    }
     
     
 }
