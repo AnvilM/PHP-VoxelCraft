@@ -1,9 +1,9 @@
-<body class="bg-black flex relative flex-row pt-3 h-screen pb-3 px-3">
+<div class="bg-black flex relative flex-row pt-3 h-screen pb-3 px-3">
     <div class="flex flex-col">
         <aside class="w-64" aria-label="Sidebar">
             <div class="px-3 py-4 overflow-y-auto rounded bg-tavern-black">
                 <a href="#" class="flex items-start mb-5">
-                    <img class="h-8 sm:h-10 mr-5" src="public\images\logo.png">
+                    <img class="h-8 sm:h-10 mr-5" src="\public\images\logo.png">
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Voxel ID</span>
                 </a>
                 <ul class="space-y-2">
@@ -200,7 +200,7 @@
         <div class="">
             <p class="text-left font-semibold">Статус</p>
             <div class="form-login">
-                <select class="text-white bg-tavern-black rounded-md border-solid transition duration-150 w-52">
+                <select class="text-white bg-tavern-black p-3 rounded-md border-solid transition duration-150 w-52">
                     <option>Заморожен</option>
                     <option>Активен</option>
                 </select>
@@ -220,7 +220,4 @@
 
 
     </div>
-</body>
-
-
-</html>
+</div>

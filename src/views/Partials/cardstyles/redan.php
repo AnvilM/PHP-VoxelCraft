@@ -1,5 +1,5 @@
 <div class="relative">
-    <img src="public\images\redan.png" style="max-width: 300px; margin-bottom: 20px;">
+    <img src="\public\images\redan.png" style="max-width: 300px; margin-bottom: 20px;">
     <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[61px] font-medium absolute top-[10px]">1111
         2222 3333 4444</div>
     <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[27px] font-medium absolute top-[150px]">

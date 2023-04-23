@@ -37,7 +37,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/891260764134993960/1090689040912756836/image.png">
+                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Green</p>
                                             <p class="flex text-tavern-bank items-center">999
@@ -95,7 +95,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/891260764134993960/1090689040912756836/image.png">
+                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Green</p>
                                             <p class="flex text-tavern-bank items-center">999
@@ -153,7 +153,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/891260764134993960/1090689040912756836/image.png">
+                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Green</p>
                                             <p class="flex text-tavern-bank items-center">999
@@ -211,7 +211,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/891260764134993960/1090689040912756836/image.png">
+                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Green</p>
                                             <p class="flex text-tavern-bank items-center">999
@@ -269,7 +269,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/891260764134993960/1090689040912756836/image.png">
+                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Доступна карта <span class="font-medium">(3)</span>
                                             </p>
@@ -283,7 +283,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/891260764134993960/1090689040912756836/image.png">
+                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Карта <span class="font-medium">New_Jeb</span></p>
                                             <p class="flex text-tavern-bank items-center">999
@@ -341,7 +341,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/891260764134993960/1090702407706615878/image.png">
+                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668090935050353/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Гильдия ХЗ</p>
                                             <p class="flex text-[#FF5949] items-center">999

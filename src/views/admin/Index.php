@@ -7,14 +7,14 @@
             <div class="pt-6 font-Manrope">
                 <div class="form-login">
                     <input maxlength="24" placeholder="Никнейм*" type="text" name="name"
-                        class="text-white bg-admin-black-btn rounded-md border-solid w-96 transition duration-150"
+                        class="text-black bg-admin-black-btn rounded-md border-solid w-96 transition duration-150"
                         id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
             </div>
             <div class="pt-6 font-Manrope">
                 <div class="mb-3 form-login">
                     <input maxlength="50" placeholder="Пароль*" type="password" name="passwd"
-                        class="text-white bg-admin-black-btn rounded-md border-solid w-96 transition duration-150"
+                        class="text-black bg-admin-black-btn rounded-md border-solid w-96 transition duration-150"
                         id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <!-- <p class="password-flex"><a href="#" class="password-err">Забыли пароль?</a></p> -->
