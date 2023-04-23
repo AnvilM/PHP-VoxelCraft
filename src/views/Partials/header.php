@@ -35,7 +35,7 @@
         if(isset($_SESSION['User']['Login'])){
           echo '<a id="dropdownDefaultButton" data-dropdown-toggle="dropdown" href="#"
           class="flex items-center text-center mr-3 lg:mr-0 transition-all">
-          <img class="h-11" src="\public\images\ava.png">
+          <img class="h-11 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($this->User->get_login()).'">
         </a>';
         }
         ?>

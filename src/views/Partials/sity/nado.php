@@ -26,7 +26,7 @@
     <div class="py-4 px-6">
         <p class="city-name text-white"><?=$Towns[$i][1]?></p>
         <div class="flex items-center">
-            <img class="h-[18px] " src="public\images\ava.png">
+            <img class="h-[18px] rounded-sm" style="image-rendering: pixelated;" src="<?=$this->User->get_avatar($Towns[$i][5])?>">
             <p class="text-white ml-3"><?=$Towns[$i][5]?></p>
         </div>
     </div>

@@ -3,7 +3,7 @@
   class="z-10 hidden bg-tavern-black border-[#343737] border divide-y divide-gray-100 rounded-lg shadow w-72">
   <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
     <a href="/Profile" class="flex items-center px-5 py-2">
-      <img class="h-9" src="\public\images\ava.png">
+      <img class="h-9 rounded-lg" style="image-rendering: pixelated;" src="<?=$this->User->get_avatar($this->User->get_login())?>">
       <p href="#" class="block text-xl ml-3 font-medium"><?=$_SESSION['User']['Login']?></p>
     </a>
     <hr class="border-[#343737]" />

@@ -184,7 +184,7 @@
                                         
                                     </form>
                                     <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2" src="public\images\ava.png">
+                                        <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="<?=$this->User->get_avatar($Town[0][5])?>">
                                         <svg class="mr-2" width="24" height="22" viewBox="0 0 24 22" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_0_1317)">
@@ -206,7 +206,7 @@
                                    <?php
                                    if($Town[0][6] != ''){
                                     echo ' <div class="flex mb-3 items-center">
-                                    <img class="h-11 mr-2" src="public\images\ava.png">
+                                    <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($Town[0][6]).'">
                                         <svg class="mr-2" width="26" height="24" viewBox="0 0 26 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -225,7 +225,7 @@
                                             if($Players[$i][1] != $Town[0][5] && $Players[$i][1] != $Town[0][6]){
                                                 echo '
                                                 <div class="user flex mb-3 items-center">
-                                                    <img class="h-11 mr-2" src="public\images\ava.png">
+                                                <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($Players[$i][1]).'">
                                                     <p class="user-name text-white text-base font-medium">'.$Players[$i][1].'</p>
                                                 </div>';
                                             }
