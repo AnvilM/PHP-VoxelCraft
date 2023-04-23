@@ -1,23 +1,5 @@
-<div id="sidebar">
-	<strong>Username</strong>
-	<input id="username" type="text" value="earthiverse">
-
-	<strong>Toggle Visibility - Body Parts</strong>
-	<label><input id="headToggle" type="checkbox" checked>Head</label>
-	<label><input id="bodyToggle" type="checkbox" checked>Body</label>
-	<label><input id="leftArmToggle" type="checkbox" checked>Left Arm</label>
-	<label><input id="rightArmToggle" type="checkbox" checked>Right Arm</label>
-	<label><input id="leftLegToggle" type="checkbox" checked>Left Leg</label>
-	<label><input id="rightLegToggle" type="checkbox" checked>Right Leg</label>
-	
-	<strong>Toggle Visibility - Secondary Layer</strong>
-	<label><input id="head2Toggle" type="checkbox" checked>Head</label>
-	<label><input id="body2Toggle" type="checkbox" checked>Body</label>
-	<label><input id="leftArm2Toggle" type="checkbox" checked>Left Arm</label>
-	<label><input id="rightArm2Toggle" type="checkbox" checked>Right Arm</label>
-	<label><input id="leftLeg2Toggle" type="checkbox" checked>Left Leg</label>
-	<label><input id="rightLeg2Toggle" type="checkbox" checked>Right Leg</label>
-</div>
+<script src="/public/js/Profile/skinview3d.bundle.js"></script>
+<script>var skin = 'https://minotar.net/skin/<?=$_SESSION['User']['Login'] ?>'</script>
 <body class="bg-tavern-black md:overflow-hidden min-w-[547px]">
     <?require 'src\views\Partials\header.php';?>
         <main>
@@ -31,12 +13,7 @@
                             </p>
                             <div
                                 class="h-[400px] bg-tavern-grid relative rounded-xl border flex flex-col items-center justify-between pt-4 border-tavern-grid-br">
-                                <script src="/public/js/Profile/2dskin.js" type="text/javascript"></script>
-                                <script src="/public/js/Profile/three.min.js" type="text/javascript"></script>
-                                    <canvas class="hidden" id="2d"></canvas>
-                                    <div id="model" class="skin absolute top-0 h-[347px] w-[295px]">
-                                        
-                                    </div>
+                                    <canvas id="skin_container" class="rounded-xl absolute top-0 h-[347px] w-[295px]"></canvas>
                                 <img class="absolute top-[330px] w-14 h-14 p-3 z-10 bg-tavern-grid rounded-full mb-4 overflow-visible ring-2 ring-tavern-link" src="public/images/ava.png" alt="Bordered avatar">
                                 <div class="pizda"></div>
                             </div>
@@ -299,5 +276,4 @@
         <?require 'src\views\Partials\modals\fine.php';?>
 
 </body>
-
 </html>
