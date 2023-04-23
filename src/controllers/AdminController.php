@@ -15,4 +15,14 @@ Class AdminController extends Controller{
       
     $this->View->render();
    }
+
+   public function MainAction(){
+      
+      $this->View->render();
+     }
+
+     public function SettingsAction(){
+      
+      $this->View->render();
+     }
 } 
