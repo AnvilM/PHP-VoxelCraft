@@ -22,3 +22,23 @@ input.oninput = function(){
     }
     
 }
+
+window.addEventListener('load', (e)=>{
+    const users = document.querySelectorAll('.user')
+    const showmore = document.querySelector('.show-more')
+    if(users.length < 1){
+        showmore.classList.add('hidden')
+    }
+    for(var i =0; i < users.length; i++){
+        if(i > 1 ){
+            users[i].classList.add('hidden')
+        }
+    }
+})
+
+function showAllUsers(){
+    const users = document.querySelectorAll('.user')
+    for(var i =0; i < users.length; i++){
+        users[i].classList.remove('hidden')
+    }
+}

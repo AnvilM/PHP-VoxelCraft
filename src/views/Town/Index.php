@@ -224,7 +224,7 @@
                                         for($i=0;$i<count($Players); $i++){
                                             if($Players[$i][1] != $Town[0][5] && $Players[$i][1] != $Town[0][6]){
                                                 echo '
-                                                <div class="flex mb-3 items-center">
+                                                <div class="user flex mb-3 items-center">
                                                     <img class="h-11 mr-2" src="public\images\ava.png">
                                                     <p class="user-name text-white text-base font-medium">'.$Players[$i][1].'</p>
                                                 </div>';
@@ -232,7 +232,7 @@
                                         }
                                     ?>
                                     <a
-                                        class="text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold">Показать
+                                        class="show-more text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold cursor-pointer" onclick="showAllUsers()">Показать
                                         больше...</a>
                                 </div>
 

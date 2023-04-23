@@ -291,7 +291,7 @@
                                                 </svg>
                                             </div>
                                             <input type="text" id="simple-search"
-                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-tavern-black dark:border-tavern-link dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="search bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-tavern-black dark:border-tavern-link dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                 placeholder="Поиск..." required>
                                         </div>
                                         <button type="submit"
@@ -305,7 +305,7 @@
                                         </button>
                                     </form>
                                     <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2" src="public\images\ava.png">
+                                        <img class="h-11 mr-2" src="\public\images\ava.png">
                                         <svg class="mr-2" width="24" height="22" viewBox="0 0 24 22" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_0_1317)">
@@ -327,7 +327,7 @@
                                     <?php
                                    if($Town[0][6] != ''){
                                     echo ' <div class="flex mb-3 items-center">
-                                    <img class="h-11 mr-2" src="public\images\ava.png">
+                                    <img class="h-11 mr-2" src="\public\images\ava.png">
                                         <svg class="mr-2" width="26" height="24" viewBox="0 0 26 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -345,15 +345,15 @@
                                         for($i=0;$i<count($Players); $i++){
                                             if($Players[$i][1] != $Town[0][5] && $Players[$i][1] != $Town[0][6]){
                                                 echo '
-                                                <div class="flex mb-3 items-center">
-                                                    <img class="h-11 mr-2" src="public\images\ava.png">
+                                                <div class="user flex mb-3 items-center">
+                                                    <img class="h-11 mr-2" src="/public/images/ava.png">
                                                     <p class="user-name text-white text-base font-medium">'.$Players[$i][1].'</p>
                                                 </div>';
                                             }
                                         }
                                     ?>
                                     <a
-                                        class="text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold">Показать
+                                        class="show-more text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold cursor-pointer" onclick="showAllUsers()">Показать
                                         больше...</a>
                                 </div>
 
