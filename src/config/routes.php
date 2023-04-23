@@ -109,6 +109,24 @@ $routes = [
         'Title' => 'Да'
     ],
 
+    [
+        'Route' => 'Admin/Main',
+        'Controller' => 'Admin',
+        'Action' => 'Main',
+        'Layout' => 'Default',
+        'View' => 'Main',
+        'Title' => 'Да'
+    ],
+
+    [
+        'Route' => 'Admin/Settings',
+        'Controller' => 'Admin',
+        'Action' => 'Settings',
+        'Layout' => 'Default',
+        'View' => 'Settings',
+        'Title' => 'Да'
+    ],
+
     
 ];
 

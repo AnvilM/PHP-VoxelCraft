@@ -16,7 +16,9 @@ return [
         'Admin',
         'Map',
         'Profile/Logout',
-        'Town/Create'
+        'Town/Create',
+        'Admin/Main',
+        'Admin/Settings',
         
     ],
     'noLogined' => [
