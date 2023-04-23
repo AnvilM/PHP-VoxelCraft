@@ -1,4 +1,4 @@
-<a href="Town?id=<?=$Towns[$i][1]?>" class="hover:bg-tavern-grid border select-none relative border-tavern-link rounded-md flex flex-col">
+<a href="Town?id=<?=$Towns[$i][0]?>" class="hover:bg-tavern-grid border select-none relative border-tavern-link rounded-md flex flex-col">
     <div class="bg-tavern-link w-full text-tavern-black font-semibold py-4 px-6 flex items-center rounded-t-md">
         <svg class="mr-2" width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_0_876)">
