@@ -48,7 +48,7 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        ip-server.ru
+                        mc.voxelcraft.ru
                     </p>
                 </div>
                 <script>

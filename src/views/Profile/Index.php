@@ -11,10 +11,10 @@
                             </p>
                             <div
                                 class="h-[400px] bg-tavern-grid relative rounded-xl border flex flex-col items-center justify-between pt-4 border-tavern-grid-br">
-                                <img class="h-[300px]"
-                                    src="https://media.discordapp.net/attachments/943509410561544213/1089950183573434388/image.png" />
-                                <img class="w-14 h-14 p-3 z-10 bg-tavern-grid rounded-full mb-4 overflow-visible ring-2 ring-tavern-link"
-                                    src="public/images/ava.png" alt="Bordered avatar">
+                                
+                                    <canvas class="absolute top-0 h-[347px] w-[295px]"></canvas>
+                                
+                                <img class="absolute top-[330px] w-14 h-14 p-3 z-10 bg-tavern-grid rounded-full mb-4 overflow-visible ring-2 ring-tavern-link" src="public/images/ava.png" alt="Bordered avatar">
                                 <div class="pizda"></div>
                             </div>
                         </div>

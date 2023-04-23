@@ -352,9 +352,10 @@
                                             }
                                         }
                                     ?>
-                                    <a
-                                        class="show-more text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold cursor-pointer" onclick="showAllUsers()">Показать
+                                    <a class="show-more text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold cursor-pointer" onclick="showAllUsers()">Показать
                                         больше...</a>
+                                    <button type="button" data-modal-target="adduser" data-modal-toggle="adduser" class="mt-4 w-full text-[#95F867] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#2D5027] dark:hover:bg-[#2D5027] dark:focus:ring-[#95F867]">Добавить</button>
+                                    <button type="button" data-modal-target="removeuser" data-modal-toggle="removeuser" class="mt-4 w-full text-[#FF866B] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#503127] dark:hover:bg-[#503127] dark:focus:ring-[#FF866B]">Убрать</button>
                                 </div>
 
 
@@ -366,6 +367,8 @@
         </main>
         <?require 'src\views\Partials\modals\link.php';?>
         <?require 'src\views\Partials\modals\transfermoney.php';?>
+        <?require 'src\views\Partials\modals\adduser.php';?>
+        <?require 'src\views\Partials\modals\removeuser.php';?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 
