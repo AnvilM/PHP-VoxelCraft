@@ -6,8 +6,8 @@
                     <div class="block md:grid md:gap-x-8 md:grid-cols-4 md:grid-rows-2">
                         <div class="flex flex-col">
                             <p class="text-white font-semibold text-xl md:text-base mb-2 justify-center md:justify-start flex items-center">
-                                <img class="h-[14px] mr-2" src="public\images\stats.svg" />
-                                Статистика: New_Jeb
+                                <img class="h-[14px] mr-2" src="/public/images/stats.svg" />
+                                Статистика: <?=$_SESSION['User']['Login']?>
                             </p>
                             <div
                                 class="h-[400px] bg-tavern-grid relative rounded-xl border flex flex-col items-center justify-between pt-4 border-tavern-grid-br">
@@ -158,7 +158,7 @@
                             <hr class="my-3 border-[#343737]">
                             <div id="element" class="overflow-y-scroll h-[180px]">
                                 <div class="flex items-center">
-                                    <img class="w-12 h-12 mr-3" src="public\images\ava.png" alt="Bordered avatar">
+                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
                                     <div class="flex flex-col">
                                         <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
                                         <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
@@ -171,7 +171,7 @@
                                     Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
                                 </p>
                                 <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="public\images\ava.png" alt="Bordered avatar">
+                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
                                     <div class="flex flex-col">
                                         <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
                                         <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
@@ -184,7 +184,7 @@
                                     Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
                                 </p>
                                 <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="public\images\ava.png" alt="Bordered avatar">
+                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
                                     <div class="flex flex-col">
                                         <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
                                         <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
@@ -197,7 +197,7 @@
                                     Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
                                 </p>
                                 <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="public\images\ava.png" alt="Bordered avatar">
+                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
                                     <div class="flex flex-col">
                                         <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
                                         <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
@@ -210,7 +210,7 @@
                                     Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
                                 </p>
                                 <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="public\images\ava.png" alt="Bordered avatar">
+                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
                                     <div class="flex flex-col">
                                         <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
                                         <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
@@ -223,7 +223,7 @@
                                     Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
                                 </p>
                                 <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="public\images\ava.png" alt="Bordered avatar">
+                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
                                     <div class="flex flex-col">
                                         <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
                                         <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
@@ -236,7 +236,7 @@
                                     Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
                                 </p>
                                 <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="public\images\ava.png" alt="Bordered avatar">
+                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
                                     <div class="flex flex-col">
                                         <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
                                         <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
@@ -249,7 +249,7 @@
                                     Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
                                 </p>
                                 <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="public\images\ava.png" alt="Bordered avatar">
+                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
                                     <div class="flex flex-col">
                                         <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
                                         <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
