@@ -12,6 +12,7 @@ Class AdminController extends Controller{
     $this->View->render();
    }
    public function BankAction(){
+      
     $this->View->render();
    }
 } 

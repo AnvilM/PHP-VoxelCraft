@@ -12,7 +12,7 @@ return [
         'Stats',
         'Zalupatown',
         'Zalupatownedit',
-        'admin/bank',
+        'Admin/Bank',
         'Admin',
         'Map',
         'Profile/Logout',
