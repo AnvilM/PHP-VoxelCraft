@@ -2,20 +2,20 @@
   <nav class="font-inter font-semibold px-0 py-3.5 bg-tavern-black fixed w-full z-20 top-0 left-0">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
       <a href="/" class="flex items-center">
-        <img src="public\images\logo.png" class="h-12 mr-0 sm:mr-3 sm:h-12 hidden lg:block" alt="VoxelCraft Logo">
-        <img src="public\images\logo.png" class="block lg:hidden h-9 ml-3" alt="VoxelCraft Logo">
+        <img src="\public\images\logo.png" class="h-12 mr-0 sm:mr-3 sm:h-12 hidden lg:block" alt="VoxelCraft Logo">
+        <img src="\public\images\logo.png" class="block lg:hidden h-9 ml-3" alt="VoxelCraft Logo">
       </a>
       <div class="flex items-center lg:order-2">
         <?php
         if(isset($_SESSION['User']['Login'])){
           echo '<a href="#">
-          <img class="h-6 mr-2" src="public\images\bans.svg">
+          <img class="h-6 mr-2" src="\public\images\bans.svg">
         </a>
         <a href="/Profile/Bank">
-          <img class="h-6 mr-2" src="public\images\card.svg">
+          <img class="h-6 mr-2" src="\public\images\card.svg">
         </a>
         <a href="##" id="dropdownDefaultButton" data-dropdown-toggle="dropdown2">
-          <img class="h-6 mr-3" src="public\images\check.svg">
+          <img class="h-6 mr-3" src="\public\images\check.svg">
         </a>';
         }
         ?>
@@ -35,7 +35,7 @@
         if(isset($_SESSION['User']['Login'])){
           echo '<a id="dropdownDefaultButton" data-dropdown-toggle="dropdown" href="#"
           class="flex items-center text-center mr-3 lg:mr-0 transition-all">
-          <img class="h-11" src="public\images\ava.png">
+          <img class="h-11" src="\public\images\ava.png">
         </a>';
         }
         ?>
