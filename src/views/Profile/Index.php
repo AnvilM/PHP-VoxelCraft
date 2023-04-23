@@ -14,7 +14,7 @@
                             <div
                                 class="h-[400px] bg-tavern-grid relative rounded-xl border flex flex-col items-center justify-between pt-4 border-tavern-grid-br">
                                     <canvas id="skin_container" class="rounded-xl absolute top-0 h-[347px] w-[295px]"></canvas>
-                                <img class="absolute top-[330px] w-14 h-14 p-3 z-10 bg-tavern-grid rounded-full mb-4 overflow-visible ring-2 ring-tavern-link" src="public/images/ava.png" alt="Bordered avatar">
+                                <img class="absolute top-[330px] w-14 h-14 p-3 z-10 bg-tavern-grid rounded-full mb-4 overflow-visible ring-2 ring-tavern-link" src="<?=$this->User->get_avatar($this->User->get_login())?>" alt="Bordered avatar">
                                 <div class="pizda"></div>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                                         <img class="h-7 "
                                             src="https://media.discordapp.net/attachments/943509410561544213/1089956906153545798/image.png" />
                                     </div>
-                                    <div class="text-white font-semibold pl-4"><?=$Login.'#'.$Discr?></div>
+                                    <div class="text-white font-semibold pl-4"><?=$this->User->get_login().'#'.$_SESSION['User']['discriminator']?></div>
                                 </a>
                             </div>
                             <div class="mt-6 flex flex-col">
@@ -148,7 +148,7 @@
                         </div>
                         <div class="row-start-2 col-span-3 flex flex-col items-center md:items-stretch">
                             <p class="text-white font-semibold text-xl mb-3 flex items-center">Предупреждения
-                                <span class="text-tavern-link bg-[#27272A] rounded-full w-6 h-6 text-center text-sm leading-6 ml-3">100</span>
+                                <span class="text-tavern-link bg-[#27272A] rounded-full w-6 h-6 text-center text-sm leading-6 ml-3"><?=count($Warnings)?></span>
                             </p>
                             <div class="bg-[#1D72F2] p-2 rounded-xl w-full flex justify-center items-center">
                                 <div class="rounded-full bg-white h-6 w-6"></div>
@@ -157,110 +157,25 @@
                             </div>
                             <hr class="my-3 border-[#343737]">
                             <div id="element" class="overflow-y-scroll h-[180px]">
-                                <div class="flex items-center">
-                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
-                                    <div class="flex flex-col">
-                                        <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
-                                        <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
+                                <?php
+                                for($i = 0; $i < count($Warnings); $i++){
+                                    echo '
+                                    <div class="flex mt-4 items-center">
+                                        <img class="w-12 h-12 rounded-lg mr-3" src="'.$this->User->get_avatar($Warnings[$i][0]).'" alt="Bordered avatar">
+                                        <div class="flex flex-col">
+                                            <p class="text-white font-semibold leading-none mb-1">'.date('G:i \\\ d.m.y', $Warnings[$i][3]).'</p>
+                                            <p class="text-white leading-none">Выдал: <span class="font-semibold">'.$Warnings[$i][0].'</span></p>
+                                        </div>
                                     </div>
-                                </div>
-                                <p class="text-white mt-4 text-base flex items-center">
-                                    <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
-                                        </svg>                                    
-                                    Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
-                                </p>
-                                <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
-                                    <div class="flex flex-col">
-                                        <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
-                                        <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
-                                    </div>
-                                </div>
-                                <p class="text-white mt-4 text-base flex items-center">
-                                    <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
-                                        </svg>                                    
-                                    Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
-                                </p>
-                                <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
-                                    <div class="flex flex-col">
-                                        <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
-                                        <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
-                                    </div>
-                                </div>
-                                <p class="text-white mt-4 text-base flex items-center">
-                                    <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
-                                        </svg>                                    
-                                    Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
-                                </p>
-                                <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
-                                    <div class="flex flex-col">
-                                        <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
-                                        <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
-                                    </div>
-                                </div>
-                                <p class="text-white mt-4 text-base flex items-center">
-                                    <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
-                                        </svg>                                    
-                                    Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
-                                </p>
-                                <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
-                                    <div class="flex flex-col">
-                                        <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
-                                        <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
-                                    </div>
-                                </div>
-                                <p class="text-white mt-4 text-base flex items-center">
-                                    <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
-                                        </svg>                                    
-                                    Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
-                                </p>
-                                <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
-                                    <div class="flex flex-col">
-                                        <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
-                                        <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
-                                    </div>
-                                </div>
-                                <p class="text-white mt-4 text-base flex items-center">
-                                    <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
-                                        </svg>                                    
-                                    Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
-                                </p>
-                                <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
-                                    <div class="flex flex-col">
-                                        <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
-                                        <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
-                                    </div>
-                                </div>
-                                <p class="text-white mt-4 text-base flex items-center">
-                                    <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
-                                        </svg>                                    
-                                    Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
-                                </p>
-                                <div class="flex mt-4 items-center">
-                                    <img class="w-12 h-12 mr-3" src="/public/images/ava.png" alt="Bordered avatar">
-                                    <div class="flex flex-col">
-                                        <p class="text-white font-semibold leading-none mb-1">15:23 \ 22.07.22</p>
-                                        <p class="text-white leading-none">Выдал: <span class="font-semibold">New_Jeb</span></p>
-                                    </div>
-                                </div>
-                                <p class="text-white mt-4 text-base flex items-center">
-                                    <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
-                                        </svg>                                    
-                                    Очень глубоко отсосал игроку <span class="font-semibold ml-1">_SpeRMa_</span>
-                                </p>    
+                                    <p class="text-white mt-4 text-base flex items-center">
+                                        <svg class="mr-3" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 9L-8.15666e-07 17.6603L-5.85621e-08 0.339745L15 9Z" fill="#1D72F2"/>
+                                            </svg>                                    
+                                        '.$Warnings[$i][2].'
+                                    </p>
+                                    ';
+                                }
+                                ?>
                             </div>
                             
                             

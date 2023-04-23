@@ -3,6 +3,7 @@
 
 namespace src\controllers;
 
+use mysqli;
 use src\core\Controller;
 use src\lib\Discord;
 
@@ -16,7 +17,8 @@ Class ProfileController extends Controller{
          header('Location: /');
          exit();
       }
-      $this->View->render(['Login' => $_SESSION['User']['Login'], 'Discr' => $_SESSION['User']['discriminator']]);
+      $Warnings = mysqli_fetch_all($this->Model->getWarnings($this->User->get_login()));
+      $this->View->render(['Warnings' => $Warnings]);
    }
    public function BankAction(){
       if(!isset($_SESSION['User'])){

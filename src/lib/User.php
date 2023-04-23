@@ -19,4 +19,7 @@ class User{
         }
     }
     
+    public function get_avatar($Login){
+        return 'https://minotar.net/avatar/'.$Login.'';
+    }
 }

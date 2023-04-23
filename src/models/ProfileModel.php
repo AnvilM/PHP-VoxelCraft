@@ -13,4 +13,7 @@ class ProfileModel extends Model{
         return $this->db->query("SELECT * FROM `user` WHERE `Login` = '$login' AND `Descriminator` = '$descriminator'");
     }
     
+    public function getWarnings($login){
+        return $this->db->query("SELECT * FROM `users_warning` WHERE `to_user` = '$login'");
+    }
 }
