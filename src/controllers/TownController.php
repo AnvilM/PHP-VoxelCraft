@@ -61,9 +61,11 @@ Class TownController extends Controller{
 
    public function CreateAction(){
       if(isset($_SESSION['User'])){
-         $this->Model->Create($_POST['name'], $_POST['desc'], '/public/resources/Towns/'.(count(scandir('public/resources/Towns'))-1).'/banner.png', $_SESSION['User']['Login']);
-         mkdir('public/resources/Towns/'.count(scandir('public/resources/Towns'))-1);
-         copy($_FILES['banner']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.(count(scandir('public/resources/Towns'))-2).'/banner.png');
+         $id = count(scandir('public/resources/Towns'))-1;
+         $this->Model->Create($_POST['name'], $_POST['desc'], '/public/resources/Towns/'.$id.'/banner.png', $_SESSION['User']['Login'], $_POST['discord'], $id);
+         $this->Model->addPlayer($id, $this->User->get_login());
+         mkdir('public/resources/Towns/'.$id);
+         copy($_FILES['banner']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.($id-1).'/banner.png');
       }
       header('Location: /Towns');
       exit();
