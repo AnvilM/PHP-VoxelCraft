@@ -19,6 +19,7 @@ return [
         'Town/Create',
         'Admin/Main',
         'Admin/Settings',
+        'API/set.skin'
         
     ],
     'noLogined' => [

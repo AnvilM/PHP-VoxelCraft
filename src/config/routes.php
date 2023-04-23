@@ -126,8 +126,15 @@ $routes = [
         'View' => 'Settings',
         'Title' => 'Да'
     ],
+    [
+        'Route' => 'API/set.skin',
+        'Controller' => 'API',
+        'Action' => 'SET_SKIN',
+        'Layout' => 'Default',
+        'View' => 'SKIN',
+        'Title' => 'Да'
+    ],
 
-    
 ];
 
 return $routes;
