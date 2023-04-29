@@ -1,4 +1,4 @@
-<body class="bg-tavern-black lg:overflow-hidden min-w-[500px]">
+<body class="bg-tavern-black  min-w-[500px]">
     <?require 'src\views\Partials\header.php';?>
         <main>
             <div class="pt-20 font-sans">
@@ -164,7 +164,7 @@
                                             Нужны новые люди!
                                             <label
                                                 class="relative ml-2 mt-[1px] inline-flex items-center cursor-pointer">
-                                                <input type="checkbox" value="" class="sr-only peer" <?=$Town[0][7] != 0 ? "checked" : ""?> onclick="openLink()">
+                                                <input type="checkbox" value="" class="sr-only peer" <?=$Town[0][7] != 0 ? "checked" : ""?> onclick="openLink('&SwitchPlayers_need')">
                                                 <div
                                                     class="w-7 h-4 rounded-full peer dark:bg-tavern-black peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-tavern-bg-bank after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-tavern-bg-bank peer-checked:bg-tavern-black">
                                                 </div>
@@ -304,8 +304,8 @@
                                             <span class="sr-only">Поиск</span>
                                         </button>
                                     </form>
-                                    <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="<?=$this->User->get_avatar($Town[0][5])?>">
+                                    <div class="user flex mb-3 items-center">
+                                        <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="<?=$this->User->getAvatar($Town[0][5])?>">
                                         <svg class="mr-2" width="24" height="22" viewBox="0 0 24 22" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_0_1317)">
@@ -326,8 +326,8 @@
                                     </div>
                                     <?php
                                    if($Town[0][6] != ''){
-                                    echo ' <div class="flex mb-3 items-center">
-                                    <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($Town[0][6]).'">
+                                    echo ' <div class="user flex mb-3 items-center">
+                                    <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->getAvatar($Town[0][6]).'">
                                         <svg class="mr-2" width="26" height="24" viewBox="0 0 26 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -341,14 +341,17 @@
                                     </div>';
                                    }
                                    ?>
+                                   
                                     <?php
                                         for($i=0;$i<count($Players); $i++){
                                             if($Players[$i][1] != $Town[0][5] && $Players[$i][1] != $Town[0][6]){
                                                 echo '
                                                 <div class="user flex mb-3 items-center">
-                                                    <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($Players[$i][1]).'">
+                                                    <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->getAvatar($Players[$i][1]).'">
                                                     <p class="user-name text-white text-base font-medium">'.$Players[$i][1].'</p>
-                                                </div>';
+                                                </div>
+                                                
+                                                ';
                                             }
                                         }
                                     ?>

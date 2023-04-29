@@ -1,12 +1,11 @@
 <div class="relative">
     <img src="\public\images\whiteredan.png" style="max-width: 300px; margin-bottom: 20px;">
-    <div class="h-52 text-[#000000] select-none text-xl text-center left-[61px] font-medium absolute top-[10px]">1111
-        2222 3333 4444</div>
+    <div class="h-52 text-[#000000] select-none text-xl text-center left-[61px] font-medium absolute top-[10px]"><?=$Cards[$i][1]?></div>
     <div class="h-52 text-[#000000] select-none text-xl text-center left-[27px] font-medium absolute top-[150px]">
         РЕДАНБанк</div>
     <div class="h-52 text-[#000000] select-none text-xl text-center left-[211px] font-medium absolute top-[150px]">
         <span class="flex items-center">
-            999
+        <?=$Cards[$i][2]?>
             <svg class="w-5 ml-1" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_168_988)">
                     <path

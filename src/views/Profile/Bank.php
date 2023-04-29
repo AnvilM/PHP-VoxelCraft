@@ -5,12 +5,24 @@
                 <div class="max-w-2xl lg:container mx-auto px-4 xl:px-28 md:px-0 pt-10">
                     <div class="flex lg:items-start lg:justify-start items-center lg:flex-row flex-col">
                         <div class="flex lg:w-96 w-full flex-col">
-                            <div
+                        <?php
+                                if(count($Cards) < 1){
+                                    echo '
+                                    <div
                                 class="h-52 text-[#343737] select-none hover:text-tavern-bg-bank hover:border-tavern-bg-bank transition-all text-2xl font-medium mb-4  flex flex-col items-center justify-center border-dashed border-2 border-[#343737] rounded-lg">
                                 Нет карточек
                             </div>
-                            <!-- <?require 'src\views\Partials\cardstyles\whiteredan.php';?> -->
-                            <a href="#" data-modal-target="editcard" data-modal-toggle="editcard"
+                                    ';
+                                }
+                            else{
+                                for($i=0; $i < count($Cards); $i++){
+                                    require 'src\views\Partials\cardstyles\\'.$Cards[$i][3].'.php';
+                                }
+                            }
+                            
+                                if(count($Cards) >= 1){
+                                    echo '
+                                    <a href="#" data-modal-target="editcard" data-modal-toggle="editcard"
                                 class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-4 flex items-center font-medium text-xl">
                                 <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -20,27 +32,50 @@
                                 </svg>
                                 Редактировать дизайн
                             </a>
+                                    ';
+                                }
+
+                                if($this->User->isBankir()){
+                                    echo '
+                                    <a href="#" data-modal-target="createcard" data-modal-toggle="createcard"
+                                        class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-14 flex items-center font-medium text-xl">
+                                        <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 9V15M15 12H9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        Создать карту
+                                    </a>
+                                    ';
+                                }
+                            ?>
                             <a href="#" data-modal-target="createcard" data-modal-toggle="createcard"
-                                class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-14 flex items-center font-medium text-xl">
-                                <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12 9V15M15 12H9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                Создать карту
-                            </a>
+                                        class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-14 flex items-center font-medium text-xl">
+                                        <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 9V15M15 12H9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        Создать карту
+                                    </a>
+                            
                             <h2 class="text-white text-xl whitespace-nowrap font-semibold">Счета и карты</h2>
                             <hr class="my-3 border-[#343737]">
 
                             <div id="element" class="flex flex-col overflow-y-scroll h-[350px]">
-                                <div class="flex items-center justify-between">
+                                <?php
+                                    if(count($Cards) >= 1){
+                                        for($i=0; $i < count($Cards); $i++){
+                                            echo '
+                                        <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
                                             src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Green</p>
-                                            <p class="flex text-tavern-bank items-center">999
+                                            <p class="flex text-tavern-bank items-center">'.$Cards[$i][2].'
                                                 <svg class="w-[13px] ml-1" width="13" height="13" viewBox="0 0 13 13"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <g clip-path="url(#clip0_0_1647)">
@@ -86,187 +121,20 @@
 
                                     <div
                                         class="bg-tavern-bg-bank px-2 rounded-md flex items-center justify-center flex-col">
-                                        <p class="text-white whitespace-nowrap text-[15px]">* **** 9999</p>
+                                        <p class="text-white whitespace-nowrap text-[15px]">* **** '.substr($Cards[$i][1], 12).'</p>
                                         <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
                                     </div>
                                 </div>
                                 <hr class="my-3 border-[#343737]">
+                                        ';
+                                        }
+                                    }
+                                ?>
 
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
-                                        <div class="ml-3 flex flex-col">
-                                            <p class="text-white">Green</p>
-                                            <p class="flex text-tavern-bank items-center">999
-                                                <svg class="w-[13px] ml-1" width="13" height="13" viewBox="0 0 13 13"
-                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_0_1647)">
-                                                        <g clip-path="url(#clip1_0_1647)">
-                                                            <path
-                                                                d="M1.87925 2.4113L4.24896 4.07214C4.29878 4.10719 4.36155 4.12641 4.42569 4.12641C4.47174 4.12641 4.51692 4.11637 4.55642 4.09732L5.83294 3.47427C5.93421 3.42536 5.98485 3.3169 5.98485 3.2044V0.405044C5.98485 0.26086 5.89153 0.147949 5.75016 0.147949C5.71066 0.147949 5.68071 0.156904 5.64412 0.17454L1.91056 1.97457C1.82647 2.01507 1.77411 2.09279 1.76679 2.18252C1.75947 2.27225 1.80293 2.3578 1.87925 2.4113Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M4.73616 5.22171L4.37688 6.79592C4.35598 6.88769 4.38038 6.99442 4.43902 7.06792L5.44558 8.32585C5.50422 8.39953 5.60299 8.44294 5.69722 8.44294H7.31183C7.40602 8.44294 7.50479 8.39953 7.56329 8.32603L8.56976 7.0661C8.62858 6.9926 8.65308 6.88674 8.63213 6.79478L8.2728 5.22126C8.25194 5.12962 8.18376 5.04421 8.0988 5.00316L6.64387 4.30265C6.56064 4.2627 6.44823 4.2627 6.36491 4.30279L4.91012 5.00344C4.8253 5.04435 4.75703 5.13007 4.73616 5.22171Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M3.44906 6.50304L3.76042 5.13861C3.78656 5.0247 3.73797 4.89833 3.64229 4.83124L1.29889 3.18885C1.25389 3.15731 1.2018 3.14062 1.1483 3.14062C1.02893 3.14062 0.926612 3.22372 0.89952 3.34263L0.00682589 7.25395C-0.0109925 7.33205 0.00646225 7.41146 0.0546447 7.47182C0.102009 7.53123 0.173465 7.56528 0.250693 7.56528C0.275239 7.56528 0.299966 7.56182 0.324149 7.55496L3.23587 6.72786C3.33924 6.69836 3.42487 6.60817 3.44906 6.50304Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M7.15682 3.47445L8.44034 4.092C8.47961 4.11096 8.52511 4.12101 8.57075 4.12101C8.63702 4.12101 8.70175 4.10032 8.75257 4.06278L11.0469 2.36648C11.121 2.31171 11.1602 2.22607 11.1519 2.13748C11.1435 2.04888 11.089 1.97211 11.0061 1.9322L7.3561 0.17445C7.3195 0.156858 7.27873 0.147949 7.23919 0.147949C7.09786 0.147949 6.98486 0.26086 6.98486 0.405044V3.20449C6.98491 3.31699 7.05532 3.4255 7.15682 3.47445Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M12.9931 7.2143L12.0883 3.2501C12.0611 3.1316 11.9592 3.04883 11.8405 3.04883C11.7849 3.04883 11.7312 3.06683 11.685 3.10087L9.3585 4.82113C9.265 4.89026 9.21968 5.01281 9.24564 5.12577L9.55901 6.49865C9.58328 6.60451 9.66996 6.69483 9.7746 6.72333L12.6781 7.51648C12.7014 7.52284 12.7252 7.52603 12.7488 7.52607H12.7489C12.8263 7.52607 12.8979 7.49184 12.9454 7.43225C12.9936 7.37171 13.011 7.29216 12.9931 7.2143Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M12.5139 8.47692L9.5595 7.66987C9.53527 7.66332 9.51 7.65991 9.48436 7.65991C9.393 7.65991 9.30536 7.70141 9.24986 7.771L8.3778 8.86452C8.30916 8.95052 8.2933 9.0757 8.33807 9.17589L9.62982 12.0721C9.67209 12.167 9.76086 12.2259 9.86141 12.2259C9.86146 12.2259 9.86141 12.2259 9.86146 12.2259C9.93896 12.2259 10.0121 12.1899 10.062 12.1272L12.6473 8.88547C12.7024 8.81638 12.7194 8.72634 12.6928 8.6447C12.6662 8.56302 12.5994 8.50029 12.5139 8.47692Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M4.62707 8.85932L3.7626 7.77522C3.70728 7.70576 3.61978 7.66431 3.5286 7.66431C3.50191 7.66431 3.47569 7.6679 3.45055 7.67503L0.517555 8.50823C0.432827 8.53227 0.366689 8.59532 0.340644 8.67682C0.314598 8.75832 0.331871 8.84805 0.386644 8.91651L2.91182 12.083C2.96186 12.1458 3.03505 12.1819 3.11273 12.1819C3.21205 12.1819 3.30041 12.1241 3.34332 12.0312L4.66502 9.17315C4.71166 9.0721 4.69634 8.94587 4.62707 8.85932Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M7.46425 9.60828C7.4173 9.50287 7.30811 9.44287 7.19266 9.44287H5.80959C5.69554 9.44287 5.58672 9.50155 5.53877 9.60515L4.20416 12.4857C4.16648 12.5671 4.17193 12.6606 4.21875 12.7339C4.26552 12.8071 4.34702 12.852 4.43675 12.852H8.51672C8.60586 12.852 8.68713 12.8048 8.73413 12.7323C8.78113 12.6597 8.7875 12.5714 8.75122 12.4903L7.46425 9.60828Z"
-                                                                fill="#CDDFFF" />
-                                                        </g>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_0_1647">
-                                                            <rect width="13" height="13" fill="white" />
-                                                        </clipPath>
-                                                        <clipPath id="clip1_0_1647">
-                                                            <rect width="13" height="13" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                        </div>
-                                    </div>
 
-                                    <div
-                                        class="bg-tavern-bg-bank px-2 rounded-md flex items-center justify-center flex-col">
-                                        <p class="text-white whitespace-nowrap text-[15px]">* **** 9999</p>
-                                        <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
-                                    </div>
-                                </div>
-                                <hr class="my-3 border-[#343737]">
+                                
 
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
-                                        <div class="ml-3 flex flex-col">
-                                            <p class="text-white">Green</p>
-                                            <p class="flex text-tavern-bank items-center">999
-                                                <svg class="w-[13px] ml-1" width="13" height="13" viewBox="0 0 13 13"
-                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_0_1647)">
-                                                        <g clip-path="url(#clip1_0_1647)">
-                                                            <path
-                                                                d="M1.87925 2.4113L4.24896 4.07214C4.29878 4.10719 4.36155 4.12641 4.42569 4.12641C4.47174 4.12641 4.51692 4.11637 4.55642 4.09732L5.83294 3.47427C5.93421 3.42536 5.98485 3.3169 5.98485 3.2044V0.405044C5.98485 0.26086 5.89153 0.147949 5.75016 0.147949C5.71066 0.147949 5.68071 0.156904 5.64412 0.17454L1.91056 1.97457C1.82647 2.01507 1.77411 2.09279 1.76679 2.18252C1.75947 2.27225 1.80293 2.3578 1.87925 2.4113Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M4.73616 5.22171L4.37688 6.79592C4.35598 6.88769 4.38038 6.99442 4.43902 7.06792L5.44558 8.32585C5.50422 8.39953 5.60299 8.44294 5.69722 8.44294H7.31183C7.40602 8.44294 7.50479 8.39953 7.56329 8.32603L8.56976 7.0661C8.62858 6.9926 8.65308 6.88674 8.63213 6.79478L8.2728 5.22126C8.25194 5.12962 8.18376 5.04421 8.0988 5.00316L6.64387 4.30265C6.56064 4.2627 6.44823 4.2627 6.36491 4.30279L4.91012 5.00344C4.8253 5.04435 4.75703 5.13007 4.73616 5.22171Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M3.44906 6.50304L3.76042 5.13861C3.78656 5.0247 3.73797 4.89833 3.64229 4.83124L1.29889 3.18885C1.25389 3.15731 1.2018 3.14062 1.1483 3.14062C1.02893 3.14062 0.926612 3.22372 0.89952 3.34263L0.00682589 7.25395C-0.0109925 7.33205 0.00646225 7.41146 0.0546447 7.47182C0.102009 7.53123 0.173465 7.56528 0.250693 7.56528C0.275239 7.56528 0.299966 7.56182 0.324149 7.55496L3.23587 6.72786C3.33924 6.69836 3.42487 6.60817 3.44906 6.50304Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M7.15682 3.47445L8.44034 4.092C8.47961 4.11096 8.52511 4.12101 8.57075 4.12101C8.63702 4.12101 8.70175 4.10032 8.75257 4.06278L11.0469 2.36648C11.121 2.31171 11.1602 2.22607 11.1519 2.13748C11.1435 2.04888 11.089 1.97211 11.0061 1.9322L7.3561 0.17445C7.3195 0.156858 7.27873 0.147949 7.23919 0.147949C7.09786 0.147949 6.98486 0.26086 6.98486 0.405044V3.20449C6.98491 3.31699 7.05532 3.4255 7.15682 3.47445Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M12.9931 7.2143L12.0883 3.2501C12.0611 3.1316 11.9592 3.04883 11.8405 3.04883C11.7849 3.04883 11.7312 3.06683 11.685 3.10087L9.3585 4.82113C9.265 4.89026 9.21968 5.01281 9.24564 5.12577L9.55901 6.49865C9.58328 6.60451 9.66996 6.69483 9.7746 6.72333L12.6781 7.51648C12.7014 7.52284 12.7252 7.52603 12.7488 7.52607H12.7489C12.8263 7.52607 12.8979 7.49184 12.9454 7.43225C12.9936 7.37171 13.011 7.29216 12.9931 7.2143Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M12.5139 8.47692L9.5595 7.66987C9.53527 7.66332 9.51 7.65991 9.48436 7.65991C9.393 7.65991 9.30536 7.70141 9.24986 7.771L8.3778 8.86452C8.30916 8.95052 8.2933 9.0757 8.33807 9.17589L9.62982 12.0721C9.67209 12.167 9.76086 12.2259 9.86141 12.2259C9.86146 12.2259 9.86141 12.2259 9.86146 12.2259C9.93896 12.2259 10.0121 12.1899 10.062 12.1272L12.6473 8.88547C12.7024 8.81638 12.7194 8.72634 12.6928 8.6447C12.6662 8.56302 12.5994 8.50029 12.5139 8.47692Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M4.62707 8.85932L3.7626 7.77522C3.70728 7.70576 3.61978 7.66431 3.5286 7.66431C3.50191 7.66431 3.47569 7.6679 3.45055 7.67503L0.517555 8.50823C0.432827 8.53227 0.366689 8.59532 0.340644 8.67682C0.314598 8.75832 0.331871 8.84805 0.386644 8.91651L2.91182 12.083C2.96186 12.1458 3.03505 12.1819 3.11273 12.1819C3.21205 12.1819 3.30041 12.1241 3.34332 12.0312L4.66502 9.17315C4.71166 9.0721 4.69634 8.94587 4.62707 8.85932Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M7.46425 9.60828C7.4173 9.50287 7.30811 9.44287 7.19266 9.44287H5.80959C5.69554 9.44287 5.58672 9.50155 5.53877 9.60515L4.20416 12.4857C4.16648 12.5671 4.17193 12.6606 4.21875 12.7339C4.26552 12.8071 4.34702 12.852 4.43675 12.852H8.51672C8.60586 12.852 8.68713 12.8048 8.73413 12.7323C8.78113 12.6597 8.7875 12.5714 8.75122 12.4903L7.46425 9.60828Z"
-                                                                fill="#CDDFFF" />
-                                                        </g>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_0_1647">
-                                                            <rect width="13" height="13" fill="white" />
-                                                        </clipPath>
-                                                        <clipPath id="clip1_0_1647">
-                                                            <rect width="13" height="13" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-tavern-bg-bank px-2 rounded-md flex items-center justify-center flex-col">
-                                        <p class="text-white whitespace-nowrap text-[15px]">* **** 9999</p>
-                                        <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
-                                    </div>
-                                </div>
-                                <hr class="my-3 border-[#343737]">
-
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <img class="h-[45px]"
-                                            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
-                                        <div class="ml-3 flex flex-col">
-                                            <p class="text-white">Green</p>
-                                            <p class="flex text-tavern-bank items-center">999
-                                                <svg class="w-[13px] ml-1" width="13" height="13" viewBox="0 0 13 13"
-                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_0_1647)">
-                                                        <g clip-path="url(#clip1_0_1647)">
-                                                            <path
-                                                                d="M1.87925 2.4113L4.24896 4.07214C4.29878 4.10719 4.36155 4.12641 4.42569 4.12641C4.47174 4.12641 4.51692 4.11637 4.55642 4.09732L5.83294 3.47427C5.93421 3.42536 5.98485 3.3169 5.98485 3.2044V0.405044C5.98485 0.26086 5.89153 0.147949 5.75016 0.147949C5.71066 0.147949 5.68071 0.156904 5.64412 0.17454L1.91056 1.97457C1.82647 2.01507 1.77411 2.09279 1.76679 2.18252C1.75947 2.27225 1.80293 2.3578 1.87925 2.4113Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M4.73616 5.22171L4.37688 6.79592C4.35598 6.88769 4.38038 6.99442 4.43902 7.06792L5.44558 8.32585C5.50422 8.39953 5.60299 8.44294 5.69722 8.44294H7.31183C7.40602 8.44294 7.50479 8.39953 7.56329 8.32603L8.56976 7.0661C8.62858 6.9926 8.65308 6.88674 8.63213 6.79478L8.2728 5.22126C8.25194 5.12962 8.18376 5.04421 8.0988 5.00316L6.64387 4.30265C6.56064 4.2627 6.44823 4.2627 6.36491 4.30279L4.91012 5.00344C4.8253 5.04435 4.75703 5.13007 4.73616 5.22171Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M3.44906 6.50304L3.76042 5.13861C3.78656 5.0247 3.73797 4.89833 3.64229 4.83124L1.29889 3.18885C1.25389 3.15731 1.2018 3.14062 1.1483 3.14062C1.02893 3.14062 0.926612 3.22372 0.89952 3.34263L0.00682589 7.25395C-0.0109925 7.33205 0.00646225 7.41146 0.0546447 7.47182C0.102009 7.53123 0.173465 7.56528 0.250693 7.56528C0.275239 7.56528 0.299966 7.56182 0.324149 7.55496L3.23587 6.72786C3.33924 6.69836 3.42487 6.60817 3.44906 6.50304Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M7.15682 3.47445L8.44034 4.092C8.47961 4.11096 8.52511 4.12101 8.57075 4.12101C8.63702 4.12101 8.70175 4.10032 8.75257 4.06278L11.0469 2.36648C11.121 2.31171 11.1602 2.22607 11.1519 2.13748C11.1435 2.04888 11.089 1.97211 11.0061 1.9322L7.3561 0.17445C7.3195 0.156858 7.27873 0.147949 7.23919 0.147949C7.09786 0.147949 6.98486 0.26086 6.98486 0.405044V3.20449C6.98491 3.31699 7.05532 3.4255 7.15682 3.47445Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M12.9931 7.2143L12.0883 3.2501C12.0611 3.1316 11.9592 3.04883 11.8405 3.04883C11.7849 3.04883 11.7312 3.06683 11.685 3.10087L9.3585 4.82113C9.265 4.89026 9.21968 5.01281 9.24564 5.12577L9.55901 6.49865C9.58328 6.60451 9.66996 6.69483 9.7746 6.72333L12.6781 7.51648C12.7014 7.52284 12.7252 7.52603 12.7488 7.52607H12.7489C12.8263 7.52607 12.8979 7.49184 12.9454 7.43225C12.9936 7.37171 13.011 7.29216 12.9931 7.2143Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M12.5139 8.47692L9.5595 7.66987C9.53527 7.66332 9.51 7.65991 9.48436 7.65991C9.393 7.65991 9.30536 7.70141 9.24986 7.771L8.3778 8.86452C8.30916 8.95052 8.2933 9.0757 8.33807 9.17589L9.62982 12.0721C9.67209 12.167 9.76086 12.2259 9.86141 12.2259C9.86146 12.2259 9.86141 12.2259 9.86146 12.2259C9.93896 12.2259 10.0121 12.1899 10.062 12.1272L12.6473 8.88547C12.7024 8.81638 12.7194 8.72634 12.6928 8.6447C12.6662 8.56302 12.5994 8.50029 12.5139 8.47692Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M4.62707 8.85932L3.7626 7.77522C3.70728 7.70576 3.61978 7.66431 3.5286 7.66431C3.50191 7.66431 3.47569 7.6679 3.45055 7.67503L0.517555 8.50823C0.432827 8.53227 0.366689 8.59532 0.340644 8.67682C0.314598 8.75832 0.331871 8.84805 0.386644 8.91651L2.91182 12.083C2.96186 12.1458 3.03505 12.1819 3.11273 12.1819C3.21205 12.1819 3.30041 12.1241 3.34332 12.0312L4.66502 9.17315C4.71166 9.0721 4.69634 8.94587 4.62707 8.85932Z"
-                                                                fill="#CDDFFF" />
-                                                            <path
-                                                                d="M7.46425 9.60828C7.4173 9.50287 7.30811 9.44287 7.19266 9.44287H5.80959C5.69554 9.44287 5.58672 9.50155 5.53877 9.60515L4.20416 12.4857C4.16648 12.5671 4.17193 12.6606 4.21875 12.7339C4.26552 12.8071 4.34702 12.852 4.43675 12.852H8.51672C8.60586 12.852 8.68713 12.8048 8.73413 12.7323C8.78113 12.6597 8.7875 12.5714 8.75122 12.4903L7.46425 9.60828Z"
-                                                                fill="#CDDFFF" />
-                                                        </g>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_0_1647">
-                                                            <rect width="13" height="13" fill="white" />
-                                                        </clipPath>
-                                                        <clipPath id="clip1_0_1647">
-                                                            <rect width="13" height="13" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-tavern-bg-bank px-2 rounded-md flex items-center justify-center flex-col">
-                                        <p class="text-white whitespace-nowrap text-[15px]">* **** 9999</p>
-                                        <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
-                                    </div>
-                                </div>
-                                <hr class="my-3 border-[#343737]">
-
-                                <div class="flex items-center justify-between">
+                                <!-- <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
                                             src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
@@ -278,9 +146,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="my-3 border-[#343737]">
+                                <hr class="my-3 border-[#343737]"> -->
 
-                                <div class="flex items-center justify-between">
+                                <!-- <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
                                             src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
@@ -336,9 +204,9 @@
                                         <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
                                     </div>
                                 </div>
-                                <hr class="my-3 border-[#343737]">
+                                <hr class="my-3 border-[#343737]"> -->
 
-                                <div class="flex items-center justify-between">
+                                <!-- <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img class="h-[45px]"
                                             src="https://media.discordapp.net/attachments/1097539754234499132/1099668090935050353/image.png">
@@ -380,8 +248,8 @@
                                         <p class="text-white whitespace-nowrap text-[15px]">* **** 9999</p>
                                         <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
                                     </div>
-                                </div>
-                                <hr class="my-3 border-[#343737]">
+                                </div> -->
+                                <!-- <hr class="my-3 border-[#343737]"> -->
                             </div>
 
                         </div>

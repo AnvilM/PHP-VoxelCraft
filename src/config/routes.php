@@ -127,12 +127,36 @@ $routes = [
         'Title' => 'Да'
     ],
     [
+        'Route' => 'Buy',
+        'Controller' => 'Home',
+        'Action' => 'Buy',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
+    [
         'Route' => 'API/set.skin',
         'Controller' => 'API',
         'Action' => 'SET_SKIN',
-        'Layout' => 'Default',
-        'View' => 'SKIN',
-        'Title' => 'Да'
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
+    [
+        'Route' => 'API/get.skin',
+        'Controller' => 'API',
+        'Action' => 'GET_SKIN',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
+    [
+        'Route' => 'API/get.avatar',
+        'Controller' => 'API',
+        'Action' => 'GET_AVATAR',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
     ],
 
 ];

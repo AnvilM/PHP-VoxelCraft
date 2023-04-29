@@ -1,5 +1,5 @@
 <script src="/public/js/Profile/skinview3d.bundle.js"></script>
-<script>var skin = 'https://minotar.net/skin/<?=$_SESSION['User']['Login'] ?>'</script>
+<script>var skin = '<?=$this->User->getSkin($_GET['Login'])?>'</script>
 <body class="bg-tavern-black md:overflow-hidden min-w-[547px]">
     <?require 'src\views\Partials\header.php';?>
         <main>
@@ -9,12 +9,12 @@
                         <div class="flex flex-col">
                             <p class="text-white font-semibold text-xl md:text-base mb-2 justify-center md:justify-start flex items-center">
                                 <img class="h-[14px] mr-2" src="/public/images/stats.svg" />
-                                Статистика: <?=$_SESSION['User']['Login']?>
+                                Статистика: <?=$_GET['Login']?>
                             </p>
                             <div
                                 class="h-[400px] bg-tavern-grid relative rounded-xl border flex flex-col items-center justify-between pt-4 border-tavern-grid-br">
                                     <canvas id="skin_container" class="rounded-xl absolute top-0 h-[347px] w-[295px]"></canvas>
-                                <img class="absolute top-[330px] w-14 h-14 p-3 z-10 bg-tavern-grid rounded-full mb-4 overflow-visible ring-2 ring-tavern-link" src="<?=$this->User->get_avatar($this->User->get_login())?>" alt="Bordered avatar">
+                                <img class="absolute top-[330px] w-14 h-14 p-3 z-10 bg-tavern-grid rounded-full mb-4 overflow-visible ring-2 ring-tavern-link" src="<?=$this->User->getAvatar($_GET['Login'])?>" alt="Bordered avatar" style="image-rendering: pixelated;">
                                 <div class="pizda"></div>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                                         <img class="h-7 "
                                             src="https://media.discordapp.net/attachments/943509410561544213/1089956906153545798/image.png" />
                                     </div>
-                                    <div class="text-white font-semibold pl-4"><?=$this->User->get_login().'#'.$_SESSION['User']['discriminator']?></div>
+                                    <div class="text-white font-semibold pl-4"><?=$Discord?></div>
                                 </a>
                             </div>
                             <div class="mt-6 flex flex-col">
@@ -43,20 +43,20 @@
                         <div class="flex items-center md:items-start flex-col">
                             <p class="text-white font-semibold text-xl mb-3 mt-5 md:mt-0">Роли в дискорде</p>
                             <div class="flex items-center">
-                                <p class="text-white flex items-center">
-                                    <svg class="mr-1" width="5" height="5" viewBox="0 0 5 5" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="2.5" cy="2.5" r="2.5" fill="#1D72F2" />
-                                    </svg>
-                                    Игрок
-                                </p>
-                                <p class="text-white ml-3 flex items-center">
-                                    <svg class="mr-1" width="5" height="5" viewBox="0 0 5 5" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="2.5" cy="2.5" r="2.5" fill="#DE1E1E" />
-                                    </svg>
-                                    ФБР
-                                </p>
+                            
+                            <?php
+                                    for($i=0; $i<count($Roles); $i++){
+                                        echo '
+                                        <p class="ml-3 text-white flex items-center">
+                                            <svg class="mr-1" width="5" height="5" viewBox="0 0 5 5" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="2.5" cy="2.5" r="2.5" fill="#'.$Roles[$i][2].'" />
+                                            </svg>
+                                            '.$Roles[$i][1].'
+                                        </p>
+                                        ';
+                                    }
+                                ?>
                             </div>
 
                             <div class="flex flex-col items-center md:items-start mt-4 ">
@@ -151,9 +151,28 @@
                                 <span class="text-tavern-link bg-[#27272A] rounded-full w-6 h-6 text-center text-sm leading-6 ml-3"><?=count($Warnings)?></span>
                             </p>
                             <div class="bg-[#1D72F2] p-2 rounded-xl w-full flex justify-center items-center">
-                                <div class="rounded-full bg-white h-6 w-6"></div>
-                                <div class="rounded-full mx-6 bg-black h-6 w-6"></div>
-                                <div class="rounded-full bg-black h-6 w-6"></div>
+                                <?php
+                                    if(count($Warnings)< 1){
+                                        echo '<div class="rounded-full bg-black h-6 w-6"></div>
+                                        <div class="rounded-full mx-6 bg-black h-6 w-6"></div>
+                                        <div class="rounded-full bg-black h-6 w-6"></div>';
+                                    }
+                                    else if(count($Warnings)==1){
+                                        echo '<div class="rounded-full bg-white h-6 w-6"></div>
+                                        <div class="rounded-full bg-black h-6 w-6"></div>
+                                        <div class="rounded-full bg-black h-6 w-6"></div>';
+                                    }
+                                    else if(count($Warnings)==2){
+                                        echo '<div class="rounded-full bg-white h-6 w-6"></div>
+                                        <div class="rounded-full bg-white h-6 w-6"></div>
+                                        <div class="rounded-full bg-black h-6 w-6"></div>';
+                                    }
+                                    else{
+                                        echo '<div class="rounded-full bg-white h-6 w-6"></div>
+                                        <div class="rounded-full bg-white h-6 w-6"></div>
+                                        <div class="rounded-full bg-white h-6 w-6"></div>';
+                                    }
+                                ?>
                             </div>
                             <hr class="my-3 border-[#343737]">
                             <div id="element" class="overflow-y-scroll h-[180px]">
@@ -161,7 +180,7 @@
                                 for($i = 0; $i < count($Warnings); $i++){
                                     echo '
                                     <div class="flex mt-4 items-center">
-                                        <img class="w-12 h-12 rounded-lg mr-3" src="'.$this->User->get_avatar($Warnings[$i][0]).'" alt="Bordered avatar">
+                                        <img class="w-12 h-12 rounded-lg mr-3" src="'.$this->User->getAvatar($Warnings[$i][0]).'" alt="Bordered avatar">
                                         <div class="flex flex-col">
                                             <p class="text-white font-semibold leading-none mb-1">'.date('G:i \\\ d.m.y', $Warnings[$i][3]).'</p>
                                             <p class="text-white leading-none">Выдал: <span class="font-semibold">'.$Warnings[$i][0].'</span></p>
@@ -180,9 +199,15 @@
                             
                             
                             <hr class="my-3 border-[#343737]">
-                            <button type="button" data-modal-target="fine" data-modal-toggle="fine" class="bg-[#EA3D2D] hover:bg-[#b13328] p-2 rounded-xl w-full flex justify-center items-center">
-                                <div class="text-white">Выписать штраф</div>
-                            </button>
+                            <?php
+                                if($this->User->isFBI()){
+                                    echo '
+                                    <button type="button" data-modal-target="fine" data-modal-toggle="fine" class="bg-[#EA3D2D] hover:bg-[#b13328] p-2 rounded-xl w-full flex justify-center items-center">
+                                        <div class="text-white">Выписать штраф</div>
+                                    </button>
+                                    ';
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>

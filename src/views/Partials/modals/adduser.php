@@ -17,15 +17,11 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-base text-gray-900 dark:text-white">Добавить в город</h3>
-                <form class="space-y-6" action="#">
-                    <select id="countries"
+                <form class="space-y-6" action="/Town/Edit" method="GET">
+                    <input type="text" name="Id" value="<?=$Town[0][0]?>" class="hidden">
+                    <input id="countries" name="addPlayer"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-tavern-black dark:border-[#95F867] dark:placeholder-[#95F867] dark:text-white dark:focus:ring-[#95F867] dark:focus:border-[#95F867]">
-                        <option selected>Никнейм игрока</option>
-                        <option value="US">ник</option>
-                        <option value="CA">ник</option>
-                        <option value="FR">ник</option>
-                        <option value="DE">ник</option>
-                    </select>
+                    </input>
                     <button type="submit"
                         class="w-full text-[#95F867] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#2D5027] dark:hover:bg-[#2D5027] dark:focus:ring-[#95F867]">Добавить</button>
 

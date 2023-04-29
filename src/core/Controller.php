@@ -24,10 +24,21 @@ abstract class Controller{
         
         $this->Model = $this->loadModel($params['Controller']);
         
+        
     }
 
 
-    
+    public function RolesSync(){
+        if($this->User->isPlayer()){
+            $Roles = $this->Model->RolesSync($this->User->getLogin());
+            $_SESSION['User']['Roles'];
+            for($i=0; $i<count($Roles); $i++){
+                array_push($_SESSION['User']['Roles'], $Roles[$i][1]);
+            }
+        }
+    }
+
+
 
     public function loadModel($model_name){
         $model_path = 'src\models\\'.$model_name.'Model';

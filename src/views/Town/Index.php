@@ -96,9 +96,6 @@
                         <div class="mr-0 lg:mr-28 xl:mr-48 max-w-2xl">
                             <div class="flex">
                                 <div class="flex items-center">
-                                    <?php   
-                                        
-                                    ?>
                                     <img class="h-[288px] mr-6" src="<?=$Town[0][3]?>" style="image-rendering: pixelated;">
                                     <div class="flex flex-col">
                                         <div
@@ -184,7 +181,7 @@
                                         
                                     </form>
                                     <div class="flex mb-3 items-center">
-                                        <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="<?=$this->User->get_avatar($Town[0][5])?>">
+                                        <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="<?=$this->User->getAvatar($Town[0][5])?>">
                                         <svg class="mr-2" width="24" height="22" viewBox="0 0 24 22" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_0_1317)">
@@ -206,7 +203,7 @@
                                    <?php
                                    if($Town[0][6] != ''){
                                     echo ' <div class="flex mb-3 items-center">
-                                    <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($Town[0][6]).'">
+                                    <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->getAvatar($Town[0][6]).'">
                                         <svg class="mr-2" width="26" height="24" viewBox="0 0 26 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -225,7 +222,7 @@
                                             if($Players[$i][1] != $Town[0][5] && $Players[$i][1] != $Town[0][6]){
                                                 echo '
                                                 <div class="user flex mb-3 items-center">
-                                                <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($Players[$i][1]).'">
+                                                <img class="h-11 mr-2 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->getAvatar($Players[$i][1]).'">
                                                     <p class="user-name text-white text-base font-medium">'.$Players[$i][1].'</p>
                                                 </div>';
                                             }

@@ -27,7 +27,7 @@
                     <form class="flex items-center">
                         <div
                             class="rounded-full text-white select-none font-medium border border-solid border-[#004AD9] mr-3 py-2 px-3">
-                            <?=$TownsCount?></div>
+                            <?=count($Towns)?></div>
                         <label for="simple-search" class="sr-only">Вводи название города...</label>
                     
                         <div class="relative w-full">
@@ -59,16 +59,11 @@
                 </div>
 
                 <div class="container mx-auto gap-x-16 gap-y-8 px-10 sm:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 grid-rows-2">
-                        <?php
-                            for($i = 0; $i < count($Towns); $i++){
-                                if($Towns[$i][7] == 0){
-                                    require 'src\views\Partials\sity\nenado.php';
-                                }
-                                else{
-                                    require 'src\views\Partials\sity\nado.php';
-                                }
-                            }
-                        ?>
+                    <?php
+                        for($i=0;$i<count($Towns); $i++){
+                            require 'src\views\Partials\city.php';
+                        }
+                    ?>
                     
                 </div>
             </div>

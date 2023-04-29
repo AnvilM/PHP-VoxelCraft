@@ -5,7 +5,7 @@ namespace src\controllers;
 
 use mysqli;
 use src\core\Controller;
-
+use src\core\Model;
 
 Class HomeController extends Controller{
 
@@ -15,23 +15,30 @@ Class HomeController extends Controller{
         $this->View->render();
     }   
     public function TownsAction(){
-        
-        $towns = $this->Model->getTowns();
-        $TownsCount = mysqli_num_rows($towns);
-        $towns = mysqli_fetch_all($towns);
-        
-        
-        $this->View->render(['Towns'=>$towns, 'TownsCount' => $TownsCount]);
+     
+        $Towns = mysqli_fetch_all($this->Model->getTowns());
+
+
+        $this->View->render(['Towns' => $Towns]);
     } 
     public function StatsAction(){
-        
-        $Users = mysqli_fetch_all($this->Model->getUsers());
-        $this->View->render(['Users' => $Users]);
+      
+        $Players = mysqli_fetch_all($this->Model->getPlayers());
+
+        $this->View->render(['Players' => $Players]);
     } 
 
     public function MapAction(){
         
-      
         $this->View->render();
+    }
+
+    public function BuyAction(){
+        
+        if(!$this->User->isPlayer() && $this->User->isAuth() && isset($_GET['Login'])){
+            $this->Model->addPlayer($this->User->getDiscord(), $_GET['Login']);
+            $_SESSION['User']['Login'] = $_GET['Login'];
+        }
+        header('Location: /');
     }
 } 

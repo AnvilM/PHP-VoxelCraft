@@ -1,5 +1,5 @@
-function openLink(){
-    window.open(window.location.search+'&SwitchPlayers_need', '_self')
+function openLink(link){
+    window.open(window.location.search+'', '_self')
 }
 
 function changeDiscrodLink(){
@@ -10,6 +10,7 @@ function changeDiscrodLink(){
         window.open(window.location.search+'&changeDiscrodLink='+input_val, '_self')
     }
 }
+
 
 
 const input = document.querySelector('input.search')
@@ -36,23 +37,27 @@ input.oninput = function(){
     }
     
 }
-
-window.addEventListener('load', (e)=>{
+hidePlayers()
+function hidePlayers(){
     const users = document.querySelectorAll('.user')
     const showmore = document.querySelector('.show-more')
-    if(users.length < 1){
+    showmore.outerHTML = '<a class="show-more text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold cursor-pointer" onclick="showAllUsers()">Показать больше...</a>'
+    if(users.length < 4){
         showmore.classList.add('hidden')
     }
     for(var i =0; i < users.length; i++){
-        if(i > 1 ){
+        if(i > 2 ){
             users[i].classList.add('hidden')
         }
     }
-})
+    
+}
 
 function showAllUsers(){
+    const showmore = document.querySelector('.show-more')
     const users = document.querySelectorAll('.user')
     for(var i =0; i < users.length; i++){
         users[i].classList.remove('hidden')
     }
+    showmore.outerHTML = '<a class="show-more text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold cursor-pointer" onclick="hidePlayers()">Скрыть...</a>'
 }

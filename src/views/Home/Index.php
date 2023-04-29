@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <body class="bg-tavern-black overflow-x-hidden min-w-[647px]">
     <?require 'src\views\Partials\header.php';?>
     <main class="pt-20 font-sans">
@@ -68,51 +68,52 @@
         </div>
       </section>
       <section id="buy" class="h-[597px] relative my-24">
-        
-        <div class="container mx-auto  pt-6">
-          <h1  class="text-white text-5xl text-center font-[benzin]">Оплата товара</h1>
-          <div class="flex flex-col mt-14">
-            <div class="flex justify-center">
-              <label class="relative buy mr-6" data-title="Никнейм">
-                <input placeholder="Ваш никнейм..."
-                  class="bg-tavern-black pl-8 placeholder:text-gray-500 font-light text-white border border-tavern-input-br rounded-lg w-[300px] h-[55px]"
-                  type="text" value="">
-              </label>
-              <label class="relative buy2 ml-6" data-title="Промокод">
-                <input placeholder="При наличии..."
-                  class="bg-tavern-black placeholder:text-gray-500 text-white border pl-8 border-tavern-input-br rounded-lg w-[300px] h-[55px]"
-                  type="text" value="">
-              </label>
-            </div>
-            <div class="flex mt-5 justify-center">
-              <label class="relative buy3" data-title="Ассортимент">
-                <select name="select" id="select"
-                  class="bg-tavern-black text-white border pl-8 border-tavern-input-br rounded-lg w-[647px] h-[55px]">
-                  <option label="Выберите нужный товар" selected value="">Не выбрано</option>
-                  <option label="Проходка (50 р.)" value="266999">Проходка</option>
-                  <option label="Разбан (300 р.)" value="339553">Разбан</option>
-                  <option label="Смена Ника (100 р.)" value="348735">Смена ника</option>
-                </select>
-              </label>
-            </div>
-            <div class="flex mt-5 justify-center">
-              <label class="relative buy3" data-title="Оплата">
-                <select name="select" id="select"
-                  class="bg-tavern-black text-white border pl-8 border-tavern-input-br rounded-lg w-[647px] h-[55px]">
-                  <option label="Выберите способ оплаты" selected value="">Не выбрано</option>
-                  <option label="Qiwi" value="266999">Qiwi</option>
-                  <option label="EasyDonate" value="339553">EasyDonate</option>
-                  <option label="DonationAlerts" value="348735">DonationAlerts</option>
-                </select>
-              </label>
-            </div>
-            <div class="flex mt-5 items-center justify-center">
-              <a href="#"
-                class="bg-tavern-input-br hover:bg-blue-500 px-[100px] mr-[24px] py-4 rounded-lg font-semibold text-white">Приобрести</a>
-              <a href="#" class="text-white px-[100px] font-semibold">Правила сервера</a>
+        <form action="">
+          <div class="container mx-auto  pt-6">
+            <h1  class="text-white text-5xl text-center font-[benzin]">Оплата товара</h1>
+            <div class="flex flex-col mt-14">
+              <div class="flex justify-center">
+                <label class="relative buy mr-6" data-title="Никнейм">
+                  <input placeholder="Ваш никнейм..."
+                    class="bg-tavern-black pl-8 placeholder:text-gray-500 font-light text-white border border-tavern-input-br rounded-lg w-[300px] h-[55px]"
+                    type="text" value="" name="Login">
+                </label>
+                <label class="relative buy2 ml-6" data-title="Промокод">
+                  <input placeholder="При наличии..."
+                    class="bg-tavern-black placeholder:text-gray-500 text-white border pl-8 border-tavern-input-br rounded-lg w-[300px] h-[55px]"
+                    type="text" value="">
+                </label>
+              </div>
+              <div class="flex mt-5 justify-center">
+                <label class="relative buy3" data-title="Ассортимент">
+                  <select name="select" id="select"
+                    class="bg-tavern-black text-white border pl-8 border-tavern-input-br rounded-lg w-[647px] h-[55px]">
+                    <option label="Выберите нужный товар" selected value="">Не выбрано</option>
+                    <option label="Проходка (50 р.)" value="266999">Проходка</option>
+                    <option label="Разбан (300 р.)" value="339553">Разбан</option>
+                    <option label="Смена Ника (100 р.)" value="348735">Смена ника</option>
+                  </select>
+                </label>
+              </div>
+              <div class="flex mt-5 justify-center">
+                <label class="relative buy3" data-title="Оплата">
+                  <select name="select" id="select"
+                    class="bg-tavern-black text-white border pl-8 border-tavern-input-br rounded-lg w-[647px] h-[55px]">
+                    <option label="Выберите способ оплаты" selected value="">Не выбрано</option>
+                    <option label="Qiwi" value="266999">Qiwi</option>
+                    <option label="EasyDonate" value="339553">EasyDonate</option>
+                    <option label="DonationAlerts" value="348735">DonationAlerts</option>
+                  </select>
+                </label>
+              </div>
+              <div class="flex mt-5 items-center justify-center">
+                <a href="#"
+                  class="bg-tavern-input-br hover:bg-blue-500 px-[100px] mr-[24px] py-4 rounded-lg font-semibold text-white">Приобрести</a>
+                <a href="#" class="text-white px-[100px] font-semibold">Правила сервера</a>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
         <div class="zalupa"></div>
         <!-- <div class="zalupa2"></div> -->
       </section>

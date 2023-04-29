@@ -2,25 +2,36 @@
 
 namespace src\models;
 
+use mysqli;
 use src\core\Model;
 
 class TownModel extends Model{
-    public function Create($name, $description, $banner, $login, $discord, $id){
-        return $this->db->query("INSERT INTO `towns` (`id`,`Name`, `Description`, `Players`, `Banner`, `Owner`, `Discord`) VALUES ('$id', '$name', '$description', 0, '$banner', '$login', '$discord')");
-    }
-    public function addPlayer($id, $login){
-        if($this->db->query("UPDATE `towns` SET `Players` = `Players` + 1 WHERE `id` = $id") && $this->db->query("INSERT INTO `towns_users` (`Town_id`, `Login`) VALUES ('$id','$login')")){
-            return true;
-        }
-        return false;
-    }
     
     public function getTown($id){
-        return $this->db->query("SELECT * FROM `towns` WHERE `id` = $id");
+        return $this->db->query("SELECT * FROM `towns` WHERE `Id` = '$id'");
     }
 
     public function getPlayers($id){
-        return $this->db->query("SELECT * FROM `towns_users` WHERE `Town_id` = $id");
+        return $this->db->query("SELECT * FROM `towns_players` WHERE `Id` = '$id'");
+    }
+
+    public function Create($id, $Name, $Description, $Banner, $Owner, $Discord){
+        return $this->db->query("INSERT INTO `towns` (`Id`, `Name`, `Description`, `Banner`, `Owner`, `Discord`) VALUES ($id, '$Name', '$Description', '$Banner', '$Owner', '$Discord')");
+    }
+
+    public function addPlayer($id, $Login){
+        if(mysqli_num_rows($this->db->query("SELECT * FROM `towns_players` WHERE `Id` = '$id' AND `Login` = '$Login'")) < 1){
+            $this->db->query("UPDATE `towns` SET `Players` = `Players` + 1 WHERE `Id` = $id");
+            $this->db->query("INSERT INTO `towns_players` (`Id`, `Login`) VALUES ('$id', '$Login')");
+        }
+        return true;
+    }
+    public function removePlayer($id, $Login){
+        if(mysqli_num_rows($this->db->query("SELECT * FROM `towns_players` WHERE `Login` = '$Login'")) > 0){
+            $this->db->query("UPDATE `towns` SET `Players` = `Players` - 1 WHERE `Id` = $id");
+            $this->db->query("DELETE FROM `towns_players` WHERE `Id`, = '$id' AND `Login` = '$Login'");
+        }
+        return true;
     }
 
     public function Players_need($id){
@@ -33,6 +44,9 @@ class TownModel extends Model{
     public function ChangeDiscrodLink($id, $discord){
         return $this->db->query("UPDATE `towns` SET `Discord` = '$discord' WHERE `id` = $id");
     }
-    
+
+    public function checkUser($Login){
+        return $this->db->query("SELECT * FROM `users` WHERE `Login` = '$Login'");
+    }
     
 }

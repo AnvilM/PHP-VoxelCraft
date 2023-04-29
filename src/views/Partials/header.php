@@ -7,7 +7,7 @@
       </a>
       <div class="flex items-center lg:order-2">
         <?php
-        if(isset($_SESSION['User']['Login'])){
+        if($this->User->isPlayer()){
           echo '<a href="#">
           <img class="h-6 mr-2" src="\public\images\bans.svg">
         </a>
@@ -23,7 +23,7 @@
 
         <!-- КНОПКА АВТОРИЗОВАТЬСЯ -->
         <?php
-          if(!isset($_SESSION['User']['Login'])){
+          if(!$this->User->isAuth()){
             echo ' <a href="https://discord.com/oauth2/authorize?client_id=1099066657961414698&redirect_uri=http://localhost/Profile/Signin&response_type=code&scope=identify%20guilds"
             class="flex items-center text-white text-center bg-[#1d72f2] hover:bg-blue-500 px-3 py-2 font-semibold rounded-lg mr-3 lg:mr-0 transition-all">
             Авторизоваться
@@ -32,14 +32,14 @@
         ?>
        
         <!-- КНОПКА ПРОФИЛЯ --> <?php
-        if(isset($_SESSION['User']['Login'])){
+        if($this->User->isAuth()){
           echo '<a id="dropdownDefaultButton" data-dropdown-toggle="dropdown" href="#"
           class="flex items-center text-center mr-3 lg:mr-0 transition-all">
-          <img class="h-11 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($this->User->get_login()).'">
+          <img class="h-11 rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->getMyAvatar($this->User->getLogin()).'">
         </a>';
         }
+        require 'src\views\Partials\dropdowns\signout.php';
         ?>
-        <?require 'src\views\Partials\dropdowns\signout.php';?>
         <button data-collapse-toggle="navbar-sticky" type="button"
           class="inline-flex items-center p-2 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
           aria-controls="navbar-sticky" aria-expanded="false">

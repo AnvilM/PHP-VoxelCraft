@@ -178,12 +178,12 @@
                         </div>
                     </a>
                     <?php
-                        for($i =0; $i < count($Users); $i++){
+                        for($i=0; $i<count($Players); $i++){
                             echo '
-                            <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user ">
-                                <img class="h-[80px] rounded-lg" style="image-rendering: pixelated;" src="'.$this->User->get_avatar($Users[$i][0]).'">
+                            <a href="/Profile?Login='.$Players[$i][1].'" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
+                                <img class="h-[80px] rounded-lg" src="'.$this->User->getAvatar($Players[$i][1]).'" style="image-rendering:pixelated;">
                                 <div class="text-white ml-8 flex flex-col">
-                                    <p class="user-name font-medium text-lg leading-7">'.$Users[$i][0].'</p>
+                                    <p class="user-name font-medium text-lg leading-7">'.$Players[$i][1].'</p>
                                     <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
                                 </div>
                             </a>
