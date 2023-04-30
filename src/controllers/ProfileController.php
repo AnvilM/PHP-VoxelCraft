@@ -26,7 +26,7 @@ Class ProfileController extends Controller{
       if(!$this->User->isPlayer()){
          header('Location: /');
       }
-      $Designs = require $_SERVER['DOCUMENT_ROOT'].'/src/config/cardstyles.php';
+      $Cards = require $_SERVER['DOCUMENT_ROOT'].'/src/config/cards.php';
       if(isset($_GET['Create']) && $this->User->isBankir() && isset($_GET['Type']) && isset($_GET['Design'])){
          if($_GET['Design'] === 'redan' || $_GET['Design'] === 'whiteredan'){
             if(!$this->User->isAdmin()){
@@ -36,8 +36,8 @@ Class ProfileController extends Controller{
          }
          
          $match = false;
-         for($i=0; $i < count($Designs); $i++){
-            if($Designs[$i]['name'] === $_GET['Design']){$match = true;}
+         for($i=0; $i < count($Cards['Styles']); $i++){
+            if($Cards['Styles'][$i]['name'] === $_GET['Design']){$match = true;}
          }
          
          if($match){
@@ -106,8 +106,8 @@ Class ProfileController extends Controller{
          }
          
          $match = false;
-         for($i=0; $i < count($Designs); $i++){
-            if($Designs[$i]['name'] === $_GET['Design']){$match = true;}
+         for($i=0; $i < count($Cards['Styles']); $i++){
+            if($Cards['Styles'][$i]['name'] === $_GET['Design']){$match = true;}
          }
 
          if($match){
@@ -152,7 +152,7 @@ Class ProfileController extends Controller{
       
 
       
-      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard, 'Transfers' => $Transfers, 'Designs' => $Designs]);
+      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard, 'Transfers' => $Transfers, 'Designs' => $Cards['Styles'], 'Types' => $Cards['Types']]);
    }
    public function SigninAction(){
       $_SESSION['User'] = [];
