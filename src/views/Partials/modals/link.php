@@ -23,7 +23,7 @@
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div class="relative">
-                        <button type="button"
+                        <button type="button" onclick="copy()"
                             class="absolute bg-tavern-bg-bank rounded-l-xl inset-y-0 left-0 flex items-center px-10">
                             <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@
                                 </defs>
                             </svg>
                         </button>
-                        <input type="text" id="default-search" value="<?='https://localhost/Profile/Bank?Share='.$privateCard[0][6]?>"
+                        <input type="text" id="link" value="<?='https://localhost/Profile/Bank?Share='.$privateCard[0][6]?>"
                             class="block w-full py-2.5 px-[107px] text-sm border rounded-xl bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                             placeholder="">
                         <button type="submit" name="Reset" value="<?=$privateCard[0][1]?>" type="submit"

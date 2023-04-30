@@ -26,25 +26,39 @@ Class ProfileController extends Controller{
       if(!$this->User->isPlayer()){
          header('Location: /');
       }
-
+      $Designs = require $_SERVER['DOCUMENT_ROOT'].'/src/config/cardstyles.php';
       if(isset($_GET['Create']) && $this->User->isBankir() && isset($_GET['Type']) && isset($_GET['Design'])){
-         $Number = '';
-         do{
-            for($i = 0; $i < 16; $i++){
-               $Rand = rand(0, 9);
-               $Number = $Number.''.$Rand;
+         if($_GET['Design'] === 'redan' || $_GET['Design'] === 'whiteredan'){
+            if(!$this->User->isAdmin()){
+               header('Location: /Profile/Bank');
+               exit();
             }
          }
-         while(mysqli_num_rows($this->Model->getCard($Number)) >= 1);
-         if(mysqli_num_rows($this->Model->checkPlayer($_GET['Create'])) >= 1 && mysqli_num_rows($this->Model->getCardFromLogin($_GET['Create'])) < 1){
-            $Share = '';
-            $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-            for($i=0; $i<16; $i++){
-               $Share = $Share.''.$alphabet[rand(0, strlen($alphabet)-1)];
+         
+         $match = false;
+         for($i=0; $i < count($Designs); $i++){
+            if($Designs[$i]['name'] === $_GET['Design']){$match = true;}
+         }
+         
+         if($match){
+            $Number = '';
+            do{
+               for($i = 0; $i < 16; $i++){
+                  $Rand = rand(0, 9);
+                  $Number = $Number.''.$Rand;
+               }
             }
-            $Share = hash('sha256', $Share);
-            $this->Model->createCard($_GET['Create'], $Number, $_GET['Design'], $_GET['Type'], $Share);
-            $this->Model->addCard($_GET['Create'], $Number);
+            while(mysqli_num_rows($this->Model->getCard($Number)) >= 1);
+            if(mysqli_num_rows($this->Model->checkPlayer($_GET['Create'])) >= 1 && mysqli_num_rows($this->Model->getCardFromLogin($_GET['Create'])) < 1){
+               $Share = '';
+               $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+               for($i=0; $i<16; $i++){
+                  $Share = $Share.''.$alphabet[rand(0, strlen($alphabet)-1)];
+               }
+               $Share = hash('sha256', $Share);
+               $this->Model->createCard($_GET['Create'], $Number, $_GET['Design'], $_GET['Type'], $Share);
+               $this->Model->addCard($_GET['Create'], $Number);
+            }
          }
          header('Location: /Profile/Bank');
       }
@@ -82,6 +96,31 @@ Class ProfileController extends Controller{
          }
          header('Location: /Profile/Bank');
       }
+
+      else if(isset($_GET['Edit']) && isset($_GET['Design'])){
+         if($_GET['Design'] === 'redan' || $_GET['Design'] === 'whiteredan'){
+            if(!$this->User->isAdmin()){
+               header('Location: /Profile/Bank');
+               exit();
+            }
+         }
+         
+         $match = false;
+         for($i=0; $i < count($Designs); $i++){
+            if($Designs[$i]['name'] === $_GET['Design']){$match = true;}
+         }
+
+         if($match){
+            if(mysqli_num_rows($this->Model->getCard($_GET['Edit'])) >= 1){
+               if(mysqli_num_rows($this->Model->checkPlayerCard($this->User->getLogin(), $_GET['Edit'])) >= 1){
+                  
+                  $this->Model->editCard($_GET['Edit'], $_GET['Design']);
+               }
+            }
+            
+         }
+         header('Location: /Profile/Bank');
+      }
       
 
 
@@ -113,7 +152,7 @@ Class ProfileController extends Controller{
       
 
       
-      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard, 'Transfers' => $Transfers]);
+      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard, 'Transfers' => $Transfers, 'Designs' => $Designs]);
    }
    public function SigninAction(){
       $_SESSION['User'] = [];

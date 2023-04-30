@@ -48,6 +48,15 @@ class User{
         return false;
     }
 
+    public function isAdmin(){
+        if($this->isPlayer()){
+            if(in_array('Администратор', $_SESSION['User']['Roles'])){
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public function getLogin(){
         if($this->isPlayer()){

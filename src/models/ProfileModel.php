@@ -63,6 +63,10 @@ class ProfileModel extends Model{
         return $this->db->query("SELECT `Number` FROM `cards` WHERE `Share` = '$Share'");
     }
 
+    public function editCard($Number, $Design){
+        return $this->db->query("UPDATE `cards` SET `Design` = '$Design' WHERE `Number` = '$Number'");
+    }
+
     public function createCard($Owner, $Number, $Design, $Type, $Share){
         return $this->db->query("INSERT INTO `cards` (`Owner`, `Number`, `Design`, `Type`, `Share`) VALUES ('$Owner', '$Number', '$Design', '$Type', '$Share')");
     }

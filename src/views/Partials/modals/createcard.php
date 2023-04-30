@@ -18,33 +18,31 @@
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Создать карту</h3>
                 <h3 class="mb-4 text-base font-medium text-gray-900 dark:text-white">Дизайн карты</h3>
-                <?require 'src\views\Partials\cardstyles\whiteredan.php';?>
-                <form class="space-y-6" action="#">
-                    <select id="countries"
+                <?require 'src\views\Partials\cardstyles\style.php';?>
+                <form class="space-y-6" action="/Profile/Bank">
+                    <select id="design" name="Design"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Выберите стиль</option>
-                        <option value="US">Незерит</option>
-                        <option value="CA">Незерит</option>
-                        <option value="FR">Незерит</option>
-                        <option value="DE">Незерит</option>
+                        <option selected required>Выберите стиль</option>
+                        <?php
+                            for($i=0; $i<count($Designs); $i++){
+                                if($Designs[$i]['name'] === 'redan' || $Designs[$i]['name'] === 'whiteredan'){
+                                    if(!$this->User->isAdmin()){
+                                        continue;
+                                    }
+                                }
+                                echo '<option value="'.$Designs[$i]['name'].'">'.$Designs[$i]['label'].'</option>';
+                            }
+                        ?>
                     </select>
                     <label for="countries" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">Тип карты</label>
-                    <select id="countries"
+                    <select id="countries" name="Type" required
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Счет города</option>
-                        <option value="US">4444</option>
-                        <option value="CA">4444</option>
-                        <option value="FR">4444</option>
-                        <option value="DE">4444</option>
+                        <option selected>Тип карты</option>
+                        <option value="private">Личная карта</option>
+                        <option value="city">Счет города</option>
+
                     </select>
-                    <select id="countries"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Никнемй игрока (которому выдать карту)</option>
-                        <option value="US">Пидарас 1</option>
-                        <option value="CA">Пидарас 2</option>
-                        <option value="FR">Пидарас 3</option>
-                        <option value="DE">Пидарас 4</option>
-                    </select>
+                    <input type="text" required name="Create" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <button type="submit"
                         class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Создать карту</button>
                 </form>

@@ -16,7 +16,7 @@
                                     ';
                                 }
                             else{
-                                require 'src\views\Partials\cardstyles\\'.$privateCard[0][4].'.php';
+                                require 'src\views\Partials\cardstyles\privatestyle.php';
                                 echo '
                                     <a href="#" data-modal-target="editcard" data-modal-toggle="editcard"
                                         class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-4 flex items-center font-medium text-xl">
