@@ -2,12 +2,12 @@
     <img src="\public\images\netherite.png" style="max-width: 300px; margin-bottom: 20px;">
     <div class="text-[#ffffff] select-none text-xl text-center left-[87px] font-medium absolute top-[30px]">Личная карта
     </div>
-    <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[61px] font-medium absolute top-[81px]"><?=$allCards[$i][0][1]?></div>
+    <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[61px] font-medium absolute top-[81px]"><?=$privateCard[0][1]?></div>
     <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[27px] font-medium absolute top-[150px]">
-        ЗАЕБанк</div>
+        <?=$privateCard[0][3]?></div>
     <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[211px] font-medium absolute top-[150px]">
         <span class="flex items-center">
-        <?=$allCards[$i][0][2]?>
+        <?=$privateCard[0][2]?>
             <svg class="w-5 ml-1" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_165_603)">
                     <path

@@ -55,11 +55,16 @@ class ProfileModel extends Model{
         return $this->db->query("SELECT * FROM `players_cards` WHERE `Login` = '$Login' AND `Number` = '$Number'");
     }
 
+    public function resetShare($Number, $Share){
+        return $this->db->query("UPDATE `cards` SET `Share` = '$Share' WHERE `Number` = '$Number'");
+    }
 
+    public function getShare($Share){
+        return $this->db->query("SELECT `Number` FROM `cards` WHERE `Share` = '$Share'");
+    }
 
-
-    public function createCard($Owner, $Number, $Design, $Type){
-        return $this->db->query("INSERT INTO `cards` (`Owner`, `Number`, `Design`, `Type`) VALUES ('$Owner', '$Number', '$Design', '$Type')");
+    public function createCard($Owner, $Number, $Design, $Type, $Share){
+        return $this->db->query("INSERT INTO `cards` (`Owner`, `Number`, `Design`, `Type`, `Share`) VALUES ('$Owner', '$Number', '$Design', '$Type', '$Share')");
     }
 
     public function addCard($Login, $Number){

@@ -16,9 +16,7 @@
                                     ';
                                 }
                             else{
-                                for($i=0; $i < count($allCards); $i++){
-                                    require 'src\views\Partials\cardstyles\\'.$allCards[$i][0][4].'.php';
-                                }
+                                require 'src\views\Partials\cardstyles\\'.$privateCard[0][4].'.php';
                                 echo '
                                     <a href="#" data-modal-target="editcard" data-modal-toggle="editcard"
                                         class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-4 flex items-center font-medium text-xl">
@@ -55,6 +53,7 @@
                             <hr class="my-3 border-[#343737]">
 
                             <div id="element" class="flex flex-col overflow-y-scroll h-[350px]">
+
                                 <?php
                                     if(count($allCards) >= 1){
                                         for($i=0; $i < count($allCards); $i++){
@@ -337,17 +336,22 @@
                             <div id="element"
                                 class="border overflow-y-scroll h-[420px] mt-3 relative border-tavern-grid-br rounded-md flex flex-col">
                                 <?php
-                                    for($i=0; $i<count($Transfers[0]); $i++){
-                                        for($j=0; $j<count($allCards[0]); $j++){
-                                            if($Transfers[0][$i][0] == $allCards[0][$j][1]){
-                                                $me = false;
+
+                                    for($i=0; $i<count($Transfers); $i++){
+                                        for($n=0; $n<count($Transfers[$i]); $n++){
+                                            for($j=0; $j<count($allCards); $j++){
+                                                if($Transfers[$i][$n][0] == $allCards[$j][0][1]){
+                                                    $me = false;
+                                                }
+                                                else if($Transfers[$i][$n][1] == $allCards[$j][0][1]){
+                                                    $me = true;
+                                                }
+                                                require 'src\views\Partials\bank\transfer.php';
                                             }
-                                            else if($Transfers[0][$i][1] == $allCards[0][$j][1]){
-                                                $me = true;
-                                            }
-                                            require 'src\views\Partials\bank\transfer.php';
                                         }
                                     }
+
+                                    
 
                                 ?>
                                 

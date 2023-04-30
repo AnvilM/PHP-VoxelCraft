@@ -4,7 +4,7 @@
             src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
         <div class="ml-3 flex flex-col">
             <p class="text-white">Перевод</p>
-            <p class="flex text-tavern-bank whitespace-nowrap items-center">Перевод с <?=$Transfers[0][$i][0]?></p>
+            <p class="flex text-tavern-bank whitespace-nowrap items-center">Перевод <?=!$me ? "с ".$Transfers[$i][$n][0] : "на ".$Transfers[$i][$n][1]?> </p>
             <p class="flex text-tavern-bank whitespace-nowrap items-center"><?php
             $months = [
                 'Январья',
@@ -29,15 +29,15 @@
                 'Суббота',
                 'Воскресенье'
             ];
-                if(time() - $Transfers[0][$i][3] <= 86400){echo 'Сегодня в '.date('H:i', $Transfers[0][$i][3]);}
-                else if(time() - $Transfers[0][$i][3] > 86400 && time() - $Transfers[0][$i][3] <= 172800){echo 'Вчера в '.date('H:i', $Transfers[0][$i][3]);}
-                else{echo date('j', $Transfers[0][$i][3]).' '.$months[date('n', $Transfers[0][$i][3])-1].', '.$weekDays[date('N', $Transfers[0][$i][3])-1];}
+                if(time() - $Transfers[$i][$n][3] <= 86400){echo 'Сегодня в '.date('H:i', $Transfers[$i][$n][3]);}
+                else if(time() - $Transfers[$i][$n][3] > 86400 && time() - $Transfers[$i][$n][3] <= 172800){echo 'Вчера в '.date('H:i', $Transfers[$i][$n][3]);}
+                else{echo date('j', $Transfers[$i][$n][3]).' '.$months[date('n', $Transfers[$i][$n][3])-1].', '.$weekDays[date('N', $Transfers[$i][$n][3])-1];}
             ?></p>
         </div>
     </div>
 
     <div class="px-2 ml-48 rounded-md flex items-center justify-center flex-col">
-        <p class="<?=!$me ? "text-[#B8B8B8]" : "text-[#00D6AC]"?>  flex items-center whitespace-nowrap text-base"> <?=!$me ? "" : "+"?><?=$Transfers[0][$i][2]?>
+        <p class="<?=!$me ? "text-[#B8B8B8]" : "text-[#00D6AC]"?>  flex items-center whitespace-nowrap text-base"> <?=!$me ? "" : "+"?><?=$Transfers[$i][$n][2]?>
             <svg class="ml-1" width="17" height="18" viewBox="0 0 17 18" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
