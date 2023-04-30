@@ -1,4 +1,4 @@
-<body class="bg-tavern-black lg:overflow-hidden min-w-[665px]">
+<body class="bg-tavern-black min-w-[665px]">
     <?require 'src\views\Partials\header.php';?>
         <main>
             <div class="pt-20 font-sans">
@@ -6,34 +6,34 @@
                     <div class="flex lg:items-start lg:justify-start items-center lg:flex-row flex-col">
                         <div class="flex lg:w-96 w-full flex-col">
                         <?php
-                                if(count($Cards) < 1){
+
+                                if(count($privateCard) === 0){
                                     echo '
                                     <div
-                                class="h-52 text-[#343737] select-none hover:text-tavern-bg-bank hover:border-tavern-bg-bank transition-all text-2xl font-medium mb-4  flex flex-col items-center justify-center border-dashed border-2 border-[#343737] rounded-lg">
-                                Нет карточек
-                            </div>
+                                        class="h-52 text-[#343737] select-none hover:text-tavern-bg-bank hover:border-tavern-bg-bank transition-all text-2xl font-medium mb-4  flex flex-col items-center justify-center border-dashed border-2 border-[#343737] rounded-lg">
+                                        Нет карточек
+                                    </div>
                                     ';
                                 }
                             else{
-                                for($i=0; $i < count($Cards); $i++){
-                                    require 'src\views\Partials\cardstyles\\'.$Cards[$i][3].'.php';
+                                for($i=0; $i < count($allCards); $i++){
+                                    require 'src\views\Partials\cardstyles\\'.$allCards[$i][0][4].'.php';
                                 }
+                                echo '
+                                    <a href="#" data-modal-target="editcard" data-modal-toggle="editcard"
+                                        class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-4 flex items-center font-medium text-xl">
+                                        <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16.8617 4.48667L18.5492 2.79917C19.2814 2.06694 20.4686 2.06694 21.2008 2.79917C21.9331 3.53141 21.9331 4.71859 21.2008 5.45083L10.5822 16.0695C10.0535 16.5981 9.40144 16.9868 8.68489 17.2002L6 18L6.79978 15.3151C7.01323 14.5986 7.40185 13.9465 7.93052 13.4178L16.8617 4.48667ZM16.8617 4.48667L19.5 7.12499M18 14V18.75C18 19.9926 16.9926 21 15.75 21H5.25C4.00736 21 3 19.9926 3 18.75V8.24999C3 7.00735 4.00736 5.99999 5.25 5.99999H10"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        Редактировать дизайн
+                                    </a>
+                                    ';
                             }
                             
-                                if(count($Cards) >= 1){
-                                    echo '
-                                    <a href="#" data-modal-target="editcard" data-modal-toggle="editcard"
-                                class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-4 flex items-center font-medium text-xl">
-                                <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16.8617 4.48667L18.5492 2.79917C19.2814 2.06694 20.4686 2.06694 21.2008 2.79917C21.9331 3.53141 21.9331 4.71859 21.2008 5.45083L10.5822 16.0695C10.0535 16.5981 9.40144 16.9868 8.68489 17.2002L6 18L6.79978 15.3151C7.01323 14.5986 7.40185 13.9465 7.93052 13.4178L16.8617 4.48667ZM16.8617 4.48667L19.5 7.12499M18 14V18.75C18 19.9926 16.9926 21 15.75 21H5.25C4.00736 21 3 19.9926 3 18.75V8.24999C3 7.00735 4.00736 5.99999 5.25 5.99999H10"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                Редактировать дизайн
-                            </a>
-                                    ';
-                                }
+                                
 
                                 if($this->User->isBankir()){
                                     echo '
@@ -50,24 +50,14 @@
                                     ';
                                 }
                             ?>
-                            <a href="#" data-modal-target="createcard" data-modal-toggle="createcard"
-                                        class="text-[#343737] stroke-[#343737] hover:stroke-tavern-bg-bank hover:text-tavern-bg-bank transition-all mb-14 flex items-center font-medium text-xl">
-                                        <svg class="w-6 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M12 9V15M15 12H9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        Создать карту
-                                    </a>
                             
                             <h2 class="text-white text-xl whitespace-nowrap font-semibold">Счета и карты</h2>
                             <hr class="my-3 border-[#343737]">
 
                             <div id="element" class="flex flex-col overflow-y-scroll h-[350px]">
                                 <?php
-                                    if(count($Cards) >= 1){
-                                        for($i=0; $i < count($Cards); $i++){
+                                    if(count($allCards) >= 1){
+                                        for($i=0; $i < count($allCards); $i++){
                                             echo '
                                         <div class="flex items-center justify-between">
                                     <div class="flex items-center">
@@ -75,7 +65,7 @@
                                             src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
                                             <p class="text-white">Green</p>
-                                            <p class="flex text-tavern-bank items-center">'.$Cards[$i][2].'
+                                            <p class="flex text-tavern-bank items-center">'.$allCards[$i][0][2].'
                                                 <svg class="w-[13px] ml-1" width="13" height="13" viewBox="0 0 13 13"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <g clip-path="url(#clip0_0_1647)">
@@ -121,7 +111,7 @@
 
                                     <div
                                         class="bg-tavern-bg-bank px-2 rounded-md flex items-center justify-center flex-col">
-                                        <p class="text-white whitespace-nowrap text-[15px]">* **** '.substr($Cards[$i][1], 12).'</p>
+                                        <p class="text-white whitespace-nowrap text-[15px]">* **** '.substr($allCards[$i][0][1], 12).'</p>
                                         <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
                                     </div>
                                 </div>

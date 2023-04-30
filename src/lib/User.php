@@ -32,7 +32,7 @@ class User{
 
     public function isFBi(){
         if($this->isPlayer()){
-            if(isset($_SESSION['User']['ФБР'])){
+            if(in_array('ФБР', $_SESSION['User']['Roles'])){
                 return true;
             }
         }
@@ -41,7 +41,7 @@ class User{
 
     public function isBankir(){
         if($this->isPlayer()){
-            if(isset($_SESSION['User']['Банкир'])){
+            if(in_array('Банкир', $_SESSION['User']['Roles'])){
                 return true;
             }
         }

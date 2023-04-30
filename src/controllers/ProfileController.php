@@ -27,9 +27,42 @@ Class ProfileController extends Controller{
          header('Location: /');
       }
 
-      $Cards = mysqli_fetch_all($this->Model->getCards($this->User->getLogin()));
+      if(isset($_GET['Create']) && $this->User->isBankir() && isset($_GET['Type']) && isset($_GET['Design'])){
+         $Number = '';
+         do{
+            for($i = 0; $i < 16; $i++){
+               $Rand = rand(0, 9);
+               $Number = $Number.''.$Rand;
+            }
+         }
+         while(mysqli_num_rows($this->Model->getCard($Number)) >= 1);
+         if(mysqli_num_rows($this->Model->checkPlayer($_GET['Create'])) >= 1 && mysqli_num_rows($this->Model->getCardFromLogin($_GET['Create'])) < 1){
+            $this->Model->createCard($_GET['Create'], $Number, $_GET['Design'], $_GET['Type']);
+            $this->Model->addCard($_GET['Create'], $Number);
+         }
+      }
 
-      $this->View->render(['Cards' => $Cards]);
+
+
+
+
+
+
+
+
+
+      $privateCard = mysqli_fetch_all($this->Model->getCardFromLogin($this->User->getLogin()));
+
+      $Numbers = mysqli_fetch_all($this->Model->getPlayerCards($this->User->getLogin()));
+      $AllCards = [];
+      if(count($Numbers) >= 1){
+         for($i=0;$i<count($Numbers); $i++){
+            array_push($AllCards, mysqli_fetch_all($this->Model->getCard($Numbers[$i][1])));
+        }
+      }
+
+      
+      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard]);
    }
    public function SigninAction(){
       $_SESSION['User'] = [];
