@@ -1,7 +1,7 @@
 <div class="hover:bg-tavern-grid flex items-center justify-between px-6 py-3">
     <div class="flex items-center">
         <img class="h-[45px]"
-            src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
+            src="/public/images/<?=$Transfers[$i][$n][4]?>.png">
         <div class="ml-3 flex flex-col">
             <p class="text-white">Перевод</p>
             <p class="flex text-tavern-bank whitespace-nowrap items-center">Перевод <?=!$me ? "с ".$Transfers[$i][$n][0] : "на ".$Transfers[$i][$n][1]?> </p>

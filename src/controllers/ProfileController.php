@@ -39,8 +39,12 @@ Class ProfileController extends Controller{
          for($i=0; $i < count($Cards['Styles']); $i++){
             if($Cards['Styles'][$i]['name'] === $_GET['Design']){$match = true;}
          }
+         $matchType = false;
+         for($i=0; $i < count($Cards['Types']); $i++){
+            if($Cards['Types'][$i]['name'] === $_GET['Type']){$matchType = true;}
+         }
          
-         if($match){
+         if($match && $matchType){
             $Number = '';
             do{
                for($i = 0; $i < 16; $i++){
@@ -67,7 +71,11 @@ Class ProfileController extends Controller{
          if(mysqli_num_rows($this->Model->checkPlayerCard($this->User->getLogin(), $_GET['From_Card'])) >= 1){
             if(mysqli_num_rows($this->Model->getCard($_GET['To_Card'])) >= 1){
                if(mysqli_fetch_assoc($this->Model->getScore($_GET['From_Card']))['Score'] >= $_GET['Score']){
-                  $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score']);
+                  $Type = mysqli_fetch_assoc($this->Model->getType($_GET['To_Card']))['Type'];
+                  if(mysqli_fetch_assoc($this->Model->getType($_GET['To_Card']))['Type'] === 'town' || mysqli_fetch_assoc($this->Model->getType($_GET['From_Card']))['Type'] === 'town'){
+                     $Type = 'town';
+                  }
+                  $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score'], $Type);
                }
             }
          }

@@ -41,6 +41,14 @@ return [
         ],
     
     'Types' => [
+        [
+            'name' => 'private',
+            'label' => 'Личная карта'
+        ],
+        [
+            'name' => 'town',
+            'label' => 'Карта города'
+        ]
 
     ]
 ];
