@@ -336,24 +336,35 @@
                             <h2 class="text-white whitespace-nowrap mt-5 text-xl font-semibold">Последние операции</h2>
                             <div id="element"
                                 class="border overflow-y-scroll h-[420px] mt-3 relative border-tavern-grid-br rounded-md flex flex-col">
-                                <div
-                                    class="bg-tavern-grid-br w-full text-white font-normal py-1 px-6 flex items-center rounded-t-md">
-                                    Сегодня
-                                </div>
-                                <?require 'src\views\Partials\bank\transfer.php';?>
-                                <?require 'src\views\Partials\bank\guild.php';?>
+                                <?php
+                                    for($i=0; $i<count($Transfers[0]); $i++){
+                                        for($j=0; $j<count($allCards[0]); $j++){
+                                            if($Transfers[0][$i][0] == $allCards[0][$j][1]){
+                                                $me = false;
+                                            }
+                                            else if($Transfers[0][$i][1] == $allCards[0][$j][1]){
+                                                $me = true;
+                                            }
+                                            require 'src\views\Partials\bank\transfer.php';
+                                        }
+                                    }
+
+                                ?>
+                                
+                                
+                                <!-- <?//require 'src\views\Partials\bank\guild.php';?>
                                 <div
                                     class="bg-tavern-grid-br w-full text-white font-normal py-1 px-6 flex items-center">
                                     Вчера
                                 </div>
-                                <?require 'src\views\Partials\bank\fine.php';?>
+                                <?//require 'src\views\Partials\bank\fine.php';?>
                                 <div
                                     class="bg-tavern-grid-br w-full text-white font-normal py-1 px-6 flex items-center">
                                     26 августа, пятница
                                 </div>
                                 <?require 'src\views\Partials\bank\contribution.php';?>
                                 <?require 'src\views\Partials\bank\credit.php';?>
-                                <?require 'src\views\Partials\bank\market.php';?>
+                                <?require 'src\views\Partials\bank\market.php';?> -->
                             </div>
                         </div>
                     </div>

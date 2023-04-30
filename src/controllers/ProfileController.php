@@ -40,7 +40,24 @@ Class ProfileController extends Controller{
             $this->Model->createCard($_GET['Create'], $Number, $_GET['Design'], $_GET['Type']);
             $this->Model->addCard($_GET['Create'], $Number);
          }
+         header('Location: /Profile/Bank');
       }
+
+      if(isset($_GET['From_Card']) && isset($_GET['To_Card']) && isset($_GET['Score']) && $_GET['Score'] >= 1){
+         if(mysqli_num_rows($this->Model->checkPlayerCard($this->User->getLogin(), $_GET['From_Card'])) >= 1){
+            if(mysqli_num_rows($this->Model->getCard($_GET['To_Card'])) >= 1){
+               if(mysqli_fetch_assoc($this->Model->getScore($_GET['From_Card']))['Score'] >= $_GET['Score']){
+                  $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score']);
+               }
+            }
+         }
+         header('Location: /Profile/Bank');
+      }
+      
+
+
+
+
 
 
 
@@ -55,14 +72,16 @@ Class ProfileController extends Controller{
 
       $Numbers = mysqli_fetch_all($this->Model->getPlayerCards($this->User->getLogin()));
       $AllCards = [];
+      $Transfers = [];
       if(count($Numbers) >= 1){
          for($i=0;$i<count($Numbers); $i++){
             array_push($AllCards, mysqli_fetch_all($this->Model->getCard($Numbers[$i][1])));
+            array_push($Transfers, mysqli_fetch_all($this->Model->getTransfers($Numbers[$i][1])));
         }
       }
 
       
-      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard]);
+      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard, 'Transfers' => $Transfers]);
    }
    public function SigninAction(){
       $_SESSION['User'] = [];

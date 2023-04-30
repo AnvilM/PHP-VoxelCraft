@@ -43,12 +43,34 @@ class ProfileModel extends Model{
         return $this->db->query("SELECT * FROM `players_cards` WHERE `Login` = '$Login'");
     }
 
+    public function getScore($Number){
+        return $this->db->query("SELECT `Score` FROM `cards` WHERE `Number` = '$Number'");
+    }
+
+    public function getTransfers($Number){
+        return $this->db->query("SELECT * FROM `cards_transactions` WHERE `From_Number` = '$Number' OR `To_Number` = '$Number' ORDER BY `Date` DESC");
+    }
+
+    public function checkPlayerCard($Login, $Number){
+        return $this->db->query("SELECT * FROM `players_cards` WHERE `Login` = '$Login' AND `Number` = '$Number'");
+    }
+
+
+
+
     public function createCard($Owner, $Number, $Design, $Type){
         return $this->db->query("INSERT INTO `cards` (`Owner`, `Number`, `Design`, `Type`) VALUES ('$Owner', '$Number', '$Design', '$Type')");
     }
 
     public function addCard($Login, $Number){
         return $this->db->query("INSERT INTO `players_cards` (`Login`, `Number`) VALUES ('$Login', '$Number')");
+    }
+
+    public function transferMoney($From, $To, $Score){
+        $this->db->query("UPDATE `cards` SET `Score` = `Score` - $Score WHERE `Number` = '$From'");
+        $this->db->query("UPDATE `cards` SET `Score` = `Score` + $Score WHERE `Number` = '$To'");
+        $Time = time();
+        $this->db->query("INSERT INTO `cards_transactions` (`From_Number`, `To_Number`, `Score`, `Date`) VALUES ('$From', '$To', '$Score', '$Time')");
     }
     
 }
