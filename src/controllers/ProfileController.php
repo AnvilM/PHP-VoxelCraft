@@ -19,6 +19,7 @@ Class ProfileController extends Controller{
       if($this->User->isFBi() && isset($_GET['Score']) && isset($_GET['Message'])){
          $Number = mysqli_fetch_assoc($this->Model->getPlayerCards($_GET['Login']))['Number'];
          $this->Model->Fine($Number, $_GET['Score'], 'fine', $_GET['Message']);
+         $this->Model->addNotice($_GET['Login'], 'Вам выдали предупреждение');
          header('Location: /Profile?Login='.$_GET['Login']);
       }
 
