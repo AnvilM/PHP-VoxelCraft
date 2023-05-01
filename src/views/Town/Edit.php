@@ -7,119 +7,298 @@
                         <swiper-slide>
                             <div class="">
                                 <div class="relative bg-slider-1  xl:flex xl:justify-center xl:items-center">
-
-                                    <div class="xl:block hidden w-full mr-0 2xl:mr-6">
-                                        <div role="status" class="rounded shadow animate-pulse">
-                                            <div
-                                                class="flex items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
-                                                <svg class="w-12 h-12 text-gray-200 dark:text-gray-600"
-                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                                    fill="currentColor" viewBox="0 0 640 512">
+                                    <label for="dropzone-file"
+                                        class="flex flex-col items-center justify-center w-full h-80 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-tavern-grid hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-zinc-800">
+                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                            <svg aria-hidden="true" class="w-14 h-18 mb-3 text-gray-400" width="67"
+                                                height="54" viewBox="0 0 67 54" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_0_1548)">
                                                     <path
-                                                        d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
-                                                </svg>
-                                            </div>
-                                            <span class="sr-only">Loading...</span>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="w-full ml-0 2xl:ml-6">
-                                        <div role="status" class="rounded shadow animate-pulse">
-                                            <div
-                                                class="flex items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
-                                                <svg class="w-12 h-12 text-gray-200 dark:text-gray-600"
-                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                                    fill="currentColor" viewBox="0 0 640 512">
-                                                    <path
-                                                        d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
-                                                </svg>
-                                            </div>
-                                            <span class="sr-only">Loading...</span>
-                                        </div>
-                                    </div> -->
-                                    <div class="flex items-center justify-center ml-0 2xl:ml-6 w-full">
-                                        <label for="dropzone-file"
-                                            class="flex flex-col items-center justify-center w-full h-80 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-tavern-grid hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-zinc-800">
-                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                                <svg aria-hidden="true" class="w-14 h-18 mb-3 text-gray-400" width="67"
-                                                    height="54" viewBox="0 0 67 54" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_0_1548)">
-                                                        <path
-                                                            d="M17.4165 41.4999C13.7773 41.4999 10.2872 40.117 7.71391 37.6556C5.14061 35.1942 3.69495 31.8558 3.69495 28.3749C3.69495 24.8939 5.14061 21.5555 7.71391 19.0941C10.2872 16.6327 13.7773 15.2499 17.4165 15.2499C18.276 11.4208 20.7904 8.05585 24.4066 5.89528C26.1971 4.82547 28.2043 4.08354 30.3134 3.71185C32.4225 3.34017 34.5923 3.346 36.6989 3.72903C38.8056 4.11205 40.8077 4.86476 42.5911 5.94417C44.3745 7.02359 45.9042 8.40858 47.0929 10.0201C48.2816 11.6315 49.106 13.438 49.5189 15.3362C49.9319 17.2344 49.9254 19.1872 49.4999 21.0832H52.4165C55.124 21.0832 57.7205 22.1587 59.6349 24.0731C61.5494 25.9876 62.6249 28.5841 62.6249 31.2915C62.6249 33.9989 61.5494 36.5955 59.6349 38.5099C57.7205 40.4243 55.124 41.4999 52.4165 41.4999H49.4999"
-                                                            stroke="#00D9D9" stroke-width="5.83333"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                        <path d="M23.25 32.75L32 24L40.75 32.75" stroke="#00D9D9"
-                                                            stroke-width="5.83333" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                        <path d="M32 24V50.25" stroke="#00D9D9" stroke-width="5.83333"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_0_1548">
-                                                            <rect width="67" height="54" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
+                                                        d="M17.4165 41.4999C13.7773 41.4999 10.2872 40.117 7.71391 37.6556C5.14061 35.1942 3.69495 31.8558 3.69495 28.3749C3.69495 24.8939 5.14061 21.5555 7.71391 19.0941C10.2872 16.6327 13.7773 15.2499 17.4165 15.2499C18.276 11.4208 20.7904 8.05585 24.4066 5.89528C26.1971 4.82547 28.2043 4.08354 30.3134 3.71185C32.4225 3.34017 34.5923 3.346 36.6989 3.72903C38.8056 4.11205 40.8077 4.86476 42.5911 5.94417C44.3745 7.02359 45.9042 8.40858 47.0929 10.0201C48.2816 11.6315 49.106 13.438 49.5189 15.3362C49.9319 17.2344 49.9254 19.1872 49.4999 21.0832H52.4165C55.124 21.0832 57.7205 22.1587 59.6349 24.0731C61.5494 25.9876 62.6249 28.5841 62.6249 31.2915C62.6249 33.9989 61.5494 36.5955 59.6349 38.5099C57.7205 40.4243 55.124 41.4999 52.4165 41.4999H49.4999"
+                                                        stroke="#00D9D9" stroke-width="5.83333"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M23.25 32.75L32 24L40.75 32.75" stroke="#00D9D9"
+                                                        stroke-width="5.83333" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M32 24V50.25" stroke="#00D9D9" stroke-width="5.83333"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_0_1548">
+                                                        <rect width="67" height="54" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
 
-                                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                                        class="font-semibold">Нажмите, чтобы загрузить</span> или
-                                                    перетащите</p>
-                                                <p class="text-xs text-gray-500 dark:text-gray-400">PNG или JPG (МАКС.
-                                                    800x400px)</p>
+                                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
+                                                    class="font-semibold">Нажмите, чтобы загрузить</span> или
+                                                перетащите</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">PNG или JPG (МАКС.
+                                                800x400px)</p>
+                                        </div>
+                                        <form action="/Town/Edit?Id=<?=$_GET['Id']?>" method="POST" enctype="multipart/form-data" id="uploadform">
+                                            <input id="dropzone-file" name="image" type="file" accept=".png, .jpg, .jpeg" class="hidden" />
+                                        </form>
+                                    </label>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="" >
+                                <div class="relative bg-slider-1  xl:flex xl:justify-center xl:items-center" >
+                                    <?php
+                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/1.png') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/1.jpg') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/1.jpeg')){
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow">
+                                                    <div
+                                                        class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <img class="object-fill rounded-xl"
+                                                            src="';
+                                                            if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/1.png'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/1.png';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/1.jpg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/1.jpg';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/1.jpeg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/1.jpeg';}
+                                                            echo '">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <input id="dropzone-file" type="file" class="hidden" />
-                                        </label>
-                                    </div>
+                                            ';
+                                        }
+                                        else{
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow animate-pulse">
+                                                    <div
+                                                        class="flex items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <svg class="w-12 h-12 text-gray-200 dark:text-gray-600"
+                                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                            fill="currentColor" viewBox="0 0 640 512">
+                                                            <path
+                                                                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
+                                                        </svg>
+                                                    </div>
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
+                                            </div>
+                                            ';
+                                        }
+                                    ?>
+                                    <?php
+                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/2.png') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/2.jpg') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/2.jpeg')){
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow">
+                                                    <div
+                                                        class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <img class="object-fill rounded-xl"
+                                                            src="';
+                                                            if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/2.png'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/2.png';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/2.jpg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/2.jpg';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/2.jpeg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/2.jpeg';}
+                                                            echo '">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            ';
+                                        }
+                                        else{
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow animate-pulse">
+                                                    <div
+                                                        class="flex items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <svg class="w-12 h-12 text-gray-200 dark:text-gray-600"
+                                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                            fill="currentColor" viewBox="0 0 640 512">
+                                                            <path
+                                                                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
+                                                        </svg>
+                                                    </div>
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
+                                            </div>
+                                            ';
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="">
                                 <div class="relative bg-slider-1  xl:flex xl:justify-center xl:items-center">
-
-                                    <div class="xl:block hidden w-full mr-0 2xl:mr-6">
-                                        <div role="status" class="rounded shadow">
-                                            <div
-                                                class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
-                                                <img class="object-fill rounded-xl"
-                                                    src="https://media.discordapp.net/attachments/1086216483010527272/1090888356054974514/image.png">
+                                <?php
+                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/3.png') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/3.jpg') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/3.jpeg')){
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow">
+                                                    <div
+                                                        class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <img class="object-fill rounded-xl"
+                                                            src="';
+                                                            if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/3.png'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/3.png';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/3.jpg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/3.jpg';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/3.jpeg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/3.jpeg';}
+                                                            echo '">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="w-full ml-0 2xl:ml-6">
-                                        <div role="status" class="rounded shadow">
-                                            <div
-                                                class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
-                                                <img class="object-fill rounded-xl"
-                                                    src="https://media.discordapp.net/attachments/1086216483010527272/1090888356054974514/image.png">
+                                            ';
+                                        }
+                                        else{
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow animate-pulse">
+                                                    <div
+                                                        class="flex items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <svg class="w-12 h-12 text-gray-200 dark:text-gray-600"
+                                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                            fill="currentColor" viewBox="0 0 640 512">
+                                                            <path
+                                                                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
+                                                        </svg>
+                                                    </div>
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                            ';
+                                        }
+                                    ?>
+                                    <?php
+                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/4.png') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/4.jpg') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/4.jpeg')){
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow">
+                                                    <div
+                                                        class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <img class="object-fill rounded-xl"
+                                                            src="';
+                                                            if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/4.png'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/4.png';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/4.jpg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/4.jpg';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/4.jpeg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/4.jpeg';}
+                                                            echo '">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            ';
+                                        }
+                                        else{
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow animate-pulse">
+                                                    <div
+                                                        class="flex items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <svg class="w-12 h-12 text-gray-200 dark:text-gray-600"
+                                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                            fill="currentColor" viewBox="0 0 640 512">
+                                                            <path
+                                                                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
+                                                        </svg>
+                                                    </div>
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
+                                            </div>
+                                            ';
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </swiper-slide>
                         <swiper-slide>
                             <div class="">
                                 <div class="relative bg-slider-1  xl:flex xl:justify-center xl:items-center">
-
-                                    <div class="xl:block hidden w-full mr-0 2xl:mr-6">
-                                        <div role="status" class="rounded shadow">
-                                            <div
-                                                class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
-                                                <img class="object-fill rounded-xl"
-                                                    src="https://media.discordapp.net/attachments/891261530857963532/1089892085420793886/Its_No_Use_Hes_in_A_Deep_Coma_26032023225225.jpg?width=437&height=671">
+                                <?php
+                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/5.png') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/5.jpg') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/5.jpeg')){
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow">
+                                                    <div
+                                                        class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <img class="object-fill rounded-xl"
+                                                            src="';
+                                                            if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/5.png'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/5.png';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/5.jpg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/5.jpg';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/5.jpeg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/5.jpeg';}
+                                                            echo '">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="w-full ml-0 2xl:ml-6">
-                                        <div role="status" class="rounded shadow">
-                                            <div
-                                                class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
-                                                <img class="object-fill rounded-xl"
-                                                    src="https://media.discordapp.net/attachments/1086216483010527272/1090890567430459464/2023-03-18_23.23.02.png?width=1276&height=671">
+                                            ';
+                                        }
+                                        else{
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow animate-pulse">
+                                                    <div
+                                                        class="flex items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <svg class="w-12 h-12 text-gray-200 dark:text-gray-600"
+                                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                            fill="currentColor" viewBox="0 0 640 512">
+                                                            <path
+                                                                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
+                                                        </svg>
+                                                    </div>
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                            ';
+                                        }
+                                    ?>
+                                    <?php
+                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/6.png') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/6.jpg') || file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/6.jpeg')){
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow">
+                                                    <div
+                                                        class="flex overflow-hidden items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <img class="object-fill rounded-xl"
+                                                            src="';
+                                                            if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/6.png'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/6.png';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/6.jpg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/6.jpg';}
+                                                            else if(file_exists($_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/6.jpeg'))
+                                                            {echo '/public/resources/Towns/'.$_GET['Id'].'/6.jpeg';}
+                                                            echo '">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            ';
+                                        }
+                                        else{
+                                            echo '
+                                            <div class="xl:block hidden w-full mr-0 2xl:mr-6">
+                                                <div role="status" class="rounded shadow animate-pulse">
+                                                    <div
+                                                        class="flex items-center justify-center h-80 bg-gray-300 rounded-xl dark:bg-tavern-grid">
+                                                        <svg class="w-12 h-12 text-gray-200 dark:text-gray-600"
+                                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                            fill="currentColor" viewBox="0 0 640 512">
+                                                            <path
+                                                                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z" />
+                                                        </svg>
+                                                    </div>
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
+                                            </div>
+                                            ';
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </swiper-slide>

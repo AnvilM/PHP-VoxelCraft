@@ -61,3 +61,11 @@ function showAllUsers(){
     }
     showmore.outerHTML = '<a class="show-more text-tavern-link hover:text-blue-500 hover:underline text-base font-semibold cursor-pointer" onclick="hidePlayers()">Скрыть...</a>'
 }
+
+
+
+let inputfile = document.querySelector('input#dropzone-file')
+let uploadform = document.querySelector('form#uploadform')
+inputfile.addEventListener('change', (e)=>{
+    uploadform.submit();
+})

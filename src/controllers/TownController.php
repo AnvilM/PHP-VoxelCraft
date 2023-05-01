@@ -73,8 +73,25 @@ Class TownController extends Controller{
                $this->Model->addSecondOwner($town[0][0], $_GET['AddSecondOwner']);
                header('Location: /Town/Edit?Id='.$town[0][0]);
             }
+            else if(isset($_FILES['image'])){
+               $extension = explode(".", $_FILES['image']['name']);
+               $extension = end($extension);
+               if($extension == 'png' || $extension == 'jpg' || $extension == 'jpeg'){
+                  $dir = opendir("public/resources/Towns/".$_GET['Id']);
+                  $filecount = 0;
+                  while($file = readdir($dir)){
+                      if($file == '.' || $file == '..' || is_dir('path/to/dir' . $file)){
+                          continue;
+                      }
+                      $filecount++;
+                  }
+                  if($filecount <= 6){
+                     copy($_FILES['image']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/public/resources/Towns/'.$_GET['Id'].'/'.$filecount.'.'.$extension);
+                  }
+               }
+               header('Location: /Town/Edit?Id='.$town[0][0]);
 
-            
+            }
             $this->View->render(['Town' => $town, 'Players' => $players]);
 
 
