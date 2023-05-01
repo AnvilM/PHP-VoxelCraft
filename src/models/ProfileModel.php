@@ -47,6 +47,10 @@ class ProfileModel extends Model{
         return $this->db->query("SELECT `Score` FROM `cards` WHERE `Number` = '$Number'");
     }
 
+    public function getLoginFromCard($Number){
+        return $this->db->query("SELECT `Login` FROM `players_cards` WHERE `Number` = '$Number'");
+    }
+
     public function getTransfers($Number){
         return $this->db->query("SELECT * FROM `cards_transactions` WHERE `From_Number` = '$Number' OR `To_Number` = '$Number' ORDER BY `Date` DESC");
     }
@@ -63,8 +67,16 @@ class ProfileModel extends Model{
         return $this->db->query("UPDATE `cards` SET `Share` = '$Share' WHERE `Number` = '$Number'");
     }
 
+    public function delShare($CurShare){
+        $this->db->query("DELETE FROM `players_cards` WHERE `Share` = '$CurShare'");
+    }
+
     public function getShare($Share){
         return $this->db->query("SELECT `Number` FROM `cards` WHERE `Share` = '$Share'");
+    }
+
+    public function isAllShares($Number){
+        return $this->db->query("SELECT `Share` FROM `players_cards` WHERE `Number` = '$Number'");
     }
 
     public function isShare($Number, $Login){
@@ -96,12 +108,21 @@ class ProfileModel extends Model{
         $this->db->query("UPDATE `cards` SET `Score` = `Score` + $Score WHERE `Number` = '$To'");
         $Time = time();
         $this->db->query("INSERT INTO `cards_transactions` (`From_Number`, `To_Number`, `Score`, `Date`, `Type`) VALUES ('$From', '$To', '$Score', '$Time', '$Type')");
+
     }
 
     public function Fine($Number, $Score, $Type, $Message){
         $this->db->query("UPDATE `cards` SET `Score` = `Score` - $Score WHERE `Number` = '$Number'");
         $Time = time();
         $this->db->query("INSERT INTO `cards_transactions` (`From_Number`, `To_Number`, `Score`, `Date`, `Type`, `Fine_Message`) VALUES ('$Number', '0', '$Score', '$Time', '$Type', '$Message')");
+    }
+
+
+
+
+    public function addNotice($Login, $Message){
+        $Time = time();
+        return $this->db->query("INSERT INTO `players_notices` (`Login`, `Message`, `Date`) VALUES ('$Login', '$Message', '$Time')");
     }
     
 }

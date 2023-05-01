@@ -92,10 +92,17 @@ Class ProfileController extends Controller{
                      $Share = mysqli_fetch_assoc($this->Model->isShare($_GET['From_Card'], $this->User->getLogin()))['Share'];
                      if(mysqli_num_rows($this->Model->getShare($Share)) >= 1){
                         $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score'], $Type);
+                        $this->Model->addNotice($this->User->getLogin(), 'Вы успешно перевели деньги');
+
+                        //tyt
+                        
                      }
                   }
                   else{
                      $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score'], $Type);
+                     $this->Model->addNotice($this->User->getLogin(), 'Вы успешно перевели деньги');
+
+                     //tyt
                   }
 
 
@@ -114,6 +121,14 @@ Class ProfileController extends Controller{
                   $Share = $Share.''.$alphabet[rand(0, strlen($alphabet)-1)];
                }
                $Share = hash('sha256', $Share);
+
+               $CurShare = mysqli_fetch_all($this->Model->isAllShares($_GET['Reset']));
+               for($i=0;$i<count($CurShare); $i++){
+                  if($CurShare[$i][0] != ''){
+                     $this->Model->delShare($CurShare[$i][0]);
+                  }
+               }
+
                $this->Model->resetShare($_GET['Reset'], $Share);
             }
          }
