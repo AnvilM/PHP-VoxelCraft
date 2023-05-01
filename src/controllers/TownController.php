@@ -65,6 +65,14 @@ Class TownController extends Controller{
                header('Location: /Town/Edit?Id='.$town[0][0]);
                
             }
+            else if(isset($_GET['RemoveSecondOwner'])){
+               $this->Model->removeSecondOwner($town[0][0]);
+               header('Location: /Town/Edit?Id='.$town[0][0]);
+            }
+            else if(isset($_GET['AddSecondOwner'])){
+               $this->Model->addSecondOwner($town[0][0], $_GET['AddSecondOwner']);
+               header('Location: /Town/Edit?Id='.$town[0][0]);
+            }
 
             
             $this->View->render(['Town' => $town, 'Players' => $players]);

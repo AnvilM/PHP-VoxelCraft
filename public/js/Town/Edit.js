@@ -1,5 +1,5 @@
 function openLink(link){
-    window.open(window.location.search+'', '_self')
+    window.open(window.location.search+link, '_self')
 }
 
 function changeDiscrodLink(){
