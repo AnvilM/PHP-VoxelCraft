@@ -94,7 +94,10 @@ Class ProfileController extends Controller{
                         $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score'], $Type);
                         $this->Model->addNotice($this->User->getLogin(), 'Вы успешно перевели деньги');
 
-                        //tyt
+                        $Logins = mysqli_fetch_all($this->Model->getLoginFromCard($_GET['To_Card']));
+                        for($i=0; $i<count($Logins); $i++){
+                           $this->Model->addNotice($Logins[$i][0], 'Вам перевели деньги');
+                        }
                         
                      }
                   }
@@ -102,8 +105,13 @@ Class ProfileController extends Controller{
                      $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score'], $Type);
                      $this->Model->addNotice($this->User->getLogin(), 'Вы успешно перевели деньги');
 
-                     //tyt
+                     $Logins = mysqli_fetch_all($this->Model->getLoginFromCard($_GET['To_Card']));
+                     for($i=0; $i<count($Logins); $i++){
+                        $this->Model->addNotice($Logins[$i][0], 'Вам перевели деньги');
+                     }
+                     
                   }
+                  
 
 
                }
