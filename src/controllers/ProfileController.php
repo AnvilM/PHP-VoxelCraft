@@ -12,7 +12,7 @@ Class ProfileController extends Controller{
 
 
    public function IndexAction(){
-      if(!$this->User->isPlayer() || !isset($_GET['Login'])){
+      if(!isset($_GET['Login'])){
          header('Location: /');
       }
 
@@ -62,10 +62,14 @@ Class ProfileController extends Controller{
             if(mysqli_num_rows($this->Model->checkPlayer($_GET['Create'])) >= 1 && mysqli_num_rows($this->Model->getCardFromLogin($_GET['Create'])) < 1){
                $Share = '';
                $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-               for($i=0; $i<16; $i++){
-                  $Share = $Share.''.$alphabet[rand(0, strlen($alphabet)-1)];
+               do{
+                  for($i=0; $i<16; $i++){
+                     $Share = $Share.''.$alphabet[rand(0, strlen($alphabet)-1)];
+                  }
+                  $Share = hash('sha256', $Share);
                }
-               $Share = hash('sha256', $Share);
+               while(mysqli_num_rows($this->Model->getShare($Share)) >= 1);
+               
                $this->Model->createCard($_GET['Create'], $Number, $_GET['Design'], $_GET['Type'], $Share);
                $this->Model->addCard($_GET['Create'], $Number);
             }
@@ -74,6 +78,9 @@ Class ProfileController extends Controller{
       }
 
       else if(isset($_GET['From_Card']) && isset($_GET['To_Card']) && isset($_GET['Score']) && $_GET['Score'] >= 1){
+
+
+
          if(mysqli_num_rows($this->Model->checkPlayerCard($this->User->getLogin(), $_GET['From_Card'])) >= 1){
             if(mysqli_num_rows($this->Model->getCard($_GET['To_Card'])) >= 1){
                if(mysqli_fetch_assoc($this->Model->getScore($_GET['From_Card']))['Score'] >= $_GET['Score']){
@@ -81,7 +88,17 @@ Class ProfileController extends Controller{
                   if(mysqli_fetch_assoc($this->Model->getType($_GET['To_Card']))['Type'] === 'town' || mysqli_fetch_assoc($this->Model->getType($_GET['From_Card']))['Type'] === 'town'){
                      $Type = 'town';
                   }
-                  $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score'], $Type);
+                  if(mysqli_fetch_assoc($this->Model->isShare($_GET['From_Card'], $this->User->getLogin()))['Share'] != ''){
+                     $Share = mysqli_fetch_assoc($this->Model->isShare($_GET['From_Card'], $this->User->getLogin()))['Share'];
+                     if(mysqli_num_rows($this->Model->getShare($Share)) >= 1){
+                        $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score'], $Type);
+                     }
+                  }
+                  else{
+                     $this->Model->transferMoney($_GET['From_Card'], $_GET['To_Card'], $_GET['Score'], $Type);
+                  }
+
+
                }
             }
          }
@@ -106,7 +123,10 @@ Class ProfileController extends Controller{
       else if(isset($_GET['Share'])){
          $Number = mysqli_fetch_assoc($this->Model->getShare($_GET['Share']))['Number'];
          if(mysqli_num_rows($this->Model->checkPlayerCard($this->User->getLogin(), $Number)) < 1){
-            $this->Model->addCard($this->User->getLogin(), $Number);
+            $this->Model->addCardShare($this->User->getLogin(), $Number, $_GET['Share']);
+         }
+         else{
+            $this->Model->updateCardShare($this->User->getLogin(), $Number, $_GET['Share']);
          }
          header('Location: /Profile/Bank');
       }

@@ -67,6 +67,10 @@ class ProfileModel extends Model{
         return $this->db->query("SELECT `Number` FROM `cards` WHERE `Share` = '$Share'");
     }
 
+    public function isShare($Number, $Login){
+        return $this->db->query("SELECT `Share` FROM `players_cards` WHERE `Number` = '$Number' AND `Login` = '$Login'");
+    }
+
     public function editCard($Number, $Design){
         return $this->db->query("UPDATE `cards` SET `Design` = '$Design' WHERE `Number` = '$Number'");
     }
@@ -77,6 +81,14 @@ class ProfileModel extends Model{
 
     public function addCard($Login, $Number){
         return $this->db->query("INSERT INTO `players_cards` (`Login`, `Number`) VALUES ('$Login', '$Number')");
+    }
+
+    public function addCardShare($Login, $Number, $Share){
+        return $this->db->query("INSERT INTO `players_cards` (`Login`, `Number`, `Share`) VALUES ('$Login', '$Number', '$Share')");
+    }
+
+    public function updateCardShare($Login, $Number, $Share){
+        return $this->db->query("UPDATE `players_cards` SET `Share` = '$Share' WHERE `Login` = '$Login' AND `Number` = '$Number'");
     }
 
     public function transferMoney($From, $To, $Score, $Type){

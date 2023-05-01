@@ -63,7 +63,7 @@
                                         <img class="h-[45px]"
                                             src="https://media.discordapp.net/attachments/1097539754234499132/1099668059679117342/image.png">
                                         <div class="ml-3 flex flex-col">
-                                            <p class="text-white">Green</p>
+                                            <p class="text-white">'.$allCards[$i][0][1].'</p>
                                             <p class="flex text-tavern-bank items-center">'.$allCards[$i][0][2].'
                                                 <svg class="w-[13px] ml-1" width="13" height="13" viewBox="0 0 13 13"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
