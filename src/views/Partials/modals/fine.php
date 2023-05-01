@@ -18,14 +18,15 @@
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-base text-gray-900 dark:text-white">Выдача штрафа игроку:<span
                         class="ml-1 font-medium">New_Jeb</span></h3>
-                <form class="space-y-6" action="#">
+                <form class="space-y-6" action="/Profile">
+                    <input type="text" name="Login" value="<?=$_GET['Login']?>" hidden>
                     <div>
-                        <input type="text" name="name" id="name"
+                        <input type="text" name="Score" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-tavern-black dark:border-[#EA3D2D] dark:placeholder-gray-400 dark:text-white"
                             required placeholder="Сумма штрафа..">
                     </div>
                     <div>
-                        <input type="text" name="name" id="name"
+                        <input type="text" name="Message" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-tavern-black dark:border-[#EA3D2D] dark:placeholder-gray-400 dark:text-white"
                             required placeholder="Причина штрафа..">
                     </div>

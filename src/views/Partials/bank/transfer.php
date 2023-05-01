@@ -3,8 +3,19 @@
         <img class="h-[45px]"
             src="/public/images/<?=$Transfers[$i][$n][4]?>.png">
         <div class="ml-3 flex flex-col">
-            <p class="text-white">Перевод</p>
-            <p class="flex text-tavern-bank whitespace-nowrap items-center">Перевод <?=!$me ? "с ".$Transfers[$i][$n][0] : "на ".$Transfers[$i][$n][1]?> </p>
+            <p class="text-white"><?php
+            if($Transfers[$i][$n][4] == 'fine'){echo 'Штраф';}
+            else if($Transfers[$i][$n][4] == 'town'){echo 'Штраф';}
+            else if($Transfers[$i][$n][4] == 'private'){echo 'Перевод';}
+            ?></p>
+            <p class="<?=!$me ? "text-[#FF5949]" : "flex text-tavern-bank"?> whitespace-nowrap items-center"><?php
+                if($Transfers[$i][$n][4] == 'fine'){echo $Transfers[$i][$n][5];}
+                else{
+                    echo 'Перевод';
+                    if(!$me){echo ' с '.$Transfers[$i][$n][0];}
+                    else{echo ' на '.$Transfers[$i][$n][1];}
+                }
+            ?> </p>
             <p class="flex text-tavern-bank whitespace-nowrap items-center"><?php
             $months = [
                 'Январья',

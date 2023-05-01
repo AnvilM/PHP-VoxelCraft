@@ -15,7 +15,6 @@ Class HomeController extends Controller{
         $this->View->render();
     }   
     public function TownsAction(){
-     
         $Towns = mysqli_fetch_all($this->Model->getTowns());
 
 

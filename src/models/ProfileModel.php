@@ -85,5 +85,11 @@ class ProfileModel extends Model{
         $Time = time();
         $this->db->query("INSERT INTO `cards_transactions` (`From_Number`, `To_Number`, `Score`, `Date`, `Type`) VALUES ('$From', '$To', '$Score', '$Time', '$Type')");
     }
+
+    public function Fine($Number, $Score, $Type, $Message){
+        $this->db->query("UPDATE `cards` SET `Score` = `Score` - $Score WHERE `Number` = '$Number'");
+        $Time = time();
+        $this->db->query("INSERT INTO `cards_transactions` (`From_Number`, `To_Number`, `Score`, `Date`, `Type`, `Fine_Message`) VALUES ('$Number', '0', '$Score', '$Time', '$Type', '$Message')");
+    }
     
 }

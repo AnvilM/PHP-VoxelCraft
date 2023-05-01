@@ -240,8 +240,7 @@
                 </div>
             </div>
         </main>
-        <?require 'src\views\Partials\modals\link.php';?>
-        <?require 'src\views\Partials\modals\transfermoney.php';?>
+        
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 

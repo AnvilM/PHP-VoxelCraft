@@ -368,8 +368,7 @@
                 </div>
             </div>
         </main>
-        <?require 'src\views\Partials\modals\link.php';?>
-        <?require 'src\views\Partials\modals\transfermoney.php';?>
+
         <?require 'src\views\Partials\modals\adduser.php';?>
         <?require 'src\views\Partials\modals\removeuser.php';?>
 </body>

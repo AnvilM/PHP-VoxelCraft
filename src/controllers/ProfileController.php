@@ -12,8 +12,14 @@ Class ProfileController extends Controller{
 
 
    public function IndexAction(){
-      if(!isset($_GET['Login'])){
+      if(!$this->User->isPlayer() || !isset($_GET['Login'])){
          header('Location: /');
+      }
+
+      if($this->User->isFBi() && isset($_GET['Score']) && isset($_GET['Message'])){
+         $Number = mysqli_fetch_assoc($this->Model->getPlayerCards($_GET['Login']))['Number'];
+         $this->Model->Fine($Number, $_GET['Score'], 'fine', $_GET['Message']);
+         header('Location: /Profile?Login='.$_GET['Login']);
       }
 
       $Discord = mysqli_fetch_assoc($this->Model->getDiscord($_GET['Login']))['Discord'];
