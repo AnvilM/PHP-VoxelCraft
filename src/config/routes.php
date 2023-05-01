@@ -158,6 +158,22 @@ $routes = [
         'View' => '',
         'Title' => ''
     ],
+    [
+        'Route' => 'API/add.role',
+        'Controller' => 'API',
+        'Action' => 'ADD_ROLE',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
+    [
+        'Route' => 'API/remove.role',
+        'Controller' => 'API',
+        'Action' => 'REMOVE_ROLE',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
 
 ];
 

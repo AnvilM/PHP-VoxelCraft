@@ -22,7 +22,9 @@ return [
         'Buy',
         'API/set.skin',
         'API/get.skin',
-        'API/get.avatar'
+        'API/get.avatar',
+        'API/add.role',
+        'API/remove.role'
         
     ],
     'noLogined' => [

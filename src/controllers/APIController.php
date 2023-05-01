@@ -4,6 +4,7 @@
 namespace src\controllers;
 
 use Exception;
+use mysqli;
 use src\core\Controller;
 use src\lib\Db;
 
@@ -19,11 +20,68 @@ Class APIController extends Controller{
 
     public function SET_SKINAction(){
 
-        if(isset($_GET['skin']) && isset($_GET['password']) && $_GET['password'] == $this->data['password']){
-            echo '1';
-            return 1;
+        if(isset($_POST['skin']) && isset($_POST['discord']) && isset($_POST['password']) && $_POST['password'] == $this->data['password']){
+            $Discord = $_POST['discord'];
+            $Skin = $_POST['skin'];
+            $Login = mysqli_fetch_assoc($this->Db->query("SELECT `Login` FROM `users` WHERE `Discord` = '$Discord'"));
+            if($Login != NULL){
+                $Login = $Login['Login'];
+                $this->Db->query("UPDATE `players_skins` SET `Skin` = '$Skin' WHERE `Login` = '$Login'");
+                $Time = time();
+                $this->Db->query("INSERT INTO `players_notices` (`Login`, `Message`, `Date`) VALUES ('$Login', 'Вы сменили скин', '$Time')");
+                echo true;
+            }
+            else{
+                echo 'Игрок не найден';
+            }
+            
         }
-        return 0;
+        echo false;
+        exit();
+    }
+
+    public function ADD_ROLEAction(){
+
+        if(isset($_POST['role']) && isset($_POST['discord']) && isset($_POST['password']) && $_POST['password'] == $this->data['password']){
+            $Discord = $_POST['discord'];
+            $Role = $_POST['role'];
+            $Color = 'FFFFFF';
+            if(isset($_POST['color'])){$Color = $_POST['color'];}
+            $Login = mysqli_fetch_assoc($this->Db->query("SELECT `Login` FROM `users` WHERE `Discord` = '$Discord'"));
+            if($Login != NULL){
+                $Login = $Login['Login'];
+                $this->Db->query("INSERT INTO `players_roles` (`Login`, `Role`, `Color`) VALUES ('$Login', '$Role', '$Color')");
+                $Time = time();
+                $this->Db->query("INSERT INTO `players_notices` (`Login`, `Message`, `Date`) VALUES ('$Login', 'Вам выдана роль $Role', '$Time')");
+                echo true;
+            }
+            else{
+                echo 'Игрок не найден';
+            }
+        }
+        echo false;
+        exit();
+    }
+
+    public function REMOVE_ROLEAction(){
+
+        if(isset($_POST['role']) && isset($_POST['discord']) && isset($_POST['password']) && $_POST['password'] == $this->data['password']){
+            $Discord = $_POST['discord'];
+            $Role = $_POST['role'];
+            $Login = mysqli_fetch_assoc($this->Db->query("SELECT `Login` FROM `users` WHERE `Discord` = '$Discord'"));
+            if($Login != NULL){
+                $Login = $Login['Login'];
+                $this->Db->query("DELETE FROM `players_roles` WHERE `Login` = '$Login' AND `Role` = '$Role'");
+                $Time = time();
+                $this->Db->query("INSERT INTO `players_notices` (`Login`, `Message`, `Date`) VALUES ('$Login', 'Удаленна роль $Role', '$Time')");
+                echo true;
+            }
+            else{
+                echo 'Игрок не найден';
+            }
+        }
+        echo false;
+        exit();
     }
 
     public function GET_SKINAction(){

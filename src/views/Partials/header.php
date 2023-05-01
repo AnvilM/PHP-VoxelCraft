@@ -17,9 +17,9 @@
         <a href="##" id="dropdownDefaultButton" data-dropdown-toggle="dropdown2">
           <img class="h-6 mr-3" src="\public\images\check.svg">
         </a>';
+        require 'src\views\Partials\dropdowns\checks.php';
         }
         ?>
-        <?require 'src\views\Partials\dropdowns\checks.php';?>
 
         <!-- КНОПКА АВТОРИЗОВАТЬСЯ -->
         <?php
