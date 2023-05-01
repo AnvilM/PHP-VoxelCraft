@@ -26,6 +26,7 @@ abstract class Controller{
         $this->Model = $this->loadModel($params['Controller']);
         
         $this->RolesSync();
+        $this->NoticesSync();
     }
 
 
@@ -35,6 +36,21 @@ abstract class Controller{
             $_SESSION['User']['Roles'] = [];
             for($i=0; $i<count($Roles); $i++){
                 array_push($_SESSION['User']['Roles'], $Roles[$i][1]);
+            }
+        }
+    }
+
+    public function NoticesSync(){
+        if($this->User->isPlayer()){
+            $_SESSION['User']['Notices'] = [];
+            $Messages = mysqli_fetch_all($this->Model->getNotices($this->User->getLogin()));
+            for($i=0; $i<10; $i++){
+                if(isset($Messages[$i])){
+                    array_push($_SESSION['User']['Notices'], $Messages[$i][0]);
+                }
+                else{
+                    break;
+                }
             }
         }
     }
