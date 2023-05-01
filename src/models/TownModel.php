@@ -29,7 +29,7 @@ class TownModel extends Model{
     public function removePlayer($id, $Login){
         if(mysqli_num_rows($this->db->query("SELECT * FROM `towns_players` WHERE `Login` = '$Login'")) > 0){
             $this->db->query("UPDATE `towns` SET `Players` = `Players` - 1 WHERE `Id` = $id");
-            $this->db->query("DELETE FROM `towns_players` WHERE `Id`, = '$id' AND `Login` = '$Login'");
+            $this->db->query("DELETE FROM `towns_players` WHERE `Id` = '$id' AND `Login` = '$Login'");
         }
         return true;
     }

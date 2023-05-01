@@ -61,7 +61,7 @@ Class TownController extends Controller{
                
             }
             else if(isset($_GET['removePlayer'])){
-               $this->Model->removePlayer($town[0][0], $_GET['addPlayer']);
+               $this->Model->removePlayer($town[0][0], $_GET['removePlayer']);
                header('Location: /Town/Edit?Id='.$town[0][0]);
                
             }
