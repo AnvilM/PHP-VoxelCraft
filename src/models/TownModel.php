@@ -49,6 +49,10 @@ class TownModel extends Model{
         return $this->db->query("SELECT * FROM `users` WHERE `Login` = '$Login'");
     }
 
+    public function getSecondOwner($id){
+        return $this->db->query("SELECT `Second_Owner` FROM `towns` WHERE `id` = $id");
+    }
+
     public function removeSecondOwner($id){
         return $this->db->query("UPDATE `towns` SET `Second_Owner` = '' WHERE `id` = $id");
     }

@@ -62,6 +62,9 @@ Class TownController extends Controller{
             }
             else if(isset($_GET['removePlayer'])){
                $this->Model->removePlayer($town[0][0], $_GET['removePlayer']);
+               if(mysqli_fetch_assoc($this->Model->getSecondOwner($town[0][0]))['Second_Owner'] === $_GET['removePlayer']){
+                  $this->Model->removeSecondOwner($town[0][0]);
+               }
                header('Location: /Town/Edit?Id='.$town[0][0]);
                
             }
