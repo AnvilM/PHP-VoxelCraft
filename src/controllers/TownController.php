@@ -112,7 +112,7 @@ Class TownController extends Controller{
 
    public function CreateAction(){
       if($this->User->isPlayer()){
-         if(isset($_POST['name']) && isset($_POST['desc']) && isset($_FILES['banner'])){
+         if(isset($_POST['name']) && isset($_POST['desc']) && $_FILES['banner']['size'] > 0){
 
             $id = file_get_contents('public/resources/Towns/id')+1;
             file_put_contents('public/resources/Towns/id', $id);
