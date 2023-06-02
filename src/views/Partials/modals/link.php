@@ -44,7 +44,8 @@
                                 </defs>
                             </svg>
                         </button>
-                        <input type="text" id="link" value="<?='https://localhost/Profile/Bank?Share='.$privateCard[0][6]?>"
+                        <?php $domain = require "src\config\API.php"; $domain = $domain['domain']; ?>
+                        <input type="text" id="link" value="<?=key_exists(0, $privateCard) && key_exists(6, $privateCard[0])  ? 'http://'.$domain.'/Profile/Bank?Share='.$privateCard[0][6] : 'У вас нет карты'?>"
                             class="block w-full py-2.5 px-[107px] text-sm border rounded-xl bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                             placeholder="">
                         <button type="submit" name="Reset" value="<?=$privateCard[0][1]?>" type="submit"

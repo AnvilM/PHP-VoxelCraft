@@ -5,7 +5,7 @@
         <div class="ml-3 flex flex-col">
             <p class="text-white"><?php
             if($Transfers[$i][$n][4] == 'fine'){echo 'Штраф';}
-            else if($Transfers[$i][$n][4] == 'town'){echo 'Штраф';}
+            else if($Transfers[$i][$n][4] == 'town'){echo 'Город';}
             else if($Transfers[$i][$n][4] == 'private'){echo 'Перевод';}
             ?></p>
             <p class="<?=!$me ? "text-[#FF5949]" : "flex text-tavern-bank"?> whitespace-nowrap items-center"><?php
@@ -18,8 +18,8 @@
             ?> </p>
             <p class="flex text-tavern-bank whitespace-nowrap items-center"><?php
             $months = [
-                'Январья',
-                'Февралья',
+                'Января',
+                'Февраля',
                 'Марта',
                 'Апрелья',
                 'Мая',

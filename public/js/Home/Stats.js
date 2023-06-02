@@ -35,7 +35,7 @@ function today(){
     })
     document.querySelector('.chart-today').style.display = 'flex'
     users.forEach(function(elem){
-        if(elem.classList.contains('online-today')){
+        if(elem.classList.contains('online-today') || elem.classList.contains('online-now')){
             elem.style.display = 'flex'
         }
         else{
@@ -69,7 +69,7 @@ function week(){
     })
     document.querySelector('.chart-week').style.display = 'flex'
     users.forEach(function(elem){
-        if(elem.classList.contains('online-week')){
+        if(elem.classList.contains('online-week') || elem.classList.contains('online-yesterday') || elem.classList.contains('online-today') || elem.classList.contains('online-now')){
             elem.style.display = 'flex'
         }
         else{
@@ -85,7 +85,7 @@ function month(){
     })
     document.querySelector('.chart-month').style.display = 'flex'
     users.forEach(function(elem){
-        if(elem.classList.contains('online-month')){
+        if(elem.classList.contains('online-month') || elem.classList.contains('online-week') || elem.classList.contains('online-yesterday') || elem.classList.contains('online-today') || elem.classList.contains('online-now')){
             elem.style.display = 'flex'
         }
         else{
@@ -161,7 +161,7 @@ input.oninput = function(){
     const myChartToday = new Chart(ctxToday, {
     type: 'line',
     data: {
-        labels: ['01.04','02.04','03.04','4.04','5.04','6.04','7.04','8.04','9.04','10.04','11.04','12.04','13.04','14.04','15.04','16.04','17.04','18.04','19.04','20.04','21.04','22.04','23.04','24.04','25.04','26.04','27.04','28.04','29.04','30.04','31.04'],
+        labels: labelsToday,
         datasets: [{
             label: "Количество игроков",
             data: dataToday,
@@ -199,7 +199,7 @@ input.oninput = function(){
 const myChartYesterday = new Chart(ctxYesterday, {
     type: 'line',
     data: {
-        labels: ['01.04','02.04','03.04','4.04','5.04','6.04','7.04','8.04','9.04','10.04','11.04','12.04','13.04','14.04','15.04','16.04','17.04','18.04','19.04','20.04','21.04','22.04','23.04','24.04','25.04','26.04','27.04','28.04','29.04','30.04','31.04'],
+        labels: labelsYesterday,
         datasets: [{
             label: "Количество игроков",
             data: dataYesterday,
@@ -237,7 +237,7 @@ const myChartYesterday = new Chart(ctxYesterday, {
 const myChartWeek = new Chart(ctxWeek, {
     type: 'line',
     data: {
-        labels: ['01.04','02.04','03.04','4.04','5.04','6.04','7.04','8.04','9.04','10.04','11.04','12.04','13.04','14.04','15.04','16.04','17.04','18.04','19.04','20.04','21.04','22.04','23.04','24.04','25.04','26.04','27.04','28.04','29.04','30.04','31.04'],
+        labels: labelsWeek,
         datasets: [{
             label: "Количество игроков",
             data: dataWeek,
@@ -275,7 +275,7 @@ const myChartWeek = new Chart(ctxWeek, {
 const myChartMonth = new Chart(ctxMonth, {
     type: 'line',
     data: {
-        labels: ['01.04','02.04','03.04','4.04','5.04','6.04','7.04','8.04','9.04','10.04','11.04','12.04','13.04','14.04','15.04','16.04','17.04','18.04','19.04','20.04','21.04','22.04','23.04','24.04','25.04','26.04','27.04','28.04','29.04','30.04','31.04'],
+        labels: labelsMonth,
         datasets: [{
             label: "Количество игроков",
             data: dataMonth,

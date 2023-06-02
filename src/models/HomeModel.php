@@ -21,4 +21,25 @@ class HomeModel extends Model{
         
     }
 
+    public function getStatsToday(){
+        $Date = time() - (time() - strtotime('today'));
+        return $this->db->query("SELECT * FROM `statistics` WHERE `Date` >= '$Date'");
+    }
+
+    public function getStatsYesterday(){
+        $DateFrom = time() - (time() - strtotime('today')) - (24*60*60);
+        $DateTo = time() - (time() - strtotime('today'));
+        return $this->db->query("SELECT * FROM `statistics` WHERE `Date` >= '$DateFrom' AND `Date` <= '$DateTo'");
+    }
+
+    public function getStatsWeek(){
+        $Date = time() - (time() - strtotime('today')) - (7*24*60*60);
+        return $this->db->query("SELECT * FROM `statistics` WHERE `Date` >= '$Date'");
+    }
+
+    public function getStatsMonth(){
+        $Date = time() - (time() - strtotime('today')) - (30*24*60*60);
+        return $this->db->query("SELECT * FROM `statistics` WHERE `Date` >= '$Date'");
+    }
+
 }

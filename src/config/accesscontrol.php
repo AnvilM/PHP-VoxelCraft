@@ -24,7 +24,10 @@ return [
         'API/get.skin',
         'API/get.avatar',
         'API/add.role',
-        'API/remove.role'
+        'API/remove.role',
+        'API/set.lastonline',
+        'API/set.online',
+        'API/set.offline'
         
     ],
     'noLogined' => [

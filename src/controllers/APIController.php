@@ -29,14 +29,14 @@ Class APIController extends Controller{
                 $this->Db->query("UPDATE `players_skins` SET `Skin` = '$Skin' WHERE `Login` = '$Login'");
                 $Time = time();
                 $this->Db->query("INSERT INTO `players_notices` (`Login`, `Message`, `Date`) VALUES ('$Login', 'Вы сменили скин', '$Time')");
-                echo true;
+                echo 1;
             }
             else{
-                echo 'Игрок не найден';
+                echo 'Player not found';
             }
             
         }
-        echo false;
+        echo 0;
         exit();
     }
 
@@ -53,13 +53,13 @@ Class APIController extends Controller{
                 $this->Db->query("INSERT INTO `players_roles` (`Login`, `Role`, `Color`) VALUES ('$Login', '$Role', '$Color')");
                 $Time = time();
                 $this->Db->query("INSERT INTO `players_notices` (`Login`, `Message`, `Date`) VALUES ('$Login', 'Вам выдана роль $Role', '$Time')");
-                echo true;
+                echo 1;
             }
             else{
-                echo 'Игрок не найден';
+                echo 'Player not found';
             }
         }
-        echo false;
+        echo 0;
         exit();
     }
 
@@ -74,13 +74,13 @@ Class APIController extends Controller{
                 $this->Db->query("DELETE FROM `players_roles` WHERE `Login` = '$Login' AND `Role` = '$Role'");
                 $Time = time();
                 $this->Db->query("INSERT INTO `players_notices` (`Login`, `Message`, `Date`) VALUES ('$Login', 'Удаленна роль $Role', '$Time')");
-                echo true;
+                echo 1;
             }
             else{
-                echo 'Игрок не найден';
+                echo 'Player not found';
             }
         }
-        echo false;
+        echo 0;
         exit();
     }
 
@@ -130,6 +130,76 @@ Class APIController extends Controller{
         imagepng($avatar);
         
 
+        
+    }
+
+
+    public function SET_STATISTICSAction(){
+        if(isset($_GET['Online'])){
+            $Online = $_GET['Online'];
+            $Date = time();
+            $this->Db->query("INSERT INTO `statistics` (`Date`, `Online`) VALUES ('$Date', '$Online')");
+            echo 1;
+        }
+        else{
+            echo 0;
+        }
+        exit();
+        
+    }
+
+    public function SET_LAST_ONLINEAction(){
+        if(isset($_GET['Login']) && isset($_GET['Time'])){
+            $Time = $_GET['Time'];
+            $Login = $_GET['Login'];
+            if(mysqli_num_rows($this->Db->query("SELECT * FROM `users` WHERE `Login` = '$Login'")) > 0){
+                $this->Db->query("UPDATE `users` SET `Last_Online` = '$Time' WHERE `Login` = '$Login'");
+                echo 1;
+            }
+            else{
+                echo 'Player not found';
+            }
+        }
+        else{
+            echo 0;
+        }
+        exit();
+        
+    }
+
+    public function SET_ONLINEAction(){
+        if(isset($_GET['Login']) && isset($_GET['Time'])){
+            $Login = $_GET['Login'];
+            if(mysqli_num_rows($this->Db->query("SELECT * FROM `users` WHERE `Login` = '$Login'")) > 0){
+                $this->Db->query("UPDATE `users` SET `Online` = '1' WHERE `Login` = '$Login'");
+                echo 1;
+            }
+            else{
+                echo 'Player not found';
+            }
+        }
+        else{
+            echo 0;
+        }
+        exit();
+        
+    }
+
+    public function SET_OFFLINEAction(){
+        if(isset($_GET['Login']) && isset($_GET['Time'])){
+            $Login = $_GET['Login'];
+            if(mysqli_num_rows($this->Db->query("SELECT * FROM `users` WHERE `Login` = '$Login'")) > 0){
+                $this->Db->query("UPDATE `users` SET `Online` = '0' WHERE `Login` = '$Login'");
+                echo 1;
+            }
+            else{
+                echo 'Player not found';
+            }
+        }
+        else{
+            echo 0;
+        }
+        exit();
         
     }
 } 

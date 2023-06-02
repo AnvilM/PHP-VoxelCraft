@@ -23,8 +23,13 @@ Class HomeController extends Controller{
     public function StatsAction(){
       
         $Players = mysqli_fetch_all($this->Model->getPlayers());
+        
+        $StatsToday = mysqli_fetch_all($this->Model->getStatsToday());
+        $StatsYesterday = mysqli_fetch_all($this->Model->getStatsYesterday());
+        $StatsWeek = mysqli_fetch_all($this->Model->getStatsWeek());
+        $StatsMonth = mysqli_fetch_all($this->Model->getStatsMonth());
 
-        $this->View->render(['Players' => $Players]);
+        $this->View->render(['Players' => $Players, 'StatsToday' => $StatsToday, 'StatsYesterday' => $StatsYesterday, 'StatsWeek' => $StatsWeek, 'StatsMonth' => $StatsMonth]);
     } 
 
     public function MapAction(){
@@ -33,7 +38,6 @@ Class HomeController extends Controller{
     }
 
     public function BuyAction(){
-        
         if(!$this->User->isPlayer() && $this->User->isAuth() && isset($_GET['Login'])){
             $this->Model->addPlayer($this->User->getDiscord(), $_GET['Login']);
             $_SESSION['User']['Login'] = $_GET['Login'];

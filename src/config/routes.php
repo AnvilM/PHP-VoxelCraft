@@ -174,6 +174,41 @@ $routes = [
         'View' => '',
         'Title' => ''
     ],
+    [
+        'Route' => 'API/set.statistics',
+        'Controller' => 'API',
+        'Action' => 'SET_STATISTICS',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
+
+    [
+        'Route' => 'API/set.lastonline',
+        'Controller' => 'API',
+        'Action' => 'SET_LAST_ONLINE',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
+
+    [
+        'Route' => 'API/set.online',
+        'Controller' => 'API',
+        'Action' => 'SET_ONLINE',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
+
+    [
+        'Route' => 'API/set.offline',
+        'Controller' => 'API',
+        'Action' => 'SET_OFFLINE',
+        'Layout' => '',
+        'View' => '',
+        'Title' => ''
+    ],
 
 ];
 

@@ -36,7 +36,11 @@ class ProfileModel extends Model{
     }
 
     public function getCardFromLogin($Login){
-        return $this->db->query("SELECT * FROM `cards` WHERE `Owner` = '$Login'");
+        return $this->db->query("SELECT * FROM `cards` WHERE `Owner` = '$Login' AND `type` != 'admin'");
+    }
+
+    public function getAdminCardFromLogin($Login){
+        return $this->db->query("SELECT * FROM `cards` WHERE `Owner` = '$Login' AND `type` = 'admin'");
     }
 
     public function getPlayerCards($Login){
@@ -88,7 +92,13 @@ class ProfileModel extends Model{
     }
 
     public function createCard($Owner, $Number, $Design, $Type, $Share){
-        return $this->db->query("INSERT INTO `cards` (`Owner`, `Number`, `Design`, `Type`, `Share`) VALUES ('$Owner', '$Number', '$Design', '$Type', '$Share')");
+        $Bank = 'ЗАЕБанк';
+        return $this->db->query("INSERT INTO `cards` (`Owner`, `Number`, `Bank`, `Design`, `Type`, `Share`) VALUES ('$Owner', '$Number', '$Bank', '$Design', '$Type', '$Share')");
+    }
+
+    public function createAdminCard($Owner, $Number, $Design, $Type, $Share){
+        $Bank = 'РЕДАНБанк';
+        return $this->db->query("INSERT INTO `cards` (`Owner`, `Number`, `Bank`, `Design`, `Type`, `Share`) VALUES ('$Owner', '$Number', '$Bank', '$Design', '$Type', '$Share')");
     }
 
     public function addCard($Login, $Number){

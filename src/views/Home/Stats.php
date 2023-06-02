@@ -51,12 +51,97 @@
                         mc.voxelcraft.ru
                     </p>
                 </div>
+                <?php
+
+                    $months = [
+                        'Января',
+                        'Февраля',
+                        'Марта',
+                        'Апрелья',
+                        'Мая',
+                        'Июня',
+                        'Июля',
+                        'Августа',
+                        'Сентября',
+                        'Октября',
+                        'Ноября',
+                        'Декабря'
+                    ];
+                    $weekDays = [
+                        'Понедельник',
+                        'Вторник',
+                        'Среда',
+                        'Четверг',
+                        'Пятница',
+                        'Суббота',
+                        'Воскресенье'
+                    ];
+                ?>
                 <script>
-                    const dataToday = [28, 38, 20, 20, 39, 18, 40, 15, 26, 36, 24, 36, 15, 38, 16, 40, 26, 23, 21, 21, 19, 25, 15, 27, 33, 22, 19, 35, 17, 27, 34]
-                    const dataYesterday = [34, 31, 28, 17, 27, 20, 35, 23, 30, 22, 23, 18, 15, 40, 24, 39, 15, 35, 25, 28, 29, 36, 27, 25, 25, 15, 17, 29, 36, 32, 33]
-                    const dataWeek = [35, 39, 31, 22, 24, 36, 33, 33, 38, 22, 28, 35, 17, 38, 28, 23, 34, 17, 21, 15, 33, 16, 36, 18, 17, 30, 37, 33, 31, 31, 32]
-                    const dataMonth = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60]
+                    const dataToday = [
+                        <?php
+                            for($i=0; $i < count($StatsToday); $i++){
+                                echo $StatsToday[$i][1].',';
+                            }
+                        ?>
+                    ]
+                    const dataYesterday = [
+                        <?php
+                            for($i=0; $i < count($StatsYesterday); $i++){
+                                echo $StatsYesterday[$i][1].',';
+                            }
+                        ?>
+                    ]
+                    const dataWeek = [
+                        <?php
+                            for($i=0; $i < count($StatsWeek); $i++){
+                                echo $StatsWeek[$i][1].',';
+                            }
+                        ?>
+                    ]
+                    const dataMonth = [
+                        <?php
+                            for($i=0; $i < count($StatsMonth); $i++){
+                                echo $StatsMonth[$i][1].',';
+                            }
+                        ?>
+                    ]
+
+
+
+
+
+                    const labelsToday = [
+                        <?php
+                            for($i=0; $i < count($StatsToday); $i++){
+                                echo '"'.date('G:i', $StatsToday[$i][0]).'",';
+                            }
+                        ?>
+                    ]
+                    const labelsYesterday = [
+                        <?php
+                            for($i=0; $i < count($StatsYesterday); $i++){
+                                echo '"Вчера в '.date('G:i', $StatsYesterday[$i][0]).'",';
+                            }
+                        ?>
+                    ]
+                    const labelsWeek = [
+                        <?php
+                            for($i=0; $i < count($StatsWeek); $i++){
+                                echo '"'.date('j', $StatsWeek[$i][0]).' '.$months[date('n', $StatsWeek[$i][0])-1].', '.$weekDays[date('N', $StatsWeek[$i][0])-1].' в '.date('G:i', $StatsWeek[$i][0]).'",';
+                            }
+                        ?>
+                    ]
+                    const labelsMonth = [
+                        <?php
+                            for($i=0; $i < count($StatsMonth); $i++){
+                                echo '"'.date('j', $StatsMonth[$i][0]).' '.$months[date('n', $StatsMonth[$i][0])-1].', '.$weekDays[date('N', $StatsMonth[$i][0])-1].' в '.date('G:i', $StatsMonth[$i][0]).'",';
+                            }
+                        ?>
+                    ]
                 </script>
+
+            
                 <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col chart-today" style="display: none;"></canvas>
                 <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col chart-yesterday" style="display: none;"></canvas>
                 <canvas class="border border-tavern-link container mx-auto rounded-b-lg h-72 max-h-72 w-full flex flex-col chart-week" style="display: none;"></canvas>
@@ -128,67 +213,28 @@
                     </form>
                 </div>
                 <div class="container mx-auto gap-x-16 gap-y-8 px-10 sm:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-3">
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-now">
-                        <img class="h-[80px]" src="public\images\ava.png">
-                        <div class="text-white ml-8 flex flex-col">
-                            <p class="user-name font-medium text-lg leading-7">New_Jeb-now</p>
-                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
-                        </div>
-                    </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-today">
-                        <img class="h-[80px]" src="public\images\ava.png">
-                        <div class="text-white ml-8 flex flex-col">
-                            <p class="user-name font-medium text-lg leading-7">New_Jeb-today</p>
-                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
-                        </div>
-                    </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-yesterday">
-                        <img class="h-[80px]" src="public\images\ava.png">
-                        <div class="text-white ml-8 flex flex-col">
-                            <p class="user-name font-medium text-lg leading-7">New_Jeb-yesterday</p>
-                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
-                        </div>
-                    </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-week">
-                        <img class="h-[80px]" src="public\images\ava.png">
-                        <div class="text-white ml-8 flex flex-col">
-                            <p class="user-name font-medium text-lg leading-7">New_Jeb-week</p>
-                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
-                        </div>
-                    </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
-                        <img class="h-[80px]" src="public\images\ava.png">
-                        <div class="text-white ml-8 flex flex-col">
-                            <p class="user-name font-medium text-lg leading-7">New_Jeb-month</p>
-                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
-                        </div>
-                    </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
-                        <img class="h-[80px]" src="public\images\ava.png">
-                        <div class="text-white ml-8 flex flex-col">
-                            <p class="user-name font-medium text-lg leading-7">Aboba_Jeb-month</p>
-                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
-                        </div>
-                    </a>
-                    <a href="#" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
-                        <img class="h-[80px]" src="public\images\ava.png">
-                        <div class="text-white ml-8 flex flex-col">
-                            <p class="user-name font-medium text-lg leading-7">Biba_Jeb-month</p>
-                            <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
-                        </div>
-                    </a>
                     <?php
                         for($i=0; $i<count($Players); $i++){
+                            
                             echo '
-                            <a href="/Profile?Login='.$Players[$i][1].'" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-month">
+                            <a href="/Profile?Login='.$Players[$i][1].'" class="bg-tavern-grid hover:bg-zinc-800 border border-gray-500 py-5 px-5 rounded-md flex items-center user online-';
+                            if($Players[$i][4] == 1){echo 'now';}
+                            else if(time() - (time() - strtotime('today')) - $Players[$i][3] <= 0){echo 'today';}
+                            else if(time() - (time() - strtotime('today')) - $Players[$i][3] < 0 && time() - (time() - strtotime('today')) - 24*60*60 - $Players[$i][3] > 0){echo 'yesterday';}
+                            else if(time() - (time() - strtotime('today')) - 7*24*60*60 - $Players[$i][3] < 0){echo 'week';}
+                            else if(time() - (time() - strtotime('today')) - 30*24*60*60 - $Players[$i][3] < 0){echo 'month';}
+
+                            echo '">
                                 <img class="h-[80px] rounded-lg" src="'.$this->User->getAvatar($Players[$i][1]).'" style="image-rendering:pixelated;">
                                 <div class="text-white ml-8 flex flex-col">
                                     <p class="user-name font-medium text-lg leading-7">'.$Players[$i][1].'</p>
-                                    <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">5 ч.</span></p>
+                                    <p class="leading-none text-lg text-gray-400 font-normal">Наиграл: <span class="text-tavern-link font-semibold">'.$Players[$i][2].' ч.</span></p>
                                 </div>
                             </a>
                             ';
                         }
+
+                        
                     ?>
                 </div>
             </div>

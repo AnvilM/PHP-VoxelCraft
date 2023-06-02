@@ -4,7 +4,7 @@
     </div>
     <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[61px] font-medium absolute top-[81px]"><?=count($privateCard)>0 ? $privateCard[0][1] : "1111 2222 3333 4444"?></div>
     <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[27px] font-medium absolute top-[150px]">
-    <?=count($privateCard)>0 ? $privateCard[0][3] : "Explorer.Bank"?></div>
+    <?=count($privateCard)>0 ? $privateCard[0][3] : "ЗАЕБанк"?></div>
     <div class="h-52 text-[#ffffff] select-none text-xl text-center left-[211px] font-medium absolute top-[150px]">
         <span class="flex items-center">
         <?=count($privateCard)>0 ? $privateCard[0][2] : "999"?>

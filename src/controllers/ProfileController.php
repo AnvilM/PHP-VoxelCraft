@@ -71,7 +71,28 @@ Class ProfileController extends Controller{
                }
                while(mysqli_num_rows($this->Model->getShare($Share)) >= 1);
                
-               $this->Model->createCard($_GET['Create'], $Number, $_GET['Design'], $_GET['Type'], $Share);
+               if($_GET['Design'] === 'redan' || $_GET['Design'] === 'whiteredan'){
+                  $this->Model->createAdminCard($_GET['Create'], $Number, $_GET['Design'], 'admin', $Share);
+                  $this->Model->addCard($_GET['Create'], $Number);
+               }
+               else{
+                  $this->Model->createCard($_GET['Create'], $Number, $_GET['Design'], $_GET['Type'], $Share);
+                  $this->Model->addCard($_GET['Create'], $Number);
+               }
+               
+            }
+            else if(mysqli_num_rows($this->Model->getCardFromLogin($_GET['Create'])) >= 1 && ($_GET['Design'] === 'redan' || $_GET['Design'] === 'whiteredan')){
+               $Share = '';
+               $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+               do{
+                  for($i=0; $i<16; $i++){
+                     $Share = $Share.''.$alphabet[rand(0, strlen($alphabet)-1)];
+                  }
+                  $Share = hash('sha256', $Share);
+               }
+               while(mysqli_num_rows($this->Model->getShare($Share)) >= 1);
+               
+               $this->Model->createAdminCard($_GET['Create'], $Number, $_GET['Design'], 'admin', $Share);
                $this->Model->addCard($_GET['Create'], $Number);
             }
          }
@@ -195,7 +216,10 @@ Class ProfileController extends Controller{
 
 
       $privateCard = mysqli_fetch_all($this->Model->getCardFromLogin($this->User->getLogin()));
-
+      $adminCard;
+      if($this->User->isAdmin()){
+         $adminCard = mysqli_fetch_all($this->Model->getAdminCardFromLogin($this->User->getLogin()));
+      }
       $Numbers = mysqli_fetch_all($this->Model->getPlayerCards($this->User->getLogin()));
       $AllCards = [];
       $Transfers = [];
@@ -210,7 +234,7 @@ Class ProfileController extends Controller{
       
 
       
-      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard, 'Transfers' => $Transfers, 'Designs' => $Cards['Styles'], 'Types' => $Cards['Types']]);
+      $this->View->render(['allCards' => $AllCards, 'privateCard' => $privateCard, 'adminCard' => $adminCard, 'Transfers' => $Transfers, 'Designs' => $Cards['Styles'], 'Types' => $Cards['Types']]);
    }
    public function SigninAction(){
       $_SESSION['User'] = [];

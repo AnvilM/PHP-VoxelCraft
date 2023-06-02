@@ -6,7 +6,14 @@
                     <div class="flex lg:items-start lg:justify-start items-center lg:flex-row flex-col">
                         <div class="flex lg:w-96 w-full flex-col">
                         <?php
-
+                            if($this->User->isAdmin()){
+                                if(count($adminCard) > 0){
+                                    for($i=0;$i<count($adminCard); $i++){
+                                        require 'src\views\Partials\cardstyles\\'.$adminCard[$i][4].'.php';
+                                    }
+                                }
+                            
+                            }
                                 if(count($privateCard) === 0){
                                     echo '
                                     <div
@@ -111,7 +118,7 @@
                                     <div
                                         class="bg-tavern-bg-bank px-2 rounded-md flex items-center justify-center flex-col">
                                         <p class="text-white whitespace-nowrap text-[15px]">* **** '.substr($allCards[$i][0][1], 12).'</p>
-                                        <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
+                                        <p class="text-white whitespace-nowrap text-[9.8px]">ЗАЕБанк</p>
                                     </div>
                                 </div>
                                 <hr class="my-3 border-[#343737]">
@@ -190,7 +197,7 @@
                                     <div
                                         class="bg-tavern-bg-bank px-2 rounded-md flex items-center justify-center flex-col">
                                         <p class="text-white whitespace-nowrap text-[15px]">* **** 9999</p>
-                                        <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
+                                        <p class="text-white whitespace-nowrap text-[9.8px]">ЗАЕБанк</p>
                                     </div>
                                 </div>
                                 <hr class="my-3 border-[#343737]"> -->
@@ -235,7 +242,7 @@
 
                                     <div class="bg-[#FF5949] px-2 rounded-md flex items-center justify-center flex-col">
                                         <p class="text-white whitespace-nowrap text-[15px]">* **** 9999</p>
-                                        <p class="text-white whitespace-nowrap text-[9.8px]">Explorer.Bank</p>
+                                        <p class="text-white whitespace-nowrap text-[9.8px]">ЗАЕБанк</p>
                                     </div>
                                 </div> -->
                                 <!-- <hr class="my-3 border-[#343737]"> -->
