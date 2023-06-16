@@ -168,7 +168,7 @@ Class APIController extends Controller{
     }
 
     public function SET_ONLINEAction(){
-        if(isset($_GET['Login']) && isset($_GET['Time'])){
+        if(isset($_GET['Login'])){
             $Login = $_GET['Login'];
             if(mysqli_num_rows($this->Db->query("SELECT * FROM `users` WHERE `Login` = '$Login'")) > 0){
                 $this->Db->query("UPDATE `users` SET `Online` = '1' WHERE `Login` = '$Login'");
