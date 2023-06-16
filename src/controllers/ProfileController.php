@@ -216,7 +216,7 @@ Class ProfileController extends Controller{
 
 
       $privateCard = mysqli_fetch_all($this->Model->getCardFromLogin($this->User->getLogin()));
-      $adminCard;
+      $adminCard = '';
       if($this->User->isAdmin()){
          $adminCard = mysqli_fetch_all($this->Model->getAdminCardFromLogin($this->User->getLogin()));
       }

@@ -1,4 +1,3 @@
-
 <body class="bg-tavern-black overflow-x-hidden min-w-[647px]">
     <?require 'src\views\Partials\header.php';?>
     <main class="pt-20 font-sans">
