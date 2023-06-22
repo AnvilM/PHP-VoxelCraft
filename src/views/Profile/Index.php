@@ -1,6 +1,6 @@
 <script src="/public/js/Profile/skinview3d.bundle.js"></script>
 <script>var skin = '<?=$this->User->getSkin($_GET['Login'])?>'</script>
-<body class="bg-tavern-black md:overflow-hidden min-w-[547px]">
+<body class="bg-tavern-black min-w-[547px]">
     <?require 'src\views\Partials\header.php';?>
         <main>
             <div class="pt-20 font-sans">

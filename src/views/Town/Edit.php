@@ -309,8 +309,12 @@
                         <div class="mr-0 lg:mr-28 xl:mr-48 max-w-2xl">
                             <div class="flex">
                                 <div class="flex items-center">
-
-                                    <img class="h-[288px] mr-6" src="<?=$Town[0][3]?>" style="image-rendering: pixelated;">
+                                    <div href="#" class="relative mr-6 flex justify-center flex-col items-center">
+                                        <img class="h-[288px]" src="<?=$Town[0][3]?>" style="image-rendering: pixelated;">
+                                        <button class="mt-4 w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Изменить</button>
+                                        
+                                       
+                                    </div>
                                     <div class="flex flex-col">
                                         <div
                                             class="bg-tavern-bg-bank select-none mb-10 text-tavern-black max-w-fit rounded-full px-6 py-2.5 text-base font-semibold flex items-center">
@@ -431,7 +435,10 @@
                                 <textarea id="message" rows="3"
                                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-tavern-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Напишите что-то..."></textarea>
+                                    
                             </p>
+                            <button class="mt-4 mb-5 w-full  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Редактировать</button>
+                            
                         </div>
                         <div class="lg:w-[300px] mb-3">
                             <div class="flex lg:flex-col mt-5 lg:mt-0">

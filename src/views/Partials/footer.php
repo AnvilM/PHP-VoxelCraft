@@ -16,12 +16,12 @@
                     <a href="#" class="mr-4 hover:underline md:mr-6 ">Правила</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline">BoxStudio</a>
+                    <a href="https://discord.gg/dhkf6B7ZgV" class="hover:underline">BoxStudio</a>
                 </li>
             </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">Мы никаким образом не связаны с Mojang, AB и не поддерживаем ее!<br><a href="https://flowbite.com/" class="select-none hover:underline">© 2023 Все права защищены.</a></span>
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">Мы никаким образом не связаны с Mojang, AB и не поддерживаем ее!<br><a href="/" class="select-none hover:underline">© 2023 Все права защищены.</a></span>
     </div>
 </footer>
 
