@@ -209,7 +209,22 @@ $routes = [
         'View' => '',
         'Title' => ''
     ],
-
+    [
+        'Route' => 'Court',
+        'Controller' => 'Home',
+        'Action' => 'Court',
+        'Layout' => 'Default',
+        'View' => 'Court',
+        'Title' => 'Суд'
+    ],
+    [
+        'Route' => 'Tape',
+        'Controller' => 'Home',
+        'Action' => 'Tape',
+        'Layout' => 'Default',
+        'View' => 'Tape',
+        'Title' => 'Лента'
+    ],
 ];
 
 return $routes;

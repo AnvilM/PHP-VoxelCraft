@@ -20,6 +20,18 @@ Class HomeController extends Controller{
 
         $this->View->render(['Towns' => $Towns]);
     } 
+    public function CourtAction(){
+        $Court = mysqli_fetch_all($this->Model->getTowns());
+
+
+        $this->View->render(['Court' => $Court]);
+    }
+    public function TapeAction(){
+        $Tape = mysqli_fetch_all($this->Model->getTowns());
+
+
+        $this->View->render(['Tape' => $Tape]);
+    }
     public function StatsAction(){
       
         $Players = mysqli_fetch_all($this->Model->getPlayers());

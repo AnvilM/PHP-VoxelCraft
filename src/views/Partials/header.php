@@ -83,6 +83,20 @@
             <a class="text-white select-none" aria-current="page">•</a>
           </li>
           <li>
+            <a href="/court" class="text-white
+            hover:border-b border-[#1d72f2] transition-all px-1 py-6" aria-current="page">Суд</a>
+          </li>
+          <li class="hidden lg:block">
+            <a class="text-white select-none" aria-current="page">•</a>
+          </li>
+          <li>
+            <a href="/tape" class="text-white
+            hover:border-b border-[#1d72f2] transition-all px-1 py-6" aria-current="page">Лента</a>
+          </li>
+          <li class="hidden lg:block">
+            <a class="text-white select-none" aria-current="page">•</a>
+          </li>
+          <li>
             <a href="/map" class="text-white
             hover:border-b border-[#1d72f2] transition-all px-1 py-6" aria-current="page">Карта</a>
           </li>

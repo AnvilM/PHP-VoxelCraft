@@ -36,7 +36,7 @@
     <link rel="shortcut icon" href="public\images\favicon.ico" type="image/x-icon">
 
     <!-- TAILWIND -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/public/js/Tailwind.js"></script>
     <link rel="stylesheet" href="/public/css/Index.css">

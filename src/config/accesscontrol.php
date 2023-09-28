@@ -5,6 +5,8 @@ return [
         '',
         'Towns',
         'Town',
+        'Court',
+        'Tape',
         'Town/Edit',
         'Profile/Bank',
         'Profile',
